@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright 2011 Research Studios Austria Forschungsgesellschaft mBH
+  ~
+  ~ This file is part of easyrec.
+  ~
+  ~ easyrec is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ easyrec is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with easyrec.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="tenantConfig_default" class="org.easyrec.model.core.TenantConfigVO">
+        <constructor-arg index="0" name="itemTypes">
+            <list>
+                <value>ITEM</value>
+            </list>
+        </constructor-arg>
+        <constructor-arg index="1" name="assocTypes">
+            <list>
+                <value>VIEWED_TOGETHER</value>
+                <value>GOOD_RATED_TOGETHER</value>
+                <value>BOUGHT_TOGETHER</value>
+                <value>IS_RELATED</value>
+            </list>
+        </constructor-arg>
+        <constructor-arg index="2" name="aggregateTypes">
+            <list>
+                <value>AVERAGE</value>
+                <value>FIRST</value>
+                <value>MAXIMUM</value>
+                <value>MOST_FREQUENT</value>
+                <value>NEWEST</value>
+                <value>OLDEST</value>
+            </list>
+        </constructor-arg>
+        <constructor-arg index="3" name="actionTypes">
+            <list>
+                <value>VIEW</value>
+                <value>RATE</value>
+                <value>BUY</value>
+            </list>
+        </constructor-arg>
+        <constructor-arg index="4" name="sourceTypes">
+            <list>
+                <value>MANUALLY_CREATED</value>
+            </list>
+        </constructor-arg>
+        <constructor-arg index="5" name="viewTypes">
+            <list>
+                <value>ADMIN</value>
+                <value>COMMUNITY</value>
+                <value>SYSTEM</value>
+            </list>
+        </constructor-arg>
+        <constructor-arg index="6" name="authenticationDomains">
+            <list/>
+        </constructor-arg>
+    </bean>
+</beans>

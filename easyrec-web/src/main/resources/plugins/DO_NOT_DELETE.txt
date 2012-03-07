@@ -1,0 +1,5 @@
+
+This folder contains all plugins that are installed by default.
+They are copied into this folder with a maven build plugin, therefore you need to run "mvn install" to update the
+contents of this folder.
+Furthermore all plugins that get installed via the web interface are stored into this directory.

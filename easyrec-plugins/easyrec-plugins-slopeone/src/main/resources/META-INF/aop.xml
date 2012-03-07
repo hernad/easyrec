@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : aop.xml
+    Created on : 30. September 2010, 17:22
+    Author     : szavrel
+    Description:
+        Purpose of the document follows.
+-->
+<!DOCTYPE aspectj PUBLIC
+        "-//AspectJ//DTD//EN" "http://www.eclipse.org/aspectj/dtd/aspectj.dtd">
+<aspectj>
+
+    <weaver>
+
+        <!-- only weave classes in our application-specific packages -->
+        <include within="org.easyrec.*"/>
+
+    </weaver>
+
+    <aspects>
+
+        <!-- weave in just this aspect -->
+        <!--aspect name="foo.ProfilingAspect"/-->
+        <include within="org.easyrec.*"/>
+
+    </aspects>
+
+</aspectj>

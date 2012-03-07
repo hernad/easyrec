@@ -1,0 +1,9 @@
+# type: itemassoc
+# command: insert
+tenantId=0, itemFromId,itemFromTypeId=3(track),assocTypeId=1(isSimilarTo),assocValue,itemToId,itemToTypeId=8(prototypeTrack),sourceTypeId=1(fe),sourceInfo=NO_CLUSTERSYS_ID,viewTypeId=2(system),active=true
+0,25722,,,1.5944828711436,113321,,,,,
+0,25723,,,3.5944828711436,113321,,,,,
+0,25726,,,2.5944828711436,113321,,,,,
+0,25726,3,1,3.5944828711436,113321,4,2,abc,2,true
+0,25726,4,1,3.5944828711436,113321,4,2,abc,2,false
+0,25727,,,3.5944828711436,113321,,,,,

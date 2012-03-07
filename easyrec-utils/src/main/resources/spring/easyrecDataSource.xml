@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- $Author$ -->
+<!-- $Revision$ -->
+<!-- $Date$ -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+                http://www.springframework.org/schema/beans
+                http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+    <bean id="propertyConfigurerDatabase"
+          class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath:/easyrec.database.properties</value>
+                <value>classpath:/override/easyrec.database.properties</value>
+            </list>
+        </property>
+        <property name="ignoreResourceNotFound" value="true"/>
+        <property name="placeholderPrefix" value="$easyrec-db{"/>
+    </bean>
+
+    <bean id="easyrecDataSource"
+          class="org.apache.commons.dbcp.BasicDataSource" ><!-- destroy-method="close"> -->
+        <property name="driverClassName" value="$easyrec-db{db.easyrec.driver}"/>
+        <property name="url" value="$easyrec-db{db.easyrec.url}"/>
+        <property name="username" value="$easyrec-db{db.easyrec.username}"/>
+        <property name="password" value="$easyrec-db{db.easyrec.password}"/>
+        <!-- http://confluence.atlassian.com/display/JIRA/Surviving+Connection+Closures -->
+        <property name="timeBetweenEvictionRunsMillis" value="1800000"/>
+        <property name="testWhileIdle" value="true"/>
+        <property name="testOnBorrow" value="false"/>
+        <property name="minEvictableIdleTimeMillis" value="1800000"/>
+        <property name="validationQuery" value="SELECT 1"/>
+<!--        <property name="connectionProperties" value="characterEncoding=UTF-8;useUnicode=true;" />-->
+    </bean>
+
+    <bean id="easyrecSqlScriptService"
+          class="org.easyrec.utils.spring.store.service.sqlscript.impl.SqlScriptServiceImpl">
+        <constructor-arg ref="easyrecDataSource"/>
+    </bean>
+</beans>

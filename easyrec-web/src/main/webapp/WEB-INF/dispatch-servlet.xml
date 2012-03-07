@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+                http://www.springframework.org/schema/beans
+                http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id="propertyConfigurerRecommender"
+          class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath:/easyrec.properties</value>
+                <value>classpath:/override/easyrec.properties</value>
+            </list>
+        </property>
+        <property name="ignoreResourceNotFound" value="true"/>
+        <property name="placeholderPrefix" value="$easyrec{"/>
+    </bean>
+
+    <import resource="classpath:spring/web/common/easyrecSettings.xml"/>
+
+    <bean id="jspViewResolver"
+          class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="viewClass"
+                  value="org.springframework.web.servlet.view.JstlView"/>
+        <property name="prefix" value="/jsp/install/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+    <bean id="sqlScriptService"
+          class="org.easyrec.utils.spring.store.service.sqlscript.impl.SqlScriptServiceImpl">
+        <constructor-arg ref="easyrecDataSource"/>
+    </bean>
+
+    <bean id="dbProps"
+          class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+        <property name="locations">
+            <list>
+                <value>classpath:/easyrec.database.properties</value>
+                <!--suppress SpringModelInspection -->
+                <value>classpath:/override/easyrec.database.properties</value>
+            </list>
+        </property>
+        <property name="ignoreResourceNotFound" value="true"/>
+    </bean>
+
+    <bean id="dbPropsResource"
+          class="org.springframework.core.io.ClassPathResource">
+        <constructor-arg value="override"/>
+    </bean>
+
+    <bean id="dbCreationFile"
+          class="org.springframework.core.io.ClassPathResource">
+        <constructor-arg value="sql/innodb/easyrec_default_innodb.sql"/>
+    </bean>
+
+    <bean id="dbMigrateFolder"
+          class="org.springframework.core.io.ClassPathResource">
+        <constructor-arg value="sql"/>
+    </bean>
+
+    <bean id="loaderDAO"
+          class="org.easyrec.store.dao.web.impl.LoaderDAOMysqlImpl">
+        <constructor-arg ref="easyrecDataSource"/>
+        <constructor-arg ref="sqlScriptService"/>
+        <constructor-arg ref="dbCreationFile"/>
+        <constructor-arg ref="dbMigrateFolder"/>
+        <property name="migrateFiles">
+            <list>
+                <value>easyrec_migrate_0.92</value>
+                <value>easyrec_migrate_0.95</value>
+                <value>easyrec_migrate_0.96</value>
+                <value>easyrec_migrate_0.97</value>
+            </list>
+        </property>
+        <property name="properties" ref="dbProps"/>
+        <property name="overrideFolder" ref="dbPropsResource"/>
+        <property name="currentVersion" value="$easyrec{easyrec.instance.version}"/>
+        <property name="configLocations">
+            <!--suppress InjectionValueTypeInspection -->
+            <map key-type="java.lang.String" value-type="java.lang.String">
+                <entry key="easyrec.rest" value="classpath:spring/web/restContext.xml"/>
+                <entry key="easyrec.soap" value="classpath:spring/web/soapContext.xml"/>
+                <entry key="easyrec.dev" value="classpath:spring/web/devContext.xml"/>
+            </map>
+        </property>
+    </bean>
+
+    <bean name="/home"
+          class="org.easyrec.controller.LoaderController">
+        <property name="action" value="home"/>
+        <property name="props" ref="dbProps"/>
+        <property name="loaderDAO" ref="loaderDAO"/>
+        <property name="easyrecSettings" ref="easyrecSettings"/>
+    </bean>
+    <bean name="/connect"
+          class="org.easyrec.controller.LoaderController">
+        <property name="action" value="connect"/>
+        <property name="props" ref="dbProps"/>
+        <property name="resource" ref="dbPropsResource"/>
+        <property name="loaderDAO" ref="loaderDAO"/>
+        <property name="easyrecSettings" ref="easyrecSettings"/>
+    </bean>
+    <bean name="/create"
+          class="org.easyrec.controller.LoaderController">
+        <property name="action" value="create"/>
+        <property name="props" ref="dbProps"/>
+        <property name="loaderDAO" ref="loaderDAO"/>
+        <property name="easyrecSettings" ref="easyrecSettings"/>
+    </bean>
+    <bean name="/migrate"
+          class="org.easyrec.controller.LoaderController">
+        <property name="action" value="migrate"/>
+        <property name="props" ref="dbProps"/>
+        <property name="resource" ref="dbPropsResource"/>
+        <property name="loaderDAO" ref="loaderDAO"/>
+        <property name="easyrecSettings" ref="easyrecSettings"/>
+    </bean>
+    <bean name="/login"
+          class="org.easyrec.controller.LoaderController">
+        <property name="action" value="login"/>
+        <property name="props" ref="dbProps"/>
+        <property name="resource" ref="dbPropsResource"/>
+        <property name="loaderDAO" ref="loaderDAO"/>
+        <property name="easyrecSettings" ref="easyrecSettings"/>
+    </bean>
+    <bean name="/existing"
+          class="org.easyrec.controller.LoaderController">
+        <property name="action" value="existing"/>
+        <property name="props" ref="dbProps"/>
+        <property name="easyrecSettings" ref="easyrecSettings"/>
+    </bean>
+    <bean name="/loadcontext"
+          class="org.easyrec.controller.LoaderController">
+        <property name="action" value="loadcontext"/>
+        <property name="props" ref="dbProps"/>
+        <property name="loaderDAO" ref="loaderDAO"/>
+        <property name="easyrecSettings" ref="easyrecSettings"/>
+    </bean>
+
+    <bean name="/signup"
+          class="org.easyrec.controller.LoaderController">
+        <property name="action" value="signup"/>
+        <property name="props" ref="dbProps"/>
+        <property name="resource" ref="dbPropsResource"/>
+        <property name="loaderDAO" ref="loaderDAO"/>
+        <property name="easyrecSettings" ref="easyrecSettings"/>
+    </bean>
+    <bean name="/load"
+          class="org.easyrec.controller.LoaderController">
+        <property name="action" value="load"/>
+        <property name="props" ref="dbProps"/>
+        <property name="loaderDAO" ref="loaderDAO"/>
+        <property name="easyrecSettings" ref="easyrecSettings"/>
+    </bean>
+</beans>

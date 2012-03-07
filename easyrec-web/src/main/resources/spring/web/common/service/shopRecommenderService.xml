@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- $Author: szavrel $ -->
+<!-- $Revision: 18515 $ -->
+<!-- $Date: 2011-07-18 17:26:54 +0200 (Mo, 18 Jul 2011) $ -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+                http://www.springframework.org/schema/beans
+                http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+    <bean id="shopRecommenderService"
+          class="org.easyrec.service.web.nodomain.impl.ShopRecommenderServiceImpl">
+        <property name="domainActionService" ref="domainActionService"/>
+        <property name="domainRecommenderService" ref="domainRecommenderService"/>
+        <property name="domainItemAssocService" ref="domainItemAssocService"/>
+        <property name="typeMappingService" ref="typeMappingService"/>
+        <property name="idMappingDAO" ref="idMappingDAO"/>
+        <property name="idMappingService" ref="idMappingService"/>
+        <property name="itemService" ref="itemService"/>
+        <property name="itemDAO" ref="itemDAO"/>
+        <property name="remoteTenantDAO" ref="remoteTenantDAO"/>
+        <property name="cache" ref="rankingsCache"/>
+        <property name="clusterService" ref="clusterService" />
+        <property name="tenantService" ref="tenantService" />
+    </bean>
+</beans>
+     

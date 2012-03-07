@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ $Author: sat-rsa $
+ $Revision: 140 $
+ $Date: 2012-02-23 16:01:50 +0100 (Do, 23 Feb 2012) $
+ -->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <parent>
+        <groupId>org.easyrec</groupId>
+        <artifactId>easyrec</artifactId>
+        <version>0.97</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.easyrec</groupId>
+    <artifactId>easyrec-domain</artifactId>
+    <name>easyrec - Domain</name>
+    <version>0.97</version>
+    <description>For the isolation of domain specific content, this package is introduced, providing services and
+        database access classes for a generic domain, as well as for specific domains like the music domain.
+        Additional interfaces for the access of Third-Party data and a utility class for the aggregation of actions to
+        ratings are included.
+    </description>
+    <!--suppress MavenModelInspection -->
+    <url>${website.url.http}/easyrec/easyrec-domain/</url>
+
+    <dependencies>
+        <!-- COMPILE SCOPE -->
+        <!-- EASYREC module dependencies -->
+        <dependency>
+            <groupId>org.easyrec</groupId>
+            <artifactId>easyrec-core</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <!-- TEST SCOPE -->
+        <dependency>
+            <groupId>xerces</groupId>
+            <artifactId>xercesImpl</artifactId>
+            <version>2.9.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.easyrec</groupId>
+            <artifactId>easyrec-testutils</artifactId>
+            <version>${project.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>

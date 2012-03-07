@@ -1,0 +1,104 @@
+.footer {
+    margin-top: 20px;
+}
+
+.footer-container {
+    background: transparent url(../img/gradient_lightgray.gif) repeat-x scroll 0 0;
+
+    color: #0098C3;
+    height: 155px;
+    padding-top: 2px;
+    margin-top: 10px;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    -moz-border-radius-bottomright: 15px;
+    -moz-border-radius-bottomleft: 15px;
+    -moz-border-radius-topright: 15px;
+    -moz-border-radius-topleft: 15px;
+
+}
+
+.footermap {
+    margin: 0px auto 0;
+    padding: 0;
+    position: relative;
+}
+
+.footermap ul.footerItems {
+    float: left;
+    width: 152px;
+    font-size: 10px;
+    margin-left: 5px;
+    margin-top: 0px;
+    padding-right: 10px;
+    padding-left: 20px;
+}
+
+.footermap div table {
+    display: inline-table;
+    margin-right: 14px;
+    height: 100%;
+}
+
+.footermap div.trenner {
+    background: url(../img/abtrennung.png);
+    float: left;
+    width: 1px;
+    height: 110px;
+    margin-right: 7px;
+    margin-top: 25px;
+}
+
+.footermap p.listUberschrift {
+    color: #707070;
+    font-size: 13px;
+    height: 10px;
+    text-align: left;
+    padding-left: 19px;
+}
+
+.footermap ul li {
+    height: 20px;
+    list-style: none;
+    margin-top: 1px;
+}
+
+.footermap ul li img.pfeil {
+    margin-right: 8px;
+    padding-top: 10px;
+    vertical-align: text-bottom
+}
+
+.footermap ul li a {
+    color: #888888;
+    text-decoration: none;
+}
+
+.footermap ul li a:hover {
+    color: #333333;
+    text-decoration: none;
+}
+
+.footermap .legality a, .footer .legality a:hover {
+    color: #666666;
+    text-decoration: underline;
+}
+
+.footermap .legality {
+    padding: 3px 0;
+    color: 333333;
+    text-align: center;
+}
+
+.copyright {
+    display: block;
+    font-size: 85%;
+    margin: 0 auto;
+    color: #606060;
+    padding: 0;
+    text-align: center;
+    width: 570px;
+    margin-bottom: 30px;
+}

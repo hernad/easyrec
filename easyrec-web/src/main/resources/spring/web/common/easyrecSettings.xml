@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright 2011 Research Studios Austria Forschungsgesellschaft mBH
+  ~
+  ~ This file is part of easyrec.
+  ~
+  ~ easyrec is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ easyrec is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with easyrec.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+
+    <bean id="easyrecSettings"
+          class="org.easyrec.model.web.EasyRecSettings">
+        <property name="name" value="$easyrec{easyrec.instance.name}"/>
+        <property name="version" value="$easyrec{easyrec.instance.version}"/>
+        <property name="blogURL" value="$easyrec{easyrec.blogService}"/>
+        <property name="releases" value="$easyrec{easyrec.releases}"/>
+        <property name="updateURL" value="$easyrec{easyrec.updateURL}"/>
+        <property name="biz" value="$easyrec{easyrec.biz}"/>
+        <property name="operationMode" value="$easyrec{easyrec.operationMode}"/>
+    </bean>
+    
+    <bean id="WS" class="org.easyrec.vocabulary.WS">
+        <constructor-arg name="DEFAULT_NUMBER_OF_RESULTS" value="$easyrec{easyrec.maxNumberOfResults}" />
+        <constructor-arg name="MAX_NUMBER_OF_RANKING_RESULTS" value="$easyrec{easyrec.maxNumberOfRankingResults}" />
+        <constructor-arg name="ACTION_HISTORY_DEPTH" value="$easyrec{easyrec.actionHistoryDepth}" />
+    </bean>
+</beans>

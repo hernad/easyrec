@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- $Author: pmarschik $ -->
+<!-- $Revision: 17663 $ -->
+<!-- $Date: 2011-02-11 11:34:32 +0100 (Fr, 11 Feb 2011) $ -->
+
+<dataset>
+    <actiontype tenantId="0" id="1" name="ADD_TO_PLAYLIST"/>
+    <actiontype tenantId="0" id="2" name="BUY"/>
+    <actiontype tenantId="0" id="3" name="PREVIEW"/>
+    <actiontype tenantId="0" id="4" name="RATE"/>
+    <actiontype tenantId="0" id="5" name="SEARCH"/>
+    <actiontype tenantId="0" id="6" name="VIEW"/>
+</dataset>

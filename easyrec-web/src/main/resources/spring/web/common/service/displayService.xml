@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+    <bean id="displayHTMLTable"
+          class="org.springframework.core.io.ClassPathResource">
+        <constructor-arg value="xml/displayHTMLTable.xsl"/>
+    </bean>
+
+    <bean id="displayService"
+          class="org.easyrec.service.web.impl.DisplayServiceImpl">
+        <constructor-arg ref="displayHTMLTable"/>
+    </bean>
+</beans>

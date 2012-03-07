@@ -1,0 +1,98 @@
+<!--
+  ~ Copyright 2011 Research Studios Austria Forschungsgesellschaft mBH
+  ~
+  ~ This file is part of easyrec.
+  ~
+  ~ easyrec is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ easyrec is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with easyrec.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<taglib
+        xsi:schemaLocation="http://java.sun.com/xml/ns/javaee web-jsptaglibrary_2_1.xsd"
+        xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        version="2.1">
+
+    <description>Security-related utilities</description>
+    <tlib-version>2.0_rc10</tlib-version>
+    <uri>http://www.owasp.org/index.php/Category:OWASP_Enterprise_Security_API</uri>
+    <short-name>owasp-esapi</short-name>
+
+    <function>
+        <name>encodeForBase64</name>
+        <function-class>org.owasp.esapi.tags.ELEncodeFunctions
+        </function-class>
+        <function-signature>java.lang.String encodeForBase64(java.lang.String)</function-signature>
+    </function>
+    <function>
+        <name>encodeForBase64Wrap</name>
+        <function-class>org.owasp.esapi.tags.ELEncodeFunctions</function-class>
+        <function-signature>java.lang.String encodeForBase64Wrap(java.lang.String)</function-signature>
+    </function>
+    <function>
+        <name>encodeForBase64Charset</name>
+        <function-class>org.owasp.esapi.tags.ELEncodeFunctions</function-class>
+        <function-signature>java.lang.String encodeForBase64Charset(java.lang.String, java.lang.String)
+        </function-signature>
+    </function>
+    <function>
+        <name>encodeForBase64CharsetWrap</name>
+        <function-class>org.owasp.esapi.tags.ELEncodeFunctions</function-class>
+        <function-signature>java.lang.String encodeForBase64CharsetWrap(java.lang.String, java.lang.String)
+        </function-signature>
+    </function>
+    <function>
+        <name>encodeForCSS</name>
+        <function-class>org.owasp.esapi.tags.ELEncodeFunctions</function-class>
+        <function-signature>java.lang.String encodeForCSS(java.lang.String)</function-signature>
+    </function>
+    <function>
+        <name>encodeForHTML</name>
+        <function-class>org.owasp.esapi.tags.ELEncodeFunctions</function-class>
+        <function-signature>java.lang.String encodeForHTML(java.lang.String)</function-signature>
+    </function>
+    <function>
+        <name>encodeForHTMLAttribute</name>
+        <function-class>org.owasp.esapi.tags.ELEncodeFunctions</function-class>
+        <function-signature>java.lang.String encodeForHTMLAttribute(java.lang.String)</function-signature>
+    </function>
+    <function>
+        <name>encodeForJavaScript</name>
+        <function-class>org.owasp.esapi.tags.ELEncodeFunctions</function-class>
+        <function-signature>java.lang.String encodeForJavaScript(java.lang.String)</function-signature>
+    </function>
+    <function>
+        <name>encodeForURL</name>
+        <function-class>org.owasp.esapi.tags.ELEncodeFunctions</function-class>
+        <function-signature>java.lang.String encodeForURL(java.lang.String)</function-signature>
+    </function>
+    <function>
+        <name>encodeForVBScript</name>
+        <function-class>org.owasp.esapi.tags.ELEncodeFunctions</function-class>
+        <function-signature>java.lang.String encodeForVBScript(java.lang.String)</function-signature>
+    </function>
+    <function>
+        <name>encodeForXML</name>
+        <function-class>org.owasp.esapi.tags.ELEncodeFunctions</function-class>
+        <function-signature>java.lang.String encodeForXML(java.lang.String)</function-signature>
+    </function>
+    <function>
+        <name>encodeForXMLAttribute</name>
+        <function-class>org.owasp.esapi.tags.ELEncodeFunctions</function-class>
+        <function-signature>java.lang.String encodeForXMLAttribute(java.lang.String)</function-signature>
+    </function>
+    <function>
+        <name>encodeForXPath</name>
+        <function-class>org.owasp.esapi.tags.ELEncodeFunctions</function-class>
+        <function-signature>java.lang.String encodeForXPath(java.lang.String)</function-signature>
+    </function>
+</taglib>

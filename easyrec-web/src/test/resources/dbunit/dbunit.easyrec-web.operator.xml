@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+    <operator
+            OPERATORID="OPERATORID"
+            PASSWORD="PASSWORD"
+            FIRSTNAME="FIRSTNAME"
+            LASTNAME="LASTNAME"
+            EMAIL="EMAIL"
+            PHONE="PHONE"
+            COMPANY="COMPANY"
+            ADDRESS="ADDRESS"
+            APIKEY="APIKEY"
+            IP="IP"
+            ACTIVE="0"
+            />
+</dataset>

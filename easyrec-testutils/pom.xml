@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright 2010 Research Studios Austria Forschungsgesellschaft mBH
+  ~
+  ~ This file is part of easyrec.
+  ~
+  ~ easyrec is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ easyrec is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with easyrec.  If not, see <http://www.gnu.org/licenses />.
+  -->
+
+<!--
+ $Author: szavrel $
+ $Revision: 18733 $
+ $Date: 2012-02-08 19:25:39 +0100 (Mi, 08 Feb 2012) $
+ -->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <parent>
+        <groupId>org.easyrec</groupId>
+        <artifactId>easyrec</artifactId>
+        <version>0.97</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.easyrec</groupId>
+    <artifactId>easyrec-testutils</artifactId>
+    <version>0.97</version>
+    <name>easyrec - Test Utils</name>
+    <description>This module provides utility classes for use in testing used within all other modules of the easyrec.</description>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+            <version>3.0.5.RELEASE</version>
+        </dependency>
+        <!-- suppressing duplicate dependency error because in easyrec.pom unitils is declared with test scope -->
+        <!--suppress MavenDuplicateDependenciesInspection -->
+        <dependency>
+            <groupId>org.unitils</groupId>
+            <artifactId>unitils-core</artifactId>
+            <version>3.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.unitils</groupId>
+            <artifactId>unitils-dbmaintainer</artifactId>
+            <version>3.2</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.hibernate</groupId>
+                    <artifactId>hibernate</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>2.6</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.14</version>
+        </dependency>
+    </dependencies>
+</project>

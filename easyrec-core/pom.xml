@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright 2010 Research Studios Austria Forschungsgesellschaft mBH
+  ~
+  ~ This file is part of easyrec.
+  ~
+  ~ easyrec is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ easyrec is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with easyrec.  If not, see <http://www.gnu.org/licenses />.
+  -->
+
+<!--
+ $Author: sat-rsa $
+ $Revision: 140 $
+ $Date: 2012-02-23 16:01:50 +0100 (Do, 23 Feb 2012) $
+ -->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <parent>
+        <groupId>org.easyrec</groupId>
+        <artifactId>easyrec</artifactId>
+        <version>0.97</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.easyrec</groupId>
+    <artifactId>easyrec-core</artifactId>
+    <name>easyrec - Core</name>
+    <version>0.97</version>
+    <description>This module is the core package of easyrec. It contains model objects, classes for database access and
+        basic services like the 'ActionService', the 'ItemAssocService', the 'RecommenderService' and the
+        'RecommendationHistoryService'.
+        All interfaces and classes in this module provide generic methods, thus domain information like action or item
+        types can be parameterised individually.
+    </description>
+    <!--suppress MavenModelInspection -->
+    <url>${website.url.http}/easyrec/easyrec-core/</url>
+
+    <dependencies>
+        <!-- COMPILE SCOPE -->
+        <dependency>
+            <groupId>org.easyrec</groupId>
+            <artifactId>easyrec-utils</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>net.sf.jung</groupId>
+            <artifactId>jung-api</artifactId>
+            <version>2.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>net.sf.jung</groupId>
+            <artifactId>jung-graph-impl</artifactId>
+            <version>2.0.1</version>
+        </dependency>
+<!--        <dependency>
+            <groupId>net.sf.jung</groupId>
+            <artifactId>jung-api</artifactId>
+            <version>2.0.1</version>
+        </dependency>-->
+        <!-- TEST SCOPE -->
+        <dependency>
+            <groupId>org.easyrec</groupId>
+            <artifactId>easyrec-testutils</artifactId>
+            <version>${project.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>

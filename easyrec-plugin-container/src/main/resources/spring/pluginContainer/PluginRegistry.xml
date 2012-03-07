@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright 2011 Research Studios Austria Forschungsgesellschaft mBH
+  ~
+  ~ This file is part of easyrec.
+  ~
+  ~ easyrec is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ easyrec is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with easyrec.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+    <bean id="pluginResource"
+          class="org.springframework.core.io.ClassPathResource">
+          <!--class="org.springframework.core.io.FileSystemResource">-->
+        <constructor-arg value="plugins"/>
+    </bean>
+
+    <bean id="archivePseudoGenerator" class="org.easyrec.model.plugin.archive.ArchivePseudoGenerator"
+          init-method="init">
+        <property name="archiveDAO" ref="archiveDAO"/>
+    </bean>
+
+    <bean id="pluginRegistry" class="org.easyrec.plugin.container.PluginRegistry" init-method="init">
+        <!--            <constructor-arg value="http://www.easyrec.org/plugins/random/0.93" />-->
+        <constructor-arg index="0" ref="pluginResource"/>
+        <constructor-arg index="1" ref="pluginDAO"/>
+        <constructor-arg index="2" ref="itemAssocDAO"/>
+        <constructor-arg index="3" ref="tenantService"/>
+        <constructor-arg index="4" ref="typeMappingService"/>
+        <constructor-arg index="5">
+            <map key-type="org.easyrec.plugin.model.PluginId" value-type="org.easyrec.plugin.generator.Generator">
+                <entry value-ref="archivePseudoGenerator">
+                    <key>
+                        <util:constant static-field="org.easyrec.model.plugin.archive.ArchivePseudoGenerator.ID"/>
+                    </key>
+                </entry>
+            </map>
+        </constructor-arg>
+        <property name="namedConfigurationDAO" ref="namedConfigurationDAO" />
+    </bean>
+</beans>

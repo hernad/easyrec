@@ -1,0 +1,110 @@
+host<!--
+  ~ Copyright 2011 Research Studios Austria Forschungsgesellschaft mBH
+  ~
+  ~ This file is part of easyrec.
+  ~
+  ~ easyrec is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ easyrec is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with easyrec.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<input id="host" style="width:100%" value="http://localhost:8080/api/1.0/"><br>
+servletname
+<select id="servletname" style="width:100%;">
+    <option>view</option>
+    <option>buy</option>
+    <option>rate</option>
+    <option>otherusersalsoviewed</option>
+    <option>otherusersalsobought</option>
+    <option>itemsratedgoodbyotherusers</option>
+    <option>recommendationsforuser</option>
+    <option>relateditems</option>
+    <option>itemtypes</option>
+    <option>clusters</option>
+    <option>itemsincluster</option>
+    <option>mostvieweditems</option>
+    <option>mostboughtitems</option>
+    <option>mostrateditems</option>
+    <option>bestrateditems</option>
+    <option>worstrateditems</option>
+    <option>importrule</option>
+    <option>importitem</option>
+    <option>setitemactive</option>
+</select>
+
+<hr/>
+apikey<input id="apikey" style="width:100%"><br>
+tenantid<input id="tenantid" style="width:100%"><br>
+<hr/>
+itemid<input id="itemid" style="width:100%"><br>
+itemdescription<input id="itemdescription" style="width:100%"><br>
+itemurl<input id="itemurl" style="width:100%"><br>
+itemimageurl<input id="itemimageurl" style="width:100%"><br>
+userid<input id="userid" style="width:100%"><br>
+sessionid<input id="sessionid" style="width:100%"><br>
+itemtype<input id="itemtype" style="width:100%"><br>
+actiontime<input id="actiontime" style="width:100%"><br>
+ratingvalue<input id="ratingvalue" style="width:100%"><br>
+<hr/>
+numberOfResults<input id="numberOfResults" style="width:100%"><br>
+requesteditemtype<input id="requesteditemtype" style="width:100%"><br>
+<hr/>
+timeRange<input id="timeRange" style="width:100%"><br>
+<hr/>
+clusterid<input id="clusterid" style="width:100%"><br>
+strategy<input id="strategy" style="width:100%"><br>
+usefallback<input id="usefallback" style="width:100%"><br>
+<hr/>
+token<input id="token" style="width:100%"><br>
+<a href="javascript:send();">SEND ACTION</a>
+
+<script>
+    var url = "";
+    function send() {
+        url = document.getElementById("host").value +
+                document.getElementById("servletname").value + "?";
+
+        url += "apikey=" + document.getElementById("apikey").value + "&" +
+                "tenantid=" + document.getElementById("tenantid").value + "&";
+
+
+        addValue("itemdescription");
+        addValue("itemid");
+        addValue("itemurl");
+        addValue("itemimageurl");
+        addValue("userid");
+        addValue("sessionid");
+        addValue("itemtype");
+        addValue("actiontime");
+        addValue("ratingvalue");
+        addValue("numberOfResults");
+        addValue("requesteditemtype");
+        addValue("timeRange");
+        addValue("clusterid");
+        addValue("strategy");
+        addValue("usefallback");
+        addValue("token");
+
+        document.getElementById("iframe").src = url;
+        document.getElementById("debug").innerHTML = url;
+    }
+
+    function addValue(name) {
+        if (document.getElementById(name).value != "") {
+            url += name + "=" + document.getElementById(name).value + "&";
+        }
+    }
+</script>
+
+<div id="debug" style="background:#eee;"> URL FIELD</div>
+<iframe id="iframe" src="../../../../../../../../Dokumente%20und%20Einstellungen/dmann/Desktop"
+        style="width:100%;height:600px;"></iframe>

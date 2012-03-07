@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+    <!--
+
+      @(#) package.html
+
+      Copyright (c) 2007 Research Studios Austria, Studio Smart Agent Technologies
+      Hasnerstrasse 123, A-1060 Vienna, Austria
+
+     $Author: sat-rsa $
+     $Revision: 119 $
+     $Date: 2011-08-12 18:40:54 +0200 (Fr, 12 Aug 2011) $
+    -->
+</head>
+<body bgcolor="white">
+
+Provides utilities for DAO implementation. Some of these utilities help with common problems
+in JDBC code, like e.g. fetching an integer from a <code>ResultSet</code> with null checking,
+which normally would be coded like this:
+<pre>
+ Integer value = rs.getInt(columnName);
+ if (rs.wasNull()) {
+  	value = null;
+ }
+</pre>
+with {@link at.researchstudio.sat.util.dao.DAOUtils}, this becomes
+<pre>
+ Integer value =	DAOUtils.getInteger(rs, columnName);
+</pre>
+<p>
+    Other parts of this package work together with the package
+    <code>at.researchstudio.sat.testutil.dao</code> in project <code>sat-testutil</code>, the idea of
+    which is that DAO classes can be tested in their normal environment by simply exchanging their
+    configured <code>DataSource</code>. DAOs that are to be treated this way must be annotated with
+    {@link at.researchstudio.sat.util.store.dao.DAO}.
+</p>
+
+<p>
+    Yet another part of this package is dedicated to standardizing DAO behaviour via aspect-oriented
+    programming (see package {@link at.researchstudio.sat.util.store.dao.aop}). This mechanism is used to
+    catch certain exceptions that are thrown in DAO code, and which originate in JDBC code of the
+    spring framework, and return <code>null</code> instead. The idea is that all DAOs return
+    <code>null</code> if no object is found and only throw exceptions if something goes wrong.
+</p>
+
+
+</body>
+</html>

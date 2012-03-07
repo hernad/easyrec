@@ -1,0 +1,29 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <script
+            src='http://localhost:8084/easyrec-web/api-js/easyrec.js'
+            type='text/javascript'>
+        </script>
+        <script type='text/javascript'>
+            var apiKey      = "8ab9dc3ffcdac576d0f298043a60517a";
+            var tenantId    = "Movielens_100k_1";
+        </script>
+        <script type='text/javascript'>
+            easyrec_getRecommendations("actionhistoryforuser",{
+                                       userId:"1",
+                                       requestedItemType: "GENRE_ACTION",
+                                       numberOfResults: 50,
+                                       drawingCallback:"drawRecommendationList"});
+</script>
+<div id="recommenderDiv" >&nbsp;</div>
+    </body>
+</html>

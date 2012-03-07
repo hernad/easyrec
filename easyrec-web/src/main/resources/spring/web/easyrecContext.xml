@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                http://www.springframework.org/schema/aop
+                http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+
+    <aop:aspectj-autoproxy/>
+
+    <import resource="classpath:spring/core/PropertyPlaceholderConfigurerEasyrec.xml"/>
+
+    <bean id="loggedInCheckAspect" class="org.easyrec.controller.aop.LoggedInCheckAspect">
+        <property name="easyrecSettings" ref="easyrecSettings"/>
+    </bean>
+
+    <bean id="pluginScheduler" class="org.easyrec.service.web.PluginScheduler" destroy-method="destroy"
+          init-method="afterPropertiesSet">
+        <property name="operatorDAO" ref="operatorDAO"/>
+        <property name="remoteTenantDAO" ref="remoteTenantDAO"/>
+        <property name="tenantService" ref="tenantService"/>
+        <property name="logEntryDAO" ref="logEntryDAO"/>
+        <property name="remoteTenantService" ref="remoteTenantService"/>
+        <property name="easyrecSettings" ref="easyrecSettings"/>
+        <property name="generatorContainer" ref="generatorContainer"/>
+    </bean>
+
+    <bean id="jspViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+        <property name="prefix" value="/jsp/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+    <!-- Begin  Beans for FileUpload -->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
+
+    <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="mappings">
+            <props>
+                <prop key="/importer">importController</prop>
+                <prop key="/upload.form">fileUploadController</prop>
+                <prop key="/home">homeController</prop>
+                <prop key="/contact">homeController</prop>
+                <prop key="/about">homeController</prop>
+                <prop key="/API">homeController</prop>
+                <prop key="/robots.txt">homeController</prop>
+                <prop key="/statistics">statisticsController</prop>
+                <prop key="/updateform">operatorController</prop>
+                <prop key="/operator/signin">operatorController</prop>
+                <prop key="/operator/signout">operatorController</prop>
+                <prop key="/operator/update">operatorController</prop>
+                <prop key="/operator/remove">operatorController</prop>
+                <prop key="/operator/updatePassword">operatorController</prop>
+                <prop key="/operator/changePassword">operatorController</prop>
+                <prop key="/activate">operatorController</prop>
+                <prop key="/easyrec/overview">easyRecController</prop>
+                <prop key="/easyrec/create">easyRecController</prop>
+                <prop key="/easyrec/update">easyRecController</prop>
+                <prop key="/easyrec/tenant">easyRecController</prop>
+                <prop key="/t">backTrackingController</prop>
+                <prop key="/item/deactivate">itemController</prop>
+                <prop key="/item/activate">itemController</prop>
+                <prop key="/item/view">itemController</prop>
+                <prop key="/item/remove">itemController</prop>
+                <prop key="/item/edit">itemController</prop>
+                <prop key="/item/viewitemdetails">itemController</prop>
+                <prop key="/item/viewitemstatistics">itemController</prop>
+                <prop key="/tenant/register">remoteTenantController</prop>
+                <prop key="/tenant/update">remoteTenantController</prop>
+                <prop key="/tenant/view">remoteTenantController</prop>
+                <prop key="/tenant/items">itemSearchController</prop>
+                <prop key="/tenant/rulestoitem">remoteTenantController</prop>
+                <prop key="/tenant/statistics">remoteTenantController</prop>
+                <prop key="/tenant/viewmostvieweditems">remoteTenantController</prop>
+                <prop key="/tenant/viewhotrecommendations">remoteTenantController</prop>
+                <prop key="/tenant/clustermanager">remoteTenantController</prop>
+                <prop key="/tenant/refreshstatistics">remoteTenantController</prop>
+                <prop key="/tenant/itemtypes">itemTypeController</prop>
+                <prop key="/tenant/assoctypes">assocTypeController</prop>
+                <prop key="/tenant/actiontypes">actionTypeController</prop>
+                <prop key="/tenant/typemanager">typeManagerController</prop>
+                <prop key="/dev/home">infoController</prop>
+                <prop key="/dev/pullusedmem">infoController</prop>
+                <prop key="/dev/removetenant">tenantsController</prop>
+                <prop key="/dev/resettenant">tenantsController</prop>
+                <prop key="/dev/viewalltenants">tenantsController</prop>
+                <prop key="/dev/viewtenants">tenantsController</prop>
+                <prop key="/dev/viewpluginconfig">tenantsController</prop>
+                <prop key="/dev/storearchive">tenantsController</prop>
+                <prop key="/dev/storebacktracking">tenantsController</prop>
+                <prop key="/dev/storemaxactions">tenantsController</prop>
+                <prop key="/dev/scheduler">tenantsController</prop>
+                <prop key="/dev/storepluginconfig">tenantsController</prop>
+                <prop key="/dev/viewpluginconfigdetails">tenantsController</prop>
+                <prop key="/dev/storepluginsactive">tenantsController</prop>
+                <prop key="/dev/viewoperators">operatorsController</prop>
+                <prop key="/dev/jamonreport">benchmarkController</prop>
+                <prop key="/dev/jamonreset">benchmarkController</prop>
+                <prop key="/dev/emptypluginlogs">pluginLogsController</prop>
+                <prop key="/dev/viewpluginlogs">pluginLogsController</prop>
+                <prop key="/dev/plugins">pluginsController</prop>
+                <prop key="/dev/pluginstop">pluginsController</prop>
+                <prop key="/dev/pluginupload">pluginsController</prop>
+                <prop key="/dev/plugininstall">pluginsController</prop>
+                <prop key="/dev/pluginchangestate">pluginsController</prop>
+                <prop key="/dev/plugindelete">pluginsController</prop>
+                <prop key="/dev/viewplugindescription">pluginsController</prop>
+                <prop key="/dev/pluginupload.form">pluginUploadController</prop>
+                <prop key="/item/fatboyslim">demoController</prop>
+                <prop key="/item/gorillaz">demoController</prop>
+                <prop key="/item/beastieboyz">demoController</prop>
+                <prop key="/clustermanager/clustermanager">clusterManagerController</prop>
+                <prop key="/clustermanager/viewitems">clusterManagerController</prop>
+                <prop key="/clustermanager/help">clusterManagerController</prop>
+                <prop key="/clustermanager/ajax/clusteritemtable">clusterManagerController</prop>
+                <prop key="/clustermanager/ajax/loadtreedata">clusterManagerController</prop>
+                <prop key="/clustermanager/ajax/changeclusterparent">clusterManagerController</prop>
+                <prop key="/clustermanager/ajax/createcluster">clusterManagerController</prop>
+                <prop key="/clustermanager/ajax/deletecluster">clusterManagerController</prop>
+                <prop key="/clustermanager/ajax/updatecluster">clusterManagerController</prop>
+                <prop key="/clustermanager/ajax/additemtocluster">clusterManagerController</prop>
+                <prop key="/clustermanager/ajax/removeitemfromcluster">clusterManagerController</prop>
+                <prop key="/clustermanager/clusterimport">clusterImportController</prop>
+                <prop key="/clustermanager/ajax/searchresult">itemSearchController</prop>
+
+            </props>
+        </property>
+    </bean>
+
+    <bean id="fileUploadController" class="org.easyrec.controller.FileUploadController">
+        <property name="commandClass" value="org.easyrec.model.web.FileUploadBean"/>
+        <property name="formView" value="fileuploadform"/>
+        <property name="successView" value="confirmation.html"/>
+    </bean>
+
+    <bean id="clusterImportController" class="org.easyrec.controller.clusterManager.ClusterImportController">
+        <constructor-arg index="0" ref="clusterService"/>
+        <constructor-arg index="1" ref="idMappingDAO"/>
+        <constructor-arg index="2" ref="itemDAO"/>
+        <constructor-arg index="3" ref="itemTypeDAO"/>
+        <constructor-arg index="4" ref="viewInitializationService"/>
+        <property name="commandClass" value="org.easyrec.model.web.FileUploadBean"/>
+        <property name="successView" value="confirmation.html"/>
+    </bean>
+    <!-- End Beans for FileUpload -->
+
+    <bean id="homeController" class="org.easyrec.controller.HomeController">
+        <property name="operatorDAO" ref="operatorDAO"/>
+    </bean>
+
+    <bean id="itemTypeController" class="org.easyrec.controller.ItemTypeController">
+        <property name="viewInitializationService" ref="viewInitializationService"/>
+        <property name="tenantService" ref="tenantService"/>
+        <property name="itemTypeDAO" ref="itemTypeDAO"/>
+        <property name="remoteTenantDAO" ref="remoteTenantDAO"/>
+    </bean>
+
+    <bean id="assocTypeController" class="org.easyrec.controller.AssocTypeController">
+        <property name="viewInitializationService" ref="viewInitializationService"/>
+        <property name="tenantService" ref="tenantService"/>
+        <property name="assocTypeDAO" ref="assocTypeDAO"/>
+        <property name="remoteTenantDAO" ref="remoteTenantDAO"/>
+    </bean>
+
+    <bean id="actionTypeController" class="org.easyrec.controller.ActionTypeController">
+        <property name="viewInitializationService" ref="viewInitializationService"/>
+        <property name="tenantService" ref="tenantService"/>
+        <property name="actionTypeDAO" ref="actionTypeDAO"/>
+        <property name="remoteTenantDAO" ref="remoteTenantDAO"/>
+    </bean>
+
+    <bean id="typeManagerController" class="org.easyrec.controller.TypeManagerController">
+        <property name="viewInitializationService" ref="viewInitializationService"/>
+        <property name="remoteTenantDAO" ref="remoteTenantDAO"/>
+    </bean>
+
+    <bean id="apiJSController" class="org.easyrec.controller.ApiJSController"/>
+
+    <!-- Tracking -->
+    <bean name="backTrackingController" class="org.easyrec.controller.BackTrackingController">
+        <property name="backTrackingDAO" ref="backtrackingDAO"/>
+    </bean>
+
+    <bean id="clusterManagerController" class="org.easyrec.controller.clusterManager.ClusterManagerController">
+        <constructor-arg index="0" ref="clusterService"/>
+        <constructor-arg index="1" ref="remoteTenantDAO"/>
+        <constructor-arg index="2" ref="itemDAO"/>
+        <constructor-arg index="3" ref="itemTypeDAO"/>
+        <constructor-arg index="4" ref="idMappingDAO"/>
+        <constructor-arg index="5" ref="idMappingService"/>
+        <constructor-arg index="6" ref="viewInitializationService"/>
+    </bean>
+
+    <bean id="itemSearchController" class="org.easyrec.controller.clusterManager.ItemSearchController">
+        <constructor-arg index="0" ref="itemDAO"/>
+        <constructor-arg index="1" value="MM/dd/yyyy"/>
+        <constructor-arg index="2" ref="remoteTenantDAO"/>
+        <constructor-arg index="3" ref="itemTypeDAO"/>
+        <constructor-arg index="4" ref="assocTypeDAO"/>
+    </bean>
+
+    <bean id="demoController" class="org.easyrec.controller.DemoController"/>
+
+    <bean name="benchmarkController" class="org.easyrec.controller.dev.BenchmarkController">
+    </bean>
+
+    <bean name="infoController" class="org.easyrec.controller.dev.InfoController">
+        <property name="remoteTenantDAO" ref="remoteTenantDAO"/>
+        <property name="operatorDAO" ref="operatorDAO"/>
+        <property name="logEntryDAO" ref="logEntryDAO"/>
+    </bean>
+
+    <bean name="operatorsController" class="org.easyrec.controller.dev.OperatorsController">
+        <property name="operatorDAO" ref="operatorDAO"/>
+    </bean>
+
+    <bean name="pluginsController" class="org.easyrec.controller.dev.PluginsController">
+        <property name="remoteTenantDAO" ref="remoteTenantDAO"/>
+        <property name="pluginDAO" ref="pluginDAO"/>
+        <property name="pluginRegistry" ref="pluginRegistry"/>
+    </bean>
+
+    <bean name="pluginLogsController" class="org.easyrec.controller.dev.PluginLogController">
+        <property name="remoteTenantDAO" ref="remoteTenantDAO"/>
+        <property name="logEntryDAO" ref="logEntryDAO"/>
+        <property name="typeMappingService" ref="typeMappingService"/>
+    </bean>
+
+    <bean name="tenantsController" class="org.easyrec.controller.dev.TenantsController">
+        <property name="actionService" ref="domainActionService"/>
+        <property name="backTrackingDAO" ref="backtrackingDAO"/>
+        <property name="itemAssocService" ref="domainItemAssocService"/>
+        <property name="remoteTenantDAO" ref="remoteTenantDAO"/>
+        <property name="logEntryDAO" ref="logEntryDAO"/>
+        <property name="tenantService" ref="tenantService"/>
+        <property name="shopRecommenderService" ref="shopRecommenderService"/>
+        <property name="remoteTenantService" ref="remoteTenantService"/>
+        <property name="pluginDAO" ref="pluginDAO"/>
+        <property name="pluginRegistry" ref="pluginRegistry"/>
+        <property name="typeMappingService" ref="typeMappingService"/>
+        <property name="assocTypeDAO" ref="assocTypeDAO"/>
+        <property name="pluginScheduler" ref="pluginScheduler"/>
+        <property name="namedConfigurationDAO" ref="namedConfigurationDAO"/>
+        <property name="easyrecSettings" ref="easyrecSettings"/>
+    </bean>
+
+    <bean id="pluginUploadController" class="org.easyrec.controller.PluginUploadController">
+        <property name="commandClass" value="org.easyrec.model.web.FileUploadBean"/>
+        <property name="formView" value="pluginupload"/>
+        <property name="successView" value="/dev/plugins"/>
+        <property name="pluginRegistry" ref="pluginRegistry"/>
+        <property name="pluginDAO" ref="pluginDAO"/>
+    </bean>
+
+    <bean name="easyRecController" class="org.easyrec.controller.EasyRecController">
+        <property name="remoteTenantDAO" ref="remoteTenantDAO"/>
+    </bean>
+
+    <bean name="importController" class="org.easyrec.controller.ImportController">
+        <property name="remoteTenantDAO" ref="remoteTenantDAO"/>
+    </bean>
+
+    <bean name="itemController" class="org.easyrec.controller.ItemController">
+        <property name="remoteTenantDAO" ref="remoteTenantDAO"/>
+        <property name="itemDAO" ref="itemDAO"/>
+        <property name="itemService" ref="itemService"/>
+        <property name="clusterService" ref="clusterService"/>
+        <property name="idMappingService" ref="idMappingService"/>
+    </bean>
+
+    <bean name="operatorController" class="org.easyrec.controller.OperatorController">
+        <property name="operatorDAO" ref="operatorDAO"/>
+        <property name="remoteTenantDAO" ref="remoteTenantDAO"/>
+        <property name="tenantService" ref="tenantService"/>
+        <property name="pluginScheduler" ref="pluginScheduler"/>
+        <property name="remoteTenantService" ref="remoteTenantService"/>
+        <property name="namedConfigurationService" ref="namedConfigurationService"/>
+    </bean>
+
+    <bean name="remoteTenantController" class="org.easyrec.controller.RemoteTenantController">
+        <property name="assocTypeDAO" ref="assocTypeDAO"/>
+        <property name="backTrackingDAO" ref="backtrackingDAO"/>
+        <property name="idMappingDAO" ref="idMappingDAO"/>
+        <property name="itemDAO" ref="itemDAO"/>
+        <property name="itemService" ref="itemService"/>
+        <property name="operatorDAO" ref="operatorDAO"/>
+        <property name="remoteTenantDAO" ref="remoteTenantDAO"/>
+        <property name="pluginScheduler" ref="pluginScheduler"/>
+        <property name="shopRecommenderService" ref="shopRecommenderService"/>
+        <property name="remoteTenantService" ref="remoteTenantService"/>
+        <property name="tenantService" ref="tenantService"/>
+        <property name="logEntryDAO" ref="logEntryDAO"/>
+        <property name="namedConfigurationService" ref="namedConfigurationService"/>
+        <property name="pluginRegistry" ref="pluginRegistry"/>
+    </bean>
+
+    <!-- Pictures for Statistics -->
+    <bean name="statisticsController" class="org.easyrec.controller.StatisticsController">
+        <property name="statisticsDAO" ref="statisticsDAO"/>
+        <property name="typeMappingService" ref="typeMappingService"/>
+    </bean>
+
+</beans>

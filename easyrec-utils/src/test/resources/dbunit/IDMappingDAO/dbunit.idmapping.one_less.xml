@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- $Author: sat-rsa $ -->
+<!-- $Revision: 119 $ -->
+<!-- $Date: 2011-08-12 18:40:54 +0200 (Fr, 12 Aug 2011) $ -->
+
+<dataset>
+    <idmapping intId="1" stringId="test1"/>
+    <idmapping intId="2" stringId="test2"/>
+</dataset>

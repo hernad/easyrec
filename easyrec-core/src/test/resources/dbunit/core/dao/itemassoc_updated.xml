@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- $Author: pmarschik $ -->
+<!-- $Revision: 17672 $ -->
+<!-- $Date: 2011-02-11 11:56:23 +0100 (Fr, 11 Feb 2011) $ -->
+
+<dataset>
+    <itemassoc id="1" tenantId="1" itemFromId="1" itemFromTypeId="1" assocTypeId="1" assocValue="1.2" itemToId="2"
+               itemToTypeId="1" sourceTypeId="1" sourceInfo="abc" viewTypeId="1" active="true"
+               changeDate="2007-04-15 12:11:00.0"/>
+    <itemassoc id="2" tenantId="1" itemFromId="1" itemFromTypeId="1" assocTypeId="1" assocValue="0.5" itemToId="3"
+               itemToTypeId="1" sourceTypeId="1" sourceInfo="abc" viewTypeId="7" active="false"/>
+    <itemassoc id="3" tenantId="1" itemFromId="1" itemFromTypeId="1" assocTypeId="1" assocValue="3.0" itemToId="4"
+               itemToTypeId="1" sourceTypeId="1" sourceInfo="abc" viewTypeId="1" active="false"/>
+    <itemassoc id="4" tenantId="1" itemFromId="1" itemFromTypeId="1" assocTypeId="1" assocValue="0.3" itemToId="5"
+               itemToTypeId="1" sourceTypeId="1" sourceInfo="abc" viewTypeId="1" active="true"
+               changeDate="2007-04-15 12:14:00.0"/>
+    <itemassoc id="5" tenantId="1" itemFromId="1" itemFromTypeId="1" assocTypeId="1" assocValue="0.2" itemToId="6"
+               itemToTypeId="1" sourceTypeId="1" sourceInfo="abc" viewTypeId="1" active="true"
+               changeDate="2007-04-15 12:15:00.0"/>
+    <itemassoc id="6" tenantId="1" itemFromId="2" itemFromTypeId="1" assocTypeId="1" assocValue="0.1" itemToId="7"
+               itemToTypeId="1" sourceTypeId="2" sourceInfo="def" viewTypeId="1" active="true"
+               changeDate="2007-04-15 14:15:00.0"/>
+</dataset>

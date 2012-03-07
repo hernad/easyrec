@@ -1,0 +1,9 @@
+# type: action
+# command: insert
+tenantId=0,userId,sessionId,ip,itemId,itemTypeId=4(track),actionTypeId,ratingValue,searchSucceeded,numberOfFoundItems,description
+,17,xyz0,127.0.0.1,25722,,3,,,,test_description1
+,17,xyz1,127.0.0.1,25722,,2,,,,test description with blancs 2
+,18,xyz2,127.0.0.1,25722,,4,10,,,rating description
+,18,xyz3,127.0.0.1,25722,,5,,1,20,search desc
+0,1,abc123,127.0.0.1,2222,7,2,,,,
+0,1,cba321,127.0.0.1,3333,8,3,,,,

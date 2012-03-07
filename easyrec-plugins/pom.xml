@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright 2010 Research Studios Austria Forschungsgesellschaft mBH
+  ~
+  ~ This file is part of easyrec.
+  ~
+  ~ easyrec is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ easyrec is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with easyrec.  If not, see <http://www.gnu.org/licenses />.
+  --><!-- $Author: szavrel $ --><!-- $Revision: 18733 $ --><!-- $Date: 2012-02-08 19:25:39 +0100 (Mi, 08 Feb 2012) $ -->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>org.easyrec</groupId>
+        <artifactId>easyrec</artifactId>
+        <version>0.97</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.easyrec</groupId>
+    <artifactId>easyrec-plugins</artifactId>
+    <packaging>pom</packaging>
+    <version>0.97</version>
+    <modules>
+        <module>easyrec-plugins-arm</module>
+        <module>easyrec-plugins-slopeone</module>
+        <module>easyrec-plugins-itemitem</module>
+        <module>easyrec-plugins-pearson</module>
+        <module>easyrec-plugins-sample</module>
+        <module>easyrec-plugins-waiting</module>
+<!--        <module>easyrec-plugins-mahout-boolean</module>
+        <module>easyrec-plugins-mahout-slopeone</module>-->
+  </modules>
+    <name>easyrec - Plugins</name>
+    <description>This module is a parent module itself, and bundles several plugins for easyrec.</description>
+    <!--suppress MavenModelInspection -->
+    <url>${website.url.http}/easyrec/easyrec-plugins/</url>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.easyrec</groupId>
+            <artifactId>easyrec-plugin-api</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <!-- TEST SCOPE -->
+        <dependency>
+            <groupId>org.easyrec</groupId>
+            <artifactId>easyrec-testutils</artifactId>
+            <version>${project.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+</project>

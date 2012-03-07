@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- $Author: pmarschik $ -->
+<!-- $Revision: 17672 $ -->
+<!-- $Date: 2011-02-11 11:56:23 +0100 (Fr, 11 Feb 2011) $ -->
+
+<dataset>
+    <action id="1" tenantId="1" userId="1" sessionId="abc1" ip="[null]" itemId="1" itemTypeId="1" actionTypeId="1"
+            ratingValue="[null]" searchSucceeded="[null]" numberOfFoundItems="[null]" description="[null]"
+            actionTime="2007-04-15 12:11:00.0"/>
+    <action id="2" tenantId="1" userId="1" sessionId="abc1" ip="[null]" itemId="1" itemTypeId="1" actionTypeId="2"
+            ratingValue="[null]" searchSucceeded="[null]" numberOfFoundItems="[null]" description="[null]"
+            actionTime="2007-04-15 12:12:00.0"/>
+    <action id="3" tenantId="1" userId="1" sessionId="abc2" ip="[null]" itemId="1" itemTypeId="1" actionTypeId="3"
+            ratingValue="[null]" searchSucceeded="[null]" numberOfFoundItems="[null]" description="[null]"
+            actionTime="2007-04-15 12:13:00.0"/>
+    <action id="4" tenantId="1" userId="1" sessionId="abc2" ip="[null]" itemId="1" itemTypeId="1" actionTypeId="4"
+            ratingValue="[null]" searchSucceeded="[null]" numberOfFoundItems="[null]" description="[null]"
+            actionTime="2007-04-15 12:14:00.0"/>
+    <action id="5" tenantId="2" userId="1" sessionId="abc4" ip="[null]" itemId="2" itemTypeId="2" actionTypeId="1"
+            ratingValue="[null]" searchSucceeded="[null]" numberOfFoundItems="[null]" description="[null]"
+            actionTime="2007-04-15 12:15:00.0"/>
+    <action id="6" tenantId="2" userId="2" sessionId="abc5" ip="127.0.0.1" itemId="1" itemTypeId="1" actionTypeId="1"
+            ratingValue="[null]" searchSucceeded="[null]" numberOfFoundItems="[null]" description="[null]"
+            actionTime="2007-04-15 12:16:00.0"/>
+    <action tenantId="2" userId="2" sessionId="abc6" ip="192.168.124.1" itemId="[null]" itemTypeId="2"
+            actionTypeId="4" ratingValue="[null]" searchSucceeded="false" numberOfFoundItems="0" description="modana"/>
+    <action tenantId="2" userId="2" sessionId="abc6" ip="192.168.124.2" itemId="13" itemTypeId="2"
+            actionTypeId="4" ratingValue="[null]" searchSucceeded="true" numberOfFoundItems="1" description="madonna"/>
+    <action tenantId="2" userId="2" sessionId="abc6" ip="192.168.124.3" itemId="19" itemTypeId="1"
+            actionTypeId="3" ratingValue="7" searchSucceeded="[null]" numberOfFoundItems="[null]" description="[null]"/>
+</dataset>
+

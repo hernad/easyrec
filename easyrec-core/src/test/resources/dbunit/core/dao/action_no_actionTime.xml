@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  ~ Copyright 2011 Research Studios Austria Forschungsgesellschaft mBH
+  ~
+  ~ This file is part of easyrec.
+  ~
+  ~ easyrec is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ easyrec is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with easyrec.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<!-- $Author$ -->
+<!-- $Revision$ -->
+<!-- $Date$ -->
+
+<dataset>
+    <action id="1" tenantId="1" userId="1" sessionId="abc1" ip="[null]" itemId="1" itemTypeId="1" actionTypeId="1"
+            ratingValue="[null]" searchSucceeded="[null]" numberOfFoundItems="[null]" description="[null]"/>
+    <action id="2" tenantId="1" userId="1" sessionId="abc1" ip="[null]" itemId="1" itemTypeId="1" actionTypeId="2"
+            ratingValue="[null]" searchSucceeded="[null]" numberOfFoundItems="[null]" description="[null]"/>
+    <action id="3" tenantId="1" userId="1" sessionId="abc2" ip="[null]" itemId="1" itemTypeId="1" actionTypeId="3"
+            ratingValue="[null]" searchSucceeded="[null]" numberOfFoundItems="[null]" description="[null]"/>
+    <action id="4" tenantId="1" userId="1" sessionId="abc2" ip="[null]" itemId="1" itemTypeId="1" actionTypeId="4"
+            ratingValue="[null]" searchSucceeded="[null]" numberOfFoundItems="[null]" description="[null]"/>
+    <action id="5" tenantId="2" userId="1" sessionId="abc4" ip="[null]" itemId="2" itemTypeId="2" actionTypeId="1"
+            ratingValue="[null]" searchSucceeded="[null]" numberOfFoundItems="[null]" description="[null]"/>
+    <action tenantId="2" userId="2" sessionId="abc5" ip="127.0.0.1" itemId="1" itemTypeId="1" actionTypeId="1"
+            ratingValue="[null]" searchSucceeded="[null]" numberOfFoundItems="[null]" description="[null]"/>
+</dataset>
+

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- $Author: pmarschik $ -->
+<!-- $Revision: 17663 $ -->
+<!-- $Date: 2011-02-11 11:34:32 +0100 (Fr, 11 Feb 2011) $ -->
+
+<dataset>
+    <tenant id="0" stringId="TEST" description="aaa" ratingRangeMin="1" ratingRangeMax="10" ratingRangeNeutral="5.5"
+            active="1"/>
+    <tenant id="1" stringId="MEX-TEST" description="bbb" ratingRangeMin="1" ratingRangeMax="10" ratingRangeNeutral="5.5"
+            active="1"/>
+    <tenant id="2" stringId="MEX-LIVE" description="ccc" ratingRangeMin="1" ratingRangeMax="10" ratingRangeNeutral="5.5"
+            active="1"/>
+    <tenant id="3" stringId="RASCALLI" description="ddd" ratingRangeMin="1" ratingRangeMax="10" ratingRangeNeutral="5.5"
+            active="1"/>
+    <tenant id="4" stringId="SOUNDSCOUT" description="eee" ratingRangeMin="1" ratingRangeMax="10"
+            ratingRangeNeutral="5.5" active="1"/>
+</dataset>

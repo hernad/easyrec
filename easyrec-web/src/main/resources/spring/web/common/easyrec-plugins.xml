@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.0.xsd">
+
+    <bean id="pluginDAO"
+          class="org.easyrec.store.dao.plugin.impl.PluginDAOMysqlImpl">
+        <constructor-arg ref="easyrecDataSource"/>
+    </bean>
+
+    <!--        <bean id="pluginResource"
+        class="org.springframework.core.io.FileSystemResource" >
+        <constructor-arg value="C:/temp/plugins/"/>
+    </bean>-->
+    <bean id="pluginResource"
+          class="org.springframework.core.io.ClassPathResource">
+        <constructor-arg value="plugins"/>
+    </bean>
+
+    <bean id="overrideResource"
+          class="org.springframework.core.io.ClassPathResource">
+        <constructor-arg value="override"/>
+    </bean>
+
+    <bean id="dbProps"
+          class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+        <property name="locations">
+            <list>
+                <value>classpath:/easyrec.database.properties</value>
+                <!--suppress SpringModelInspection -->
+                <value>classpath:/override/easyrec.database.properties</value>
+            </list>
+        </property>
+        <property name="ignoreResourceNotFound" value="true"/>
+    </bean>
+
+    <bean id="archivePseudoGenerator" class="org.easyrec.model.plugin.archive.ArchivePseudoGenerator"
+          init-method="init">
+        <property name="archiveDAO" ref="archiveDAO"/>
+    </bean>
+
+    <bean id="pluginRegistry" class="org.easyrec.plugin.container.PluginRegistry" init-method="init">
+        <!--            <constructor-arg value="easyrec-plugins-slopeone-0.95.jar" />-->
+        <constructor-arg index="0" ref="pluginResource"/>
+        <constructor-arg index="1" ref="pluginDAO"/>
+        <constructor-arg index="2" ref="itemAssocDAO"/>
+        <constructor-arg index="3" ref="tenantService"/>
+        <constructor-arg index="4" ref="typeMappingService"/>
+        <constructor-arg index="5">
+            <map key-type="org.easyrec.plugin.model.PluginId" value-type="org.easyrec.plugin.generator.Generator">
+                <entry value-ref="archivePseudoGenerator">
+                    <key>
+                        <util:constant static-field="org.easyrec.model.plugin.archive.ArchivePseudoGenerator.ID"/>
+                    </key>
+                </entry>
+            </map>
+        </constructor-arg>
+        <property name="properties" ref="dbProps"/>
+        <property name="overrideFolder" ref="overrideResource"/>
+        <property name="namedConfigurationDAO" ref="namedConfigurationDAO" />
+    </bean>
+
+    <bean id="generatorContainer" class="org.easyrec.plugin.configuration.GeneratorContainer">
+        <constructor-arg index="0" ref="assocTypeDAO"/>
+        <constructor-arg index="1" ref="namedConfigurationDAO"/>
+        <constructor-arg index="2" ref="logEntryDAO"/>
+        <constructor-arg index="3" ref="pluginRegistry"/>
+    </bean>
+
+</beans>

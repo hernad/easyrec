@@ -1,0 +1,11 @@
+
+--DROP TABLE IF EXISTS dbmaintain_scripts;
+
+--CREATE TABLE dbmaintain_scripts (
+--  file_name varchar(150) DEFAULT NULL,
+--  version varchar(25) DEFAULT NULL,
+--  file_last_modified_at bigint(20) DEFAULT NULL,
+--  checksum varchar(50) DEFAULT NULL,
+--  executed_at varchar(20) DEFAULT NULL,
+--  succeeded bigint(20) DEFAULT NULL
+--) ENGINE=InnoDB DEFAULT CHARSET=latin1;

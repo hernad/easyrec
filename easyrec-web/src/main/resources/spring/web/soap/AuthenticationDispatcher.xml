@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- $Author: pmarschik $ -->
+<!-- $Revision: 17736 $ -->
+<!-- $Date: 2011-02-22 14:36:38 +0100 (Di, 22 Feb 2011) $ -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id="authenticationDispatcher"
+          class="org.easyrec.soap.service.impl.AuthenticationDispatcherImpl">
+        <constructor-arg>
+            <map>
+                <!-- used to override default authentication method for specific tenant/service combinations -->
+                <!-- Note: below is just an example entry since default method is already IPAuthenticationService -->
+                <entry key="TEST.ShopRecommenderWSImpl" value-ref="ipAuthenticationService"/>
+            </map>
+        </constructor-arg>
+        <constructor-arg ref="ipAuthenticationService"/>
+    </bean>
+
+</beans>

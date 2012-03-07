@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- $Author: pmarschik $ -->
+<!-- $Revision: 17736 $ -->
+<!-- $Date: 2011-02-22 14:36:38 +0100 (Di, 22 Feb 2011) $ -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+                http://www.springframework.org/schema/beans
+                http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id="recommenderService"
+          class="org.easyrec.service.core.impl.RecommenderServiceImpl">
+        <property name="actionService" ref="actionService"/>
+        <property name="itemAssocService" ref="itemAssocService"/>
+        <property name="recommendationHistoryService" ref="recommendationHistoryService"/>
+        <!-- In certain circumstances the actual number of results can get lower due to e.g.
+ duplicate filtering. To compensate use higher values -->
+        <property name="maximumNumberOfRelatedItemsPerItem"
+                  value="$easyrec{easyrec.recService.maximumNumberOfRelatedItemsPerItem}"/>
+        <property name="filterResults" value="$easyrec{easyrec.recService.filterResults}"/>
+    </bean>
+</beans>

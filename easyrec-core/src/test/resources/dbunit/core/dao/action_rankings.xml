@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- $Author: pmarschik $ -->
+<!-- $Revision: 17663 $ -->
+<!-- $Date: 2011-02-11 11:34:32 +0100 (Fr, 11 Feb 2011) $ -->
+
+<dataset>
+    <action id="1" tenantId="1" userId="1" sessionId="abc1" itemId="1" itemTypeId="1" actionTypeId="1"
+            actionTime="2007-04-15 12:11:00.0"/>
+    <action id="2" tenantId="1" userId="1" sessionId="abc1" itemId="6" itemTypeId="1" actionTypeId="1"
+            actionTime="2007-04-15 12:12:00.0"/>
+    <action id="3" tenantId="1" userId="1" sessionId="abc2" itemId="1" itemTypeId="1" actionTypeId="3"
+            actionTime="2007-04-15 12:13:00.0"/>
+    <action id="4" tenantId="1" userId="1" sessionId="abc2" itemId="1" itemTypeId="1" actionTypeId="4"
+            actionTime="2007-04-15 12:14:00.0"/>
+    <action id="5" tenantId="1" userId="1" sessionId="abc4" itemId="2" itemTypeId="2" actionTypeId="1"
+            actionTime="2007-04-15 12:15:00.0"/>
+    <action id="6" tenantId="1" userId="2" sessionId="abc5" itemId="3" itemTypeId="1" actionTypeId="1"
+            actionTime="2007-04-15 12:16:00.0"/>
+    <action id="7" tenantId="1" userId="1" sessionId="abc1" itemId="3" itemTypeId="1" actionTypeId="1"
+            actionTime="2007-04-15 12:17:00.0"/>
+    <action id="8" tenantId="1" userId="1" sessionId="abc1" itemId="3" itemTypeId="1" actionTypeId="2"
+            actionTime="2007-04-15 12:18:00.0"/>
+    <action id="9" tenantId="1" userId="1" sessionId="abc2" itemId="4" itemTypeId="1" actionTypeId="3"
+            actionTime="2007-04-15 12:19:00.0"/>
+    <action id="10" tenantId="1" userId="1" sessionId="abc2" itemId="4" itemTypeId="1" actionTypeId="4"
+            actionTime="2007-04-15 12:20:00.0"/>
+    <action id="11" tenantId="1" userId="1" sessionId="abc4" itemId="4" itemTypeId="2" actionTypeId="1"
+            actionTime="2007-04-15 12:21:00.0"/>
+    <action id="12" tenantId="1" userId="2" sessionId="abc5" itemId="4" itemTypeId="1" actionTypeId="1"
+            actionTime="2007-04-15 12:22:00.0"/>
+    <action id="13" tenantId="1" userId="1" sessionId="abc1" itemId="5" itemTypeId="1" actionTypeId="1"
+            actionTime="2007-04-15 12:23:00.0"/>
+    <action id="14" tenantId="1" userId="1" sessionId="abc1" itemId="5" itemTypeId="1" actionTypeId="2"
+            actionTime="2007-04-15 12:24:00.0"/>
+    <action id="15" tenantId="1" userId="1" sessionId="abc2" itemId="5" itemTypeId="1" actionTypeId="3"
+            actionTime="2007-04-15 12:25:00.0"/>
+    <action id="16" tenantId="1" userId="1" sessionId="abc2" itemId="5" itemTypeId="1" actionTypeId="4"
+            actionTime="2007-04-15 12:26:00.0"/>
+    <action id="17" tenantId="1" userId="1" sessionId="abc4" itemId="5" itemTypeId="2" actionTypeId="1"
+            actionTime="2007-04-15 12:27:00.0"/>
+    <action id="18" tenantId="1" userId="2" sessionId="abc5" itemId="1" itemTypeId="1" actionTypeId="1"
+            actionTime="2007-04-15 12:28:00.0"/>
+    <action id="19" tenantId="1" userId="1" sessionId="abc1" itemId="1" itemTypeId="1" actionTypeId="1"
+            actionTime="2007-04-15 12:29:00.0"/>
+    <action id="20" tenantId="1" userId="1" sessionId="abc1" itemId="1" itemTypeId="1" actionTypeId="2"
+            actionTime="2007-04-15 12:30:00.0"/>
+    <action id="21" tenantId="1" userId="1" sessionId="abc2" itemId="2" itemTypeId="1" actionTypeId="3"
+            actionTime="2007-04-15 12:31:00.0"/>
+    <action id="22" tenantId="1" userId="1" sessionId="abc2" itemId="2" itemTypeId="1" actionTypeId="4"
+            actionTime="2007-04-15 12:32:00.0"/>
+    <action id="23" tenantId="1" userId="1" sessionId="abc4" itemId="2" itemTypeId="2" actionTypeId="1"
+            actionTime="2007-04-15 12:33:00.0"/>
+    <action id="24" tenantId="1" userId="2" sessionId="abc5" itemId="1" itemTypeId="1" actionTypeId="1"
+            actionTime="2007-04-15 12:34:00.0"/>
+    <action id="25" tenantId="1" userId="1" sessionId="abc1" itemId="3" itemTypeId="1" actionTypeId="1"
+            actionTime="2007-04-15 12:35:00.0"/>
+    <action id="26" tenantId="1" userId="1" sessionId="abc1" itemId="4" itemTypeId="1" actionTypeId="2"
+            actionTime="2007-04-15 12:36:00.0"/>
+    <action id="27" tenantId="1" userId="1" sessionId="abc2" itemId="3" itemTypeId="1" actionTypeId="3"
+            actionTime="2007-04-15 12:37:00.0"/>
+    <action id="28" tenantId="1" userId="1" sessionId="abc2" itemId="5" itemTypeId="1" actionTypeId="4"
+            actionTime="2007-04-15 12:38:00.0"/>
+    <action id="29" tenantId="1" userId="1" sessionId="abc4" itemId="2" itemTypeId="2" actionTypeId="1"
+            actionTime="2007-04-15 12:39:00.0"/>
+    <action id="30" tenantId="1" userId="2" sessionId="abc5" itemId="1" itemTypeId="1" actionTypeId="1"
+            actionTime="2007-04-15 12:40:00.0"/>
+    <action id="31" tenantId="1" userId="1" sessionId="abc1" itemId="2" itemTypeId="1" actionTypeId="1"
+            actionTime="2007-04-15 12:41:00.0"/>
+    <action id="32" tenantId="1" userId="1" sessionId="abc1" itemId="2" itemTypeId="1" actionTypeId="2"
+            actionTime="2007-04-15 12:42:00.0"/>
+    <action id="33" tenantId="1" userId="1" sessionId="abc2" itemId="2" itemTypeId="1" actionTypeId="3"
+            actionTime="2007-04-15 12:43:00.0"/>
+    <action id="34" tenantId="1" userId="1" sessionId="abc2" itemId="1" itemTypeId="1" actionTypeId="4"
+            actionTime="2007-04-15 12:44:00.0"/>
+    <action id="35" tenantId="1" userId="1" sessionId="abc4" itemId="2" itemTypeId="2" actionTypeId="1"
+            actionTime="2007-04-15 12:45:00.0"/>
+    <action id="36" tenantId="1" userId="2" sessionId="abc5" itemId="7" itemTypeId="1" actionTypeId="2"
+            actionTime="2007-04-15 12:46:00.0"/>
+</dataset>
+

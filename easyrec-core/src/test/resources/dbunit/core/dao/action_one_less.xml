@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- $Author: pmarschik $ -->
+<!-- $Revision: 17663 $ -->
+<!-- $Date: 2011-02-11 11:34:32 +0100 (Fr, 11 Feb 2011) $ -->
+
+<dataset>
+    <action id="1" tenantId="1" userId="1" sessionId="abc1" itemId="1" itemTypeId="1" actionTypeId="1"
+            actionTime="2007-04-15 12:11:00.0"/>
+    <action id="2" tenantId="1" userId="1" sessionId="abc1" itemId="1" itemTypeId="1" actionTypeId="2"
+            actionTime="2007-04-15 12:12:00.0"/>
+    <action id="3" tenantId="1" userId="1" sessionId="abc2" itemId="1" itemTypeId="1" actionTypeId="3"
+            actionTime="2007-04-15 12:13:00.0"/>
+    <action id="4" tenantId="1" userId="1" sessionId="abc2" itemId="1" itemTypeId="1" actionTypeId="4"
+            actionTime="2007-04-15 12:14:00.0"/>
+    <action id="5" tenantId="2" userId="1" sessionId="abc4" itemId="2" itemTypeId="2" actionTypeId="1"
+            actionTime="2007-04-15 12:15:00.0"/>
+</dataset>
+

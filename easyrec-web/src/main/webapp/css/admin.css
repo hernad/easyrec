@@ -1,0 +1,531 @@
+body {
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+    background-color: #f7f8f9;
+    color: #343434;
+}
+
+.page {
+    color: #0098C3;
+    text-decoration: underline;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+#feedback {
+    position: fixed;
+    right: 0px;
+    top: 150px;
+    z-index: 1;
+}
+
+H1 {
+    color: #333333;
+    padding-bottom: 10px;
+    margin: 0px;
+    font-size: 27px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+H2 {
+    color: #707070;
+    padding-bottom: 0px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 17px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h4 {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin: 0 0 0.5em 0;
+}
+
+PRE {
+    border: 1px dotted #CCCCCC;
+    padding: 5px;
+    background: #FFFFDD none repeat scroll 0 0;
+    margin-bottom: 30px;
+    font-size: 12px;
+    margin-right: 10px;
+}
+
+A:visited, A:link {
+    color: #0098C3;
+    text-decoration: none;
+}
+
+A:hover {
+    color: #0098C3;
+    text-decoration: underline;
+}
+
+IMG {
+    border: 0px;
+    padding-top: 2px;
+}
+
+HR {
+    border: 1px solid #c0c0c0;
+}
+
+INPUT {
+    margin-bottom: 8px;
+}
+
+.bullmenu {
+    color: #707070;
+}
+
+TH {
+    text-align: left;
+}
+
+div {
+    line-height: 14pt;
+}
+
+sup,
+sub {
+    height: 0;
+    line-height: 4;
+    vertical-align: baseline;
+    _vertical-align: bottom;
+    position: relative;
+
+}
+
+sup {
+    bottom: 17px;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+div.fixed {
+    margin: 0pt auto;
+    padding-top: 10px;
+    width: 980px;
+    position: relative;
+}
+
+div.menu_admin {
+    background: transparent url(../img/gradient_green.gif) repeat-x scroll 0 0;
+    background-position: top; /* IE 6 only */
+    overflow: hidden; /* end */
+    background-color: #6cc010;
+    height: 79px;
+    color: #ffffff;
+    border-left: 1px solid #c0ffc0;
+    border-right: 1px solid #c0ffc0;
+    border-top: 1px solid #c0ffc0;
+    -moz-border-radius-topright: 15px;
+    -moz-border-radius-topleft: 15px;
+    -moz-box-shadow: 0px 0px 13px rgba(0, 0, 0, 0.2);
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    box-shadow: 0px 0px 13px rgba(0, 0, 0, 0.2);
+}
+
+A.menu_admin:visited, A.menu_admin:link {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+A.menu_admin:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+A.footer_admin:visited, A.footer_admin:link {
+    color: #888888;
+    text-decoration: none;
+}
+
+A.footer_admin:hover {
+    color: #888888;
+    text-decoration: underline;
+}
+
+div.appendbody {
+    margin: 0pt auto;
+    padding-top: 25px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    -moz-border-radius-bottomright: 15px;
+    -moz-border-radius-bottomleft: 15px;
+    -moz-box-shadow: 0px 5px 7px rgba(0, 0, 0, 0.2);
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    box-shadow: 0px 5px 7px rgba(0, 0, 0, 0.2);
+    background-color: #ffffff;
+    min-height: 400px;
+}
+
+.easyrec_demo {
+    display: none;
+}
+
+.red {
+    color: #ee0000;
+    font-weight: bold;
+    padding-left: 20px;
+}
+
+.fartblau {
+    color: #21477D;
+    font-weight: bold;
+}
+
+.fartgray {
+    color: #808080;
+    font-weight: bold;
+}
+
+.fartblack {
+    color: #0;
+    font-weight: bold;
+}
+
+.logo {
+    color: #FFFFFF;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 28px;
+}
+
+.upperheadline {
+    color: #21477D;
+    padding-top: 20px;
+    padding-bottom: 14px;
+    font-size: 27px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.headline {
+    color: #707070;
+    padding-bottom: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.headlineBig {
+    color: #707070;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.blog {
+    width: 32%;
+    display: block;
+    font-size: small;
+    padding: 5px;
+    position: absolute;
+    right: 250px;
+    top: 129px;
+}
+
+.contentSize1 {
+    color: #606060;
+    width: 32%;
+    float: left;
+    display: block;
+    font-size: 12px;
+    padding: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#signInMenu {
+    font-size: 93%;
+    line-height: normal;
+    text-align: right;
+    color: #FFFFFF;
+    padding-right: 17px;
+    padding-top: 17px;
+}
+
+#signInMenu a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+#signInMenu a:hover {
+    text-decoration: underline;
+}
+
+#menu {
+    font-size: 17px;
+    text-align: right;
+    float: right;
+    padding-top: 10px;
+}
+
+#menu ul {
+    margin: 0;
+    padding: 10px 10px 0 50px;
+    list-style: none;
+}
+
+#menu li {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+#menu a {
+    float: left;
+    background: url("../img/menustart.gif") no-repeat left top;
+    margin: 0;
+    margin-left: 5px;
+    padding: 0 0 0 3px;
+    text-decoration: none;
+}
+
+#menu a span {
+    float: left;
+    display: block;
+    background: url("../img/menuend.gif") no-repeat right top;
+    padding: 5px 8px 3px 6px;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+/* Commented Backslash Hack hides rule from IE5-Mac \*/
+#menu a span {
+    float: none;
+}
+
+/* End IE5-Mac hack */
+#menu a:hover span {
+    color: #0098c3;
+    font-weight: bold;
+    background-position: 100% -28px;
+}
+
+#menu a:hover {
+    background-position: 0% -28px;
+}
+
+.selectedMenu span {
+    color: #0098c3 !important;
+    background-position: 100% -28px !important;
+}
+
+.selectedMenu a {
+    background-position: 0% -28px !important;
+}
+
+ul.subMenu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 12em;
+}
+
+ul.subMenu li {
+    font: 11px "Lucida Sans Unicode", "Bitstream Vera Sans", "Trebuchet Unicode MS", "Lucida Grande", Verdana, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    color: #707070;
+}
+
+ul.subMenu a {
+    border-top: 1px solid #90CBE1;
+    display: block;
+    margin: 0;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: #00ff00 !important;
+    font-weight: normal;
+}
+
+ul.subMenu a:hover, #subMenu a:active {
+    background-color: #FFFF00;
+    color: #000 !important;
+    padding-bottom: 8px;
+}
+
+#confirm {
+    display: none;
+}
+
+/* Overlay */
+#confirm-overlay {
+    background-color: #eee;
+    cursor: wait;
+}
+
+/* Container */
+#confirm-container {
+    height: 155px;
+    width: 420px;
+    font: 16px/22px 'Trebuchet MS', Verdana, Arial;
+    text-align: left;
+    background: #fff;
+    border: 2px solid #999999;
+    -moz-border-radius: 5px 5px 5px 5px;
+    -moz-box-shadow: 0px 5px 7px rgba(0, 0, 0, 0.5);
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 0px 5px 7px rgba(0, 0, 0, 0.5)
+}
+
+#confirm-container .header {
+    height: 30px;
+    line-height: 30px;
+    width: 100%;
+    background: url(../img/confirm/header.gif) repeat-x;
+    color: #fff;
+    font-weight: bold;
+}
+
+#confirm-container .header span {
+    padding-left: 8px;
+}
+
+#confirm-container .message {
+    color: #333;
+    font-size: 14px;
+    margin: 0;
+    padding: 12px 4px 12px 8px;
+}
+
+#confirm-container .buttons {
+    line-height: 26px;
+    width: 160px;
+    float: right;
+    padding: 1px 140px 0;
+}
+
+#confirm-container .buttons div {
+    line-height: 18pt;
+    float: right;
+    margin-left: 4px;
+    width: 70px;
+    height: 26px;
+    color: #666;
+    font-weight: bold;
+    text-align: center;
+    background: url(../img/confirm/button.gif) repeat-x;
+    border: 1px solid #bbb;
+    cursor: pointer;
+}
+
+#confirm-container a.modal-close,
+#confirm-container a.modal-close:link,
+#confirm-container a.modal-close:active,
+#confirm-container a.modal-close:visited {
+    text-decoration: none;
+    font-weight: bold;
+    position: absolute;
+    right: 10px;
+    color: #fff;
+}
+
+#confirm-container a.modal-close:hover {
+    color: #ccc;
+}
+
+.pluginconfig_help {
+    display: none;
+    font-size: 11px;
+    text-align: justify;
+}
+
+.msgbox {
+    padding: 5px 5px 5px 5px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+input.error {
+    border: 1px solid #870000;
+}
+
+div.error {
+    border: 1px solid #870000;
+    background-color: #ffcccc;
+    color: #870000;
+}
+
+div.success {
+    border: 1px solid #008700;
+    background-color: #ccffcc;
+    color: #008700;
+}
+
+#logTable td {
+    padding-right: 3px;
+}
+
+#status > p {
+    margin: 0;
+}
+
+#status {
+    margin-bottom: 1em;
+}
+
+.configtable tr {
+    vertical-align: top;
+}
+
+.configtable th {
+    font-weight: bold;
+    vertical-align: top;
+}
+
+.configtable td {
+    vertical-align: top;
+}
+
+th.configparam {
+    width: 260px;
+}
+
+th.configparam > em {
+    font-weight: normal;
+    font-style: normal;
+}
+
+td.configedit {
+    width: 75px;
+}
+
+td.configvalue {
+    width: 310px;
+    padding-right: 1ex;
+}
+
+td.configvalue select, td.configvalue input {
+    width: 100%;
+}
+
+td.configvalue div {
+    border: 1px solid #ddd;
+    min-height: 14pt;
+    padding-left: 0.5ex;
+    padding-right: 0.5ex;
+}
+
+td.confighelpbutton {
+    width: 30px;
+}
+

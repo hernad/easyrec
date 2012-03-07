@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+    <item
+            TENANTID="TENANTID"
+            ID="ID"
+            TYPE="TYPE"
+            DESCRIPTION="DESCRIPTION"
+            URL="URL"
+            IMAGEURL="IMAGEURL"
+            />
+</dataset>

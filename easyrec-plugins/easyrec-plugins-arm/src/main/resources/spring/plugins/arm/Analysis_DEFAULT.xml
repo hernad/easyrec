@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- $Author: pmarschik $ -->
+<!-- $Revision: 17656 $ -->
+<!-- $Date: 2011-02-11 11:04:49 +0100 (Fr, 11 Feb 2011) $ -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <!--bean id="metricType_default"
+          class="org.easyrec.arm.model.enums.MetricTypes" factory-method="valueOf" >
+          <constructor-arg>
+              <value>CONFIDENCE</value>
+          </constructor-arg>
+    </bean-->
+
+    <bean id="alsoViewedItems_default"
+          class="org.easyrec.plugin.arm.model.AnalysisVOString">
+        <constructor-arg ref="tupleCounter"/>
+        <property name="actionType" value="VIEW"/>
+        <property name="itemTypes">
+            <list>
+                <value>ITEM</value>
+            </list>
+        </property>
+        <property name="assocType" value="VIEWED_TOGETHER"/>
+        <!-- property name="supportPrcnt" value="10"/-->
+        <property name="supportPrcnt" value="0"/>
+        <property name="supportMinAbs" value="2"/>
+        <!--property name="confidencePrcnt" value="5"/-->
+        <property name="confidencePrcnt" value="0"/>
+        <!--property name="metricType" ref="metricType_default"/-->
+        <property name="excludeSingleItemBaskets" value="false"/>
+        <property name="maxRulesPerItem" value="50"/>
+        <property name="maxSizeL1" value="5000"/>
+        <property name="doDeltaUpdate" value="false"/>
+    </bean>
+
+    <!--bean id="alsoSearchedItems_default"
+           class="org.easyrec.arm.model.AnalysisVOString">
+           <constructor-arg>
+               <ref bean="tupleCounter"/>
+           </constructor-arg>
+           <property name="actionType" value="SEARCH"/>
+           <property name="itemTypes">
+               <list>
+                   <value>ITEM</value>
+               </list>
+           </property>
+           <property name="assocType" value="SEARCHED_TOGETHER"/>
+           <property name="supportPrcnt" value="10"/>
+           <property name="supportMinAbs" value="2"/>
+           <property name="confidencePrcnt" value="5"/>
+           <property name="metricType" ref="metricType_default"/>
+           <property name="excludeSingleItemBaskets" value="false"/>
+           <property name="maxSizeL1" value="5000"/>
+           <property name="doDeltaUpdate" value="false"/>
+     </bean-->
+
+    <bean id="alsoGoodRatedItems_default"
+          class="org.easyrec.plugin.arm.model.AnalysisVOString">
+        <constructor-arg ref="tupleCounter"/>
+        <property name="actionType" value="RATE"/>
+        <property name="itemTypes">
+            <list>
+                <value>ITEM</value>
+            </list>
+        </property>
+        <property name="assocType" value="GOOD_RATED_TOGETHER"/>
+        <property name="supportPrcnt" value="0"/>
+        <property name="supportMinAbs" value="2"/>
+        <property name="confidencePrcnt" value="0"/>
+        <!--property name="metricType" ref="metricType_default"/-->
+        <property name="excludeSingleItemBaskets" value="false"/>
+        <property name="maxRulesPerItem" value="50"/>
+        <property name="maxSizeL1" value="5000"/>
+        <property name="doDeltaUpdate" value="false"/>
+    </bean>
+
+    <bean id="alsoBoughtItems_default"
+          class="org.easyrec.plugin.arm.model.AnalysisVOString">
+        <constructor-arg ref="tupleCounter"/>
+        <property name="actionType" value="BUY"/>
+        <property name="itemTypes">
+            <list>
+                <value>ITEM</value>
+            </list>
+        </property>
+        <property name="assocType" value="BOUGHT_TOGETHER"/>
+        <property name="supportPrcnt" value="0"/>
+        <property name="supportMinAbs" value="2"/>
+        <property name="confidencePrcnt" value="0"/>
+        <!--property name="metricType" ref="metricType_default"/-->
+        <property name="excludeSingleItemBaskets" value="false"/>
+        <property name="maxRulesPerItem" value="50"/>
+        <property name="maxSizeL1" value="5000"/>
+        <property name="doDeltaUpdate" value="false"/>
+    </bean>
+
+</beans>

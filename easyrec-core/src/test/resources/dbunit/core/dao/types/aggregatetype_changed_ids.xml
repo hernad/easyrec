@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- $Author: pmarschik $ -->
+<!-- $Revision: 17663 $ -->
+<!-- $Date: 2011-02-11 11:34:32 +0100 (Fr, 11 Feb 2011) $ -->
+
+<dataset>
+    <aggregatetype tenantId="0" id="10" name="AVERAGE"/>
+    <aggregatetype tenantId="0" id="20" name="FIRST"/>
+    <aggregatetype tenantId="0" id="30" name="MAXIMUM"/>
+    <aggregatetype tenantId="0" id="40" name="MOST_FREQUENT"/>
+    <aggregatetype tenantId="0" id="50" name="NEWEST"/>
+    <aggregatetype tenantId="0" id="60" name="OLDEST"/>
+</dataset>

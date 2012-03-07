@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- $Author: szavrel $ -->
+<!-- $Revision: 18162 $ -->
+<!-- $Date: 2011-04-19 11:21:21 +0200 (Di, 19 Apr 2011) $ -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+                http://www.springframework.org/schema/beans
+                http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+    <bean id="tenantService"
+          class="org.easyrec.service.core.impl.TenantServiceImpl">
+        <constructor-arg ref="tenantDAO"/>
+        <constructor-arg ref="tenantConfig_default"/>
+        <constructor-arg ref="actionTypeDAO"/>
+        <constructor-arg ref="aggregateTypeDAO"/>
+        <constructor-arg ref="assocTypeDAO"/>
+        <constructor-arg ref="itemTypeDAO"/>
+        <constructor-arg ref="sourceTypeDAO"/>
+        <constructor-arg ref="viewTypeDAO"/>
+        <constructor-arg ref="authenticationDAO"/>
+        <property name="clusterService" ref="clusterService" />
+    </bean>
+</beans>

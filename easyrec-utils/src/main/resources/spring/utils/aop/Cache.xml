@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright 2010 Research Studios Austria Forschungsgesellschaft mBH
+  ~
+  ~ This file is part of easyrec.
+  ~
+  ~ easyrec is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ easyrec is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with easyrec.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/aop 
+	http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+
+    <!-- Cache manager -->
+    <bean id="cacheManager" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">
+        <property name="configLocation" value="classpath:/spring/ehcache.xml"/>
+    </bean>
+
+    <!-- Cache provider -->
+    <bean id="methodLongCache" class="org.springframework.cache.ehcache.EhCacheFactoryBean">
+        <property name="cacheManager" ref="cacheManager"/>
+        <property name="cacheName" value="SAT_LONG_TERM_CACHE"/>
+    </bean>
+
+    <bean id="methodShortCache" class="org.springframework.cache.ehcache.EhCacheFactoryBean">
+        <property name="cacheManager" ref="cacheManager"/>
+        <property name="cacheName" value="SAT_SHORT_TERM_CACHE"/>
+    </bean>
+
+    <bean id="longCacheAdvice"
+          class="org.easyrec.utils.spring.cache.aop.CachingAspectAdvice">
+        <property name="cache" ref="methodLongCache"/>
+    </bean>
+
+    <bean id="shortCacheAdvice"
+          class="org.easyrec.utils.spring.cache.aop.CachingAspectAdvice">
+        <property name="cache" ref="methodShortCache"/>
+    </bean>
+
+    <bean id="cacheResetAdvice"
+          class="org.easyrec.utils.spring.cache.aop.CacheResetAspectAdvice">
+        <property name="cacheManager" ref="cacheManager"/>
+    </bean>
+
+    <aop:config>
+        <aop:aspect id="LongCacheAspect" ref="longCacheAdvice">
+            <aop:around
+                    pointcut="@annotation(org.easyrec.utils.spring.cache.annotation.LongCacheable)"
+                    method="cacheMethodResult"/>
+        </aop:aspect>
+        <aop:aspect id="ShortCacheAspect" ref="shortCacheAdvice">
+            <aop:around
+                    pointcut="@annotation(org.easyrec.utils.spring.cache.annotation.ShortCacheable)"
+                    method="cacheMethodResult"/>
+        </aop:aspect>
+        <aop:aspect id="CacheResetAspect" ref="cacheResetAdvice">
+            <aop:after
+                    pointcut="@annotation(org.easyrec.utils.spring.cache.annotation.InvalidatesCache)"
+                    method="clearCaches"/>
+        </aop:aspect>
+    </aop:config>
+
+</beans>

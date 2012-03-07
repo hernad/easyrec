@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright 2010 Research Studios Austria Forschungsgesellschaft mBH
+  ~
+  ~ This file is part of easyrec.
+  ~
+  ~ easyrec is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ easyrec is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with easyrec.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<!-- $Author$ -->
+<!-- $Revision$ -->
+<!-- $Date$ -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:u="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <u:constant static-field="org.easyrec.plugin.itemitem.model.SimilarityCalculationType.PEARSON"
+                id="similarityCalculationTypePearson"/>
+    <u:constant static-field="org.easyrec.plugin.itemitem.model.SimilarityCalculationType.COSINE"
+                id="similarityCalculationTypeCosine"/>
+    <u:constant static-field="org.easyrec.plugin.itemitem.model.SimilarityCalculationType.ADJUSTED_COSINE"
+                id="similarityCalculationTypeAdjustedCosine"/>
+
+    <bean id="similarityCalculationPearson"
+          class="org.easyrec.plugin.itemitem.impl.PearsonSimilarityCalculationStrategy"/>
+    <bean id="similarityCalculationCosine"
+          class="org.easyrec.plugin.itemitem.impl.CosineSimilarityCalculationStrategy"/>
+    <bean id="similarityCalculationAdjustedCosine"
+          class="org.easyrec.plugin.itemitem.impl.AdjustedCosineSimilarityCalculationStrategy"/>
+
+    <u:map id="similarityCalculationTypes" key-type="org.easyrec.plugin.itemitem.model.SimilarityCalculationType"
+           value-type="org.easyrec.plugin.itemitem.SimilarityCalculationStrategy">
+        <entry key-ref="similarityCalculationTypePearson" value-ref="similarityCalculationPearson"/>
+        <entry key-ref="similarityCalculationTypeCosine" value-ref="similarityCalculationCosine"/>
+        <entry key-ref="similarityCalculationTypeAdjustedCosine" value-ref="similarityCalculationAdjustedCosine"/>
+    </u:map>
+
+</beans>

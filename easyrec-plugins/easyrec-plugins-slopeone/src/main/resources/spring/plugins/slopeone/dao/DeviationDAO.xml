@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  ~ Copyright 2010 Research Studios Austria Forschungsgesellschaft mBH
+  ~
+  ~ This file is part of easyrec.
+  ~
+  ~ easyrec is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ easyrec is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with easyrec.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<!-- $Author: pmarschik $ -->
+<!-- $Revision: 17736 $ -->
+<!-- $Date: 2011-02-22 14:36:38 +0100 (Di, 22 Feb 2011) $ -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id="cachedMergingMySqlDeviationDAO"
+          class="org.easyrec.plugin.slopeone.store.dao.impl.DeviationDAOCachedMergingMySQL">
+        <constructor-arg ref="easyrecSlopeOneDataSource"/>
+        <constructor-arg ref="easyrecSlopeOneSqlScriptService"/>
+    </bean>
+
+    <alias name="cachedMergingMySqlDeviationDAO" alias="deviationDAO"/>
+
+</beans>

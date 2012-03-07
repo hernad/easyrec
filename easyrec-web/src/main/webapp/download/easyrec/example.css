@@ -1,0 +1,11 @@
+#recommenderDiv {
+    background: #FF0000;
+}
+
+#recommenderDiv span {
+    background: #00FF00 !important;
+}
+
+#recommenderDiv a {
+    color: #ccc !important;
+}

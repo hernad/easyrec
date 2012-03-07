@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- $Author: szavrel $ -->
+<!-- $Revision: 18406 $ -->
+<!-- $Date: 2011-05-31 16:33:07 +0200 (Di, 31 Mai 2011) $ -->
+
+<dataset>
+    <itemassoc tenantId="1" itemFromId="1" itemFromTypeId="1" assocTypeId="4" assocValue="100" itemToId="2"
+               itemToTypeId="1" sourceTypeId="1" viewTypeId="1" active="true"/>
+    <itemassoc tenantId="1" itemFromId="1" itemFromTypeId="1" assocTypeId="4" assocValue="100" itemToId="3"
+               itemToTypeId="1" sourceTypeId="1" viewTypeId="1" active="true"/>
+    <itemassoc tenantId="1" itemFromId="3" itemFromTypeId="1" assocTypeId="4" assocValue="100" itemToId="1"
+               itemToTypeId="1" sourceTypeId="1" viewTypeId="1" active="true"/>
+    <itemassoc tenantId="1" itemFromId="3" itemFromTypeId="1" assocTypeId="4" assocValue="100" itemToId="2"
+               itemToTypeId="1" sourceTypeId="1" viewTypeId="1" active="true"/>
+    <itemassoc tenantId="1" itemFromId="2" itemFromTypeId="1" assocTypeId="4" assocValue="100" itemToId="1"
+               itemToTypeId="1" sourceTypeId="1" viewTypeId="1" active="true"/>
+    <itemassoc tenantId="1" itemFromId="2" itemFromTypeId="1" assocTypeId="4" assocValue="100" itemToId="3"
+               itemToTypeId="1" sourceTypeId="1" viewTypeId="1" active="true"/>
+
+</dataset>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright 2010 Research Studios Austria Forschungsgesellschaft mBH
+  ~
+  ~ This file is part of easyrec.
+  ~
+  ~ easyrec is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ easyrec is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with easyrec.  If not, see <http://www.gnu.org/licenses />.
+  -->
+
+<!-- $Author: szavrel $ -->
+<!-- $Revision: 18733 $ -->
+<!-- $Date: 2012-02-08 19:25:39 +0100 (Mi, 08 Feb 2012) $ -->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>easyrec-plugins</artifactId>
+        <groupId>org.easyrec</groupId>
+        <version>0.97</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>easyrec-plugins-slopeone</artifactId>
+    <version>0.97</version>
+    <name>easyrec - Plugins - SlopeOne</name>
+    <description>A collaborative filtering algorithm using ratings for calculating recommendations.</description>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.easyrec</groupId>
+            <artifactId>easyrec-utils</artifactId>
+            <version>${project.version}</version>
+            <!--<scope>provided</scope>-->
+        </dependency>
+        <dependency>
+            <groupId>org.easyrec</groupId>
+            <artifactId>easyrec-core</artifactId>
+            <version>${project.version}</version>
+            <!--<scope>provided</scope>-->
+        </dependency>
+        <dependency>
+            <groupId>org.easyrec</groupId>
+            <artifactId>easyrec-domain</artifactId>
+            <version>${project.version}</version>
+            <!--<scope>provided</scope>-->
+        </dependency>
+
+        <!-- included as source because not available in public maven repositories
+        <dependency>
+            <groupId>gnu-trove</groupId>
+            <artifactId>trove4j</artifactId>
+            <version>3.0.0a3</version>
+        </dependency>
+        -->
+    </dependencies>
+
+</project>

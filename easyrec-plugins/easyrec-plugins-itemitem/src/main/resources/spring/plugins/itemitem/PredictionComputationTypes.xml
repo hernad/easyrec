@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright 2010 Research Studios Austria Forschungsgesellschaft mBH
+  ~
+  ~ This file is part of easyrec.
+  ~
+  ~ easyrec is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ easyrec is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with easyrec.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<!-- $Author$ -->
+<!-- $Revision$ -->
+<!-- $Date$ -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:u="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <u:constant static-field="org.easyrec.plugin.itemitem.model.PredictionComputationType.WEIGHTED"
+                id="predictionComputationTypeWeighted"/>
+
+    <bean id="predictionComputationWeighted"
+          class="org.easyrec.plugin.itemitem.impl.WeightedPredictionComputationStrategy"/>
+
+    <u:map id="predictionComputationTypes" key-type="org.easyrec.plugin.itemitem.model.PredictionComputationType"
+           value-type="org.easyrec.plugin.itemitem.PredictionComputationStrategy">
+        <entry key-ref="predictionComputationTypeWeighted" value-ref="predictionComputationWeighted"/>
+    </u:map>
+
+</beans>

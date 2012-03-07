@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- $Author: szavrel $ -->
+<!-- $Revision: 17663 $ -->
+<!-- $Date: 2011-02-11 11:34:32 +0100 (Fr, 11 Feb 2011) $ -->
+
+<dataset>
+    <tenant id="1" stringId="cluster" description="aaa" ratingRangeMin="1" ratingRangeMax="10" ratingRangeNeutral="5.5" active="1"/>
+
+    <assoctype tenantId="1" name="IS_PARENT_OF" id="1" visible="false"/>
+    <assoctype tenantId="1" name="BELONGS_TO" id="2" visible="true"/>
+
+    <itemtype tenantId="1" name="ITEM" id="1" />
+    <itemtype tenantId="1" name="CLUSTER" id="2" />
+
+    <sourcetype tenantId="1" name="MANUALLY_CREATED" id="1" />
+
+    <viewtype tenantId="1" name="ADMIN" id="1" />
+    
+    <idmapping intId="1" stringId="CLUSTERS" />
+    <idmapping intId="2" stringId="CLUSTER1" />
+    <idmapping intId="3" stringId="CLUSTER2" />
+    <idmapping intId="4" stringId="SUBCLUSTER1" />
+    <idmapping intId="5" stringId="SUBCLUSTER2" />
+
+    <profile profileId="1" tenantId="1" itemId="1" itemTypeId="2" profileData="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?>&lt;clusterVO>&lt;description>The root object of every cluster hierarchy. cannot be removed!&lt;/description>&lt;name>CLUSTERS&lt;/name>&lt;/clusterVO>" />
+    <profile profileId="2" tenantId="1" itemId="2" itemTypeId="2" profileData="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?>&lt;clusterVO>&lt;description>This is Cluster 1!&lt;/description>&lt;name>CLUSTER1&lt;/name>&lt;/clusterVO>" />
+    <profile profileId="3" tenantId="1" itemId="3" itemTypeId="2" profileData="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?>&lt;clusterVO>&lt;description>This is Cluster 2!&lt;/description>&lt;name>CLUSTER2&lt;/name>&lt;/clusterVO>" />
+    <profile profileId="4" tenantId="1" itemId="4" itemTypeId="2" profileData="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?>&lt;clusterVO>&lt;description>This is SubCluster 1!&lt;/description>&lt;name>SUBCLUSTER1&lt;/name>&lt;/clusterVO>" />
+    <profile profileId="5" tenantId="1" itemId="5" itemTypeId="2" profileData="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?>&lt;clusterVO>&lt;description>This is SubCluster 2!&lt;/description>&lt;name>SUBCLUSTER2&lt;/name>&lt;/clusterVO>" />
+
+    <itemassoc id="1" tenantId="1" itemFromId="1" itemFromTypeId="2" assocTypeId="1" assocValue="1" itemToId="2"
+               itemToTypeId="2" sourceTypeId="1" sourceInfo="abc" viewTypeId="1" active="true"
+               changeDate="2007-04-15 12:11:00.0"/>
+    <itemassoc id="2" tenantId="1" itemFromId="1" itemFromTypeId="2" assocTypeId="1" assocValue="1" itemToId="3"
+               itemToTypeId="2" sourceTypeId="1" sourceInfo="abc" viewTypeId="1" active="true"
+               changeDate="2007-04-15 12:11:00.0"/>
+    <itemassoc id="3" tenantId="1" itemFromId="2" itemFromTypeId="2" assocTypeId="1" assocValue="1" itemToId="4"
+               itemToTypeId="2" sourceTypeId="1" sourceInfo="abc" viewTypeId="1" active="true"
+               changeDate="2007-04-15 12:11:00.0"/>
+    <itemassoc id="4" tenantId="1" itemFromId="2" itemFromTypeId="2" assocTypeId="1" assocValue="1" itemToId="5"
+               itemToTypeId="2" sourceTypeId="1" sourceInfo="abc" viewTypeId="1" active="true"
+               changeDate="2007-04-15 12:11:00.0"/>
+
+     <!-- items in the clusters -->
+    <itemassoc id="5" tenantId="1" itemFromId="2" itemFromTypeId="1" assocTypeId="2" assocValue="1" itemToId="1"
+               itemToTypeId="2" sourceTypeId="1" sourceInfo="abc" viewTypeId="1" active="true"
+               changeDate="2011-04-26 11:00:00.0"/>
+    <itemassoc id="6" tenantId="1" itemFromId="3" itemFromTypeId="1" assocTypeId="2" assocValue="1" itemToId="1"
+               itemToTypeId="2" sourceTypeId="1" sourceInfo="abc" viewTypeId="1" active="true"
+               changeDate="2011-04-26 11:00:00.0"/>
+    <itemassoc id="7" tenantId="1" itemFromId="4" itemFromTypeId="1" assocTypeId="2" assocValue="1" itemToId="4"
+               itemToTypeId="2" sourceTypeId="1" sourceInfo="abc" viewTypeId="1" active="true"
+               changeDate="2011-04-26 11:00:00.0"/>
+    <itemassoc id="8" tenantId="1" itemFromId="5" itemFromTypeId="1" assocTypeId="2" assocValue="1" itemToId="4"
+               itemToTypeId="2" sourceTypeId="1" sourceInfo="abc" viewTypeId="1" active="true"
+               changeDate="2011-04-26 11:00:00.0"/>
+    <itemassoc id="9" tenantId="1" itemFromId="6" itemFromTypeId="1" assocTypeId="2" assocValue="1" itemToId="5"
+               itemToTypeId="2" sourceTypeId="1" sourceInfo="abc" viewTypeId="1" active="true"
+               changeDate="2011-04-26 11:00:00.0"/>
+    <itemassoc id="10" tenantId="1" itemFromId="7" itemFromTypeId="1" assocTypeId="2" assocValue="1" itemToId="5"
+               itemToTypeId="2" sourceTypeId="1" sourceInfo="abc" viewTypeId="1" active="true"
+               changeDate="2011-04-26 11:00:00.0"/>
+    <itemassoc id="11" tenantId="1" itemFromId="8" itemFromTypeId="1" assocTypeId="2" assocValue="1" itemToId="3"
+               itemToTypeId="2" sourceTypeId="1" sourceInfo="abc" viewTypeId="1" active="true"
+               changeDate="2011-04-26 11:00:00.0"/>
+    <itemassoc id="12" tenantId="1" itemFromId="9" itemFromTypeId="1" assocTypeId="2" assocValue="1" itemToId="3"
+               itemToTypeId="2" sourceTypeId="1" sourceInfo="abc" viewTypeId="1" active="true"
+               changeDate="2011-04-26 11:00:00.0"/>
+    <itemassoc id="13" tenantId="1" itemFromId="10" itemFromTypeId="1" assocTypeId="2" assocValue="1" itemToId="2"
+               itemToTypeId="2" sourceTypeId="1" sourceInfo="abc" viewTypeId="1" active="true"
+               changeDate="2011-04-26 11:00:00.0"/>
+    <itemassoc id="14" tenantId="1" itemFromId="11" itemFromTypeId="1" assocTypeId="2" assocValue="1" itemToId="2"
+               itemToTypeId="2" sourceTypeId="1" sourceInfo="abc" viewTypeId="1" active="true"
+               changeDate="2011-04-26 11:00:00.0"/>
+    <itemassoc id="15" tenantId="1" itemFromId="12" itemFromTypeId="1" assocTypeId="2" assocValue="1" itemToId="2"
+               itemToTypeId="2" sourceTypeId="1" sourceInfo="abc" viewTypeId="1" active="true"
+               changeDate="2011-04-26 11:00:00.0"/>
+    <itemassoc id="16" tenantId="1" itemFromId="13" itemFromTypeId="1" assocTypeId="2" assocValue="1" itemToId="2"
+               itemToTypeId="2" sourceTypeId="1" sourceInfo="abc" viewTypeId="1" active="true"
+               changeDate="2011-04-26 11:00:00.0"/>
+    <itemassoc id="17" tenantId="1" itemFromId="14" itemFromTypeId="1" assocTypeId="2" assocValue="1" itemToId="2"
+               itemToTypeId="2" sourceTypeId="1" sourceInfo="abc" viewTypeId="1" active="true"
+               changeDate="2011-04-26 11:00:00.0"/>
+    <itemassoc id="18" tenantId="1" itemFromId="15" itemFromTypeId="1" assocTypeId="2" assocValue="1" itemToId="2"
+               itemToTypeId="2" sourceTypeId="1" sourceInfo="abc" viewTypeId="1" active="true"
+               changeDate="2011-04-26 11:00:00.0"/>
+
+</dataset>

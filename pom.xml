@@ -1,0 +1,764 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright 2010 Research Studios Austria Forschungsgesellschaft mBH
+  ~
+  ~ This file is part of easyrec.
+  ~
+  ~ easyrec is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ easyrec is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with easyrec.  If not, see <http://www.gnu.org/licenses />.
+  --><!--
+ $Author: sat-rsa $
+ $Revision: 140 $
+ $Date: 2012-02-23 16:01:50 +0100 (Do, 23 Feb 2012) $
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.easyrec</groupId>
+    <artifactId>easyrec</artifactId>
+    <packaging>pom</packaging>
+    <name>easyrec</name>
+    <version>0.97</version>
+    <description>
+        The easyrec open source recommender system from the Smart Agent Technologies (SAT) Studio
+        of the Researchstudios Austria Forschungsgesellschaft mbH.
+    </description>
+
+    <!--url>${website.url.http}/easyrec/</url-->
+
+    <organization>
+        <!--  important: do not add newlines here! It will mess up javadoc generation by maven! -->
+        <name>
+            Researchstudios Austria Forschungsgesellschaft mbH (RSA) - Studio Smart Agent Technologies (SAT)
+        </name>
+        <url>http://sat.researchstudio.at</url>
+    </organization>
+
+    <developers>
+        <developer>
+            <id>egstrein</id>
+            <name>Erich Gstrein</name>
+            <email>erich.gstrein@researchstudio.at</email>
+            <organization>SAT</organization>
+            <roles>
+                <role>Project leader</role>
+                <role>Java developer</role>
+                <role>Senior scientist</role>
+            </roles>
+            <timezone />
+        </developer>
+        <developer>
+            <id>szavrel</id>
+            <name>Stephan Zavrel</name>
+            <email>stephan.zavrel@researchstudio.at</email>
+            <organization>SAT</organization>
+            <roles>
+                <role>Java developer</role>
+                <role>Scientist</role>
+            </roles>
+            <timezone />
+        </developer>
+        <developer>
+            <id>rcerny</id>
+            <name>Roman Cerny</name>
+            <email>roman.cerny@researchstudio.at</email>
+            <organization>SAT</organization>
+            <roles>
+                <role>Java developer</role>
+                <role>Scientist</role>
+            </roles>
+            <timezone />
+        </developer>
+        <developer>
+            <id>pmarschik</id>
+            <name>Patrick Marschik</name>
+            <email>patrick.marschik@researchstudio.at</email>
+            <organization>SAT</organization>
+            <roles>
+                <role>Java developer</role>
+                <role>Scientist</role>
+            </roles>
+            <timezone />
+        </developer>
+    </developers>
+
+    <properties>
+        <!-- plugin properties -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compile.compilerargs>
+            -Xlint:deprecation,fallthrough,finally,path,serial,unchecked
+        </maven.compile.compilerargs>
+        <compile.forked>false</compile.forked>
+        <java.source.version>1.6</java.source.version>
+        <java.target.version>1.6</java.target.version>
+        <surefire.skip>false</surefire.skip>
+        <surefire.failure.ignore>true</surefire.failure.ignore>
+        <surefire.forkmode>once</surefire.forkmode>
+        <surefire.reportformat>brief</surefire.reportformat>
+        <surefire.usefile>false</surefire.usefile>
+
+        <!-- versions for various dependencies -->
+        <junit.dependency.version>4.8.2</junit.dependency.version>
+        <dbunit.dependency.version>2.2.2</dbunit.dependency.version>
+        <jmock.dependency.version>2.5.1</jmock.dependency.version>
+        <spring.dependency.version>3.0.5.RELEASE</spring.dependency.version>
+
+        <!-- scm -->
+ <!--       <scm.host>svn.researchstudio.at</scm.host>
+        <scm.url.https>scm:svn:https://${scm.host}/svn/sat</scm.url.https>
+        <scm.url.https.webview>https://${scm.host}/satsvn/wsvn/SAT</scm.url.https.webview>-->
+
+        <!-- reporting plugin versions (build plugin versions are set in build>pluginManagement -->
+        <reporting.javadoc>2.7</reporting.javadoc>
+        <reporting.surefire-report>2.7.2</reporting.surefire-report>
+        <reporting.findbugs>2.3.1</reporting.findbugs>
+        <reporting.jxr>2.2</reporting.jxr>
+        <reporting.cobertura>2.4</reporting.cobertura>
+        <reporting.project-info-reports>2.3.1</reporting.project-info-reports>
+        <reporting.jdepend>2.0-beta-2</reporting.jdepend>
+        <reporting.javancss>2.0</reporting.javancss>
+        <reporting.taglist>2.4</reporting.taglist>
+        <reporting.checkstyle>2.6</reporting.checkstyle>
+        <reporting.changelog>2.2</reporting.changelog>
+        <reporting.qalab>2.2</reporting.qalab>
+        <reporting.pmd>2.5</reporting.pmd>
+
+    </properties>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-assembly-plugin</artifactId>
+                    <version>2.2</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-checkstyle-plugin</artifactId>
+                    <version>${reporting.checkstyle}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-clean-plugin</artifactId>
+                    <version>2.4.1</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>2.3.2</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-dependency-plugin</artifactId>
+                    <version>2.1</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-deploy-plugin</artifactId>
+                    <version>2.5</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-eclipse-plugin</artifactId>
+                    <version>2.8</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-help-plugin</artifactId>
+                    <version>2.1.1</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-install-plugin</artifactId>
+                    <version>2.3.1</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>2.3.1</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-pmd-plugin</artifactId>
+                    <version>${reporting.pmd}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-release-plugin</artifactId>
+                    <version>2.1</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-scm-plugin</artifactId>
+                    <version>1.4</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-site-plugin</artifactId>
+                    <version>2.2</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <version>2.1.2</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>2.7.2</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>cobertura-maven-plugin</artifactId>
+                    <version>${reporting.cobertura}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>findbugs-maven-plugin</artifactId>
+                    <version>${reporting.findbugs}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>taglist-maven-plugin</artifactId>
+                    <version>${reporting.taglist}</version>
+                </plugin>
+                <plugin>
+                    <groupId>net.objectlab</groupId>
+                    <artifactId>mvn-qalab-plugin</artifactId>
+                    <version>${reporting.qalab}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+
+        <defaultGoal>install</defaultGoal>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${java.source.version}</source>
+                    <target>${java.target.version}</target>
+                    <showDeprecation>true</showDeprecation>
+                    <fork>${compile.forked}</fork>
+                    <compilerArgument>
+                        ${maven.compile.compilerargs}
+                    </compilerArgument>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <skip>${surefire.skip}</skip>
+                    <testFailureIgnore>${surefire.failure.ignore}</testFailureIgnore>
+                    <reportFormat>${surefire.reportformat}</reportFormat>
+                    <useFile>${surefire.usefile}</useFile>
+                    <forkMode>${surefire.forkmode}</forkMode>
+                    <argLine>-Xmx512m</argLine>
+                    <includes>
+                        <include>**/*Test.java</include>
+                        <include>**/*Tests.java</include>
+                        <include>**/*TestSuite.java</include>
+                    </includes>
+                    <excludes>
+                        <exclude>**/*Abstract*Test.java</exclude>
+                        <exclude>**/*Abstract*Tests.java</exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>cobertura-maven-plugin</artifactId>
+                <configuration>
+                    <check branchrate="80" linerate="70" haltonerror="true" totalbranchrate="80" totallinerate="70">
+                    </check>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>cobertura</id>
+                        <phase>pre-site</phase>
+                        <goals>
+                            <goal>cobertura</goal>
+                        </goals>
+                        <configuration>
+                            <formats>
+                                <format>xml</format>
+                                <format>html</format>
+                            </formats>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>clean</id>
+                        <goals>
+                            <goal>clean</goal>
+                            <!--goal>check</goal--><!-- uncomment this as soon as all classes have UnitTests -->
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <configuration>
+                    <repositoryId>sat-maven-repository</repositoryId>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>findbugs-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>findbugs</id>
+                        <phase>pre-site</phase>
+                        <goals>
+                            <goal>findbugs</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <xmlOutput>true</xmlOutput>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-pmd-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>pmd</id>
+                        <phase>pre-site</phase>
+                        <goals>
+                            <goal>pmd</goal>
+                            <goal>cpd</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <linkXRef>true</linkXRef>
+                    <targetJdk>${java.target.version}</targetJdk>
+                    <format>xml</format>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>net.objectlab</groupId>
+                <artifactId>mvn-qalab-plugin</artifactId>
+                <configuration>
+                    <dateOnly>true</dateOnly>
+                    <startTimeHoursOffset>1</startTimeHoursOffset>
+                </configuration>
+            </plugin>
+            <!--
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-scm-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>site</phase>
+                        <goals>
+                            <goal>add</goal>
+                            <goal>checkin</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-eclipse-plugin</artifactId>
+                <configuration>
+                    <downloadSources>true</downloadSources>
+                    <downloadJavadocs>true</downloadJavadocs>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.zeroturnaround</groupId>
+                <artifactId>jrebel-maven-plugin</artifactId>
+                <version>1.1.3</version>
+                <executions>
+                    <execution>
+                        <id>generate-rebel-xml</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>${reporting.javadoc}</version>
+                <configuration>
+                    <source>${java.source.version}</source>
+                    <minmemory>128m</minmemory>
+                    <maxmemory>512m</maxmemory>
+                    <quiet>true</quiet>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-report-plugin</artifactId>
+                <version>${reporting.surefire-report}</version>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>findbugs-maven-plugin</artifactId>
+                <version>${reporting.findbugs}</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jxr-plugin</artifactId>
+                <version>${reporting.jxr}</version>
+                <configuration>
+                    <linkJavadoc>true</linkJavadoc>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>cobertura-maven-plugin</artifactId>
+                <version>${reporting.cobertura}</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-project-info-reports-plugin</artifactId>
+                <version>${reporting.project-info-reports}</version>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>cim</report>
+                            <report>dependencies</report>
+                            <report>dependency-convergence</report>
+                            <report>index</report>
+                            <report>issue-tracking</report>
+                            <report>project-team</report>
+                            <report>scm</report>
+                            <report>summary</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>jdepend-maven-plugin</artifactId>
+                <version>${reporting.jdepend}</version>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>javancss-maven-plugin</artifactId>
+                <version>${reporting.javancss}</version>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>taglist-maven-plugin</artifactId>
+                <version>${reporting.taglist}</version>
+                <configuration>
+                    <tags>
+                        <tag>@deprecated</tag>
+                        <tag>FIXME</tag>
+                        <tag>HINT</tag>
+                        <tag>TODO</tag>
+                        <tag>@todo</tag>
+                    </tags>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>${reporting.checkstyle}</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-changelog-plugin</artifactId>
+                <version>${reporting.changelog}</version>
+            </plugin>
+            <plugin>
+                <groupId>net.objectlab</groupId>
+                <artifactId>mvn-qalab-plugin</artifactId>
+                <version>${reporting.qalab}</version>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>report-merge-chart</report>
+                            <report>report-movers-all</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-pmd-plugin</artifactId>
+                <version>${reporting.pmd}</version>
+                <configuration>
+                    <targetJdk>${java.target.version}</targetJdk>
+                    <format>xml</format>
+                    <linkXRef>true</linkXRef>
+                    <sourceEncoding>iso-8859-1</sourceEncoding>
+                    <minimumTokens>100</minimumTokens>
+                </configuration>
+            </plugin>
+        </plugins>
+    </reporting>
+
+    <profiles>
+        <profile>
+        <id>skip-tests-localhost</id>
+        <build>
+            <plugins>
+                <plugin>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <configuration>
+                        <skip>true</skip>
+                    </configuration>
+                </plugin>
+            </plugins>
+            <resources>
+                <resource>
+                    <directory>src/main/resources</directory>
+                </resource>
+                <resource>
+                    <directory>src/main/resources.localhost</directory>
+                </resource>
+            </resources>
+            <testResources>
+                <testResource>
+                    <directory>src/test/resources</directory>
+                </testResource>
+                <testResource>
+                    <directory>src/test/resources.localhost</directory>
+                </testResource>
+            </testResources>
+        </build>
+        </profile>
+        <profile>
+            <id>no-warn</id>
+            <properties>
+                <maven.compile.compilerargs>-Xlint:none</maven.compile.compilerargs>
+            </properties>
+        </profile>
+        <profile>
+            <id>run-tests</id>
+            <properties>
+                <surefire.skip>false</surefire.skip>
+            </properties>
+        </profile>
+        <profile>
+            <id>localhost</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <build>
+                <resources>
+                    <resource>
+                        <directory>src/main/resources</directory>
+                    </resource>
+                    <resource>
+                        <directory>src/main/resources.localhost</directory>
+                    </resource>
+                </resources>
+                <testResources>
+                    <testResource>
+                        <directory>src/test/resources</directory>
+                    </testResource>
+                    <testResource>
+                        <directory>src/test/resources.localhost</directory>
+                    </testResource>
+                </testResources>
+            </build>
+        </profile>
+    </profiles>
+
+    <!-- Note: The following <distributionManagement> element is SAT specific, and therefore SHOULD BE OVERWRITTEN in extending poms.
+The reason why it is left in this pom and is not moved to the sat-specific base-project, is that the
+continous integration (in our case: continuum) needs an <distributionManagement> element within the pom
+to be able to deploy and site-deploy during daily/nightly builds -->
+
+      <distributionManagement>
+<!--      <repository>
+        <id>sat-maven-repository</id>
+        <name>SAT Maven Repository</name>
+        <url>${repository.url.private}</url>
+      </repository>
+      <snapshotRepository>
+        <id>sat-maven-repository</id>
+        <name>SAT Maven Repository</name>
+        <url>${repository.url.private}</url>
+      </snapshotRepository>
+      <site>
+        <id>sat-website</id>
+        <url>${website.url.scp}/easyrec/</url>
+      </site>-->
+    </distributionManagement>
+
+
+    <issueManagement>
+        <system>Mantis</system>
+        <!-- TODO: add project to mantis and uncomment following line, replace ID with project id in mantis -->
+        <!-- url>${issue.management.url.https}=ID</url-->
+    </issueManagement>
+
+
+    <!--  <ciManagement>
+      <system>continuum</system>
+      <url>${continous.integration.url.http}</url>
+      <notifiers>
+        &lt;!&ndash; TODO: add project members that should be notified of nightly builds &ndash;&gt;
+
+        &lt;!&ndash; people who always want to be notified &ndash;&gt;
+        <notifier>
+          <type>mail</type>
+          <configuration>
+            <address>stephan.zavrel@researchstudio.at</address>
+          </configuration>
+          <sendOnSuccess>false</sendOnSuccess>
+        </notifier>
+      </notifiers>
+    </ciManagement>-->
+
+    <!--scm>
+        <connection>scm:svn:http://svn.researchstudio.at/svn/sat/easyrec/tags/easyrec-0.97</connection>
+        <developerConnection>scm:svn:http://svn.researchstudio.at/svn/sat/easyrec/tags/easyrec-0.97</developerConnection>
+        <url>http://svn.researchstudio.at/satsvn/wsvn/SAT/easyrec/tags/easyrec-0.97</url>
+    </scm-->
+
+    <modules>
+        <module>easyrec-testutils</module>
+        <module>easyrec-utils</module>
+        <module>easyrec-core</module>
+        <module>easyrec-domain</module>
+        <module>easyrec-plugin-api</module>
+        <module>easyrec-plugin-container</module>
+        <module>easyrec-plugins</module>
+        <module>easyrec-web</module>
+<!--        <module>easyrec-mahout</module>-->
+    </modules>
+
+    <dependencies>
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+            <version>1.1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.14</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>${spring.dependency.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>r09</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.code.findbugs</groupId>
+            <artifactId>jsr305</artifactId>
+            <version>1.3.9</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+            <version>${spring.dependency.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${spring.dependency.version}</version>
+        </dependency>
+        <!-- TEST SCOPE -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.dependency.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.jmock</groupId>
+            <artifactId>jmock-junit4</artifactId>
+            <version>${jmock.dependency.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- suppressing duplicate dependency error because in easyrec-testutils.pom unitils is declared with compile scope -->
+        <!--suppress MavenDuplicateDependenciesInspection -->
+        <dependency>
+            <groupId>org.unitils</groupId>
+            <artifactId>unitils-core</artifactId>
+            <version>3.2</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.unitils</groupId>
+            <artifactId>unitils-dbunit</artifactId>
+            <version>3.2</version>
+            <scope>test</scope>
+            <exclusions>
+                <!--<exclusion>
+                    <groupId>commons-dbcp</groupId>
+                    <artifactId>commons-dbcp</artifactId>
+                </exclusion>-->
+                <exclusion>
+                    <groupId>org.springframework</groupId>
+                    <artifactId>spring-jdbc</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.unitils</groupId>
+            <artifactId>unitils-spring</artifactId>
+            <version>3.2</version>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework</groupId>
+                    <artifactId>spring-core</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.springframework</groupId>
+                    <artifactId>spring-context</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.springframework</groupId>
+                    <artifactId>spring-beans</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.springframework</groupId>
+                    <artifactId>spring-test</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.springframework</groupId>
+                    <artifactId>spring-tx</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!--dependency>
+            <groupId>org.easyrec</groupId>
+            <artifactId>easyrec-testutils</artifactId>
+            <version>0.96-SNAPSHOT</version>
+            <scope>test</scope>
+        </dependency-->
+    </dependencies>
+
+</project>

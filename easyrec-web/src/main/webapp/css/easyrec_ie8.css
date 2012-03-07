@@ -1,0 +1,15 @@
+#signInMenu {
+    font-size: 93%;
+    line-height: normal;
+    text-align: right;
+    color: #FFFFFF;
+    padding-right: 17px;
+    padding-top: 8px;
+}
+
+#menu {
+    font-size: 17px;
+    text-align: right;
+    float: right;
+    padding-top: 19px;
+}

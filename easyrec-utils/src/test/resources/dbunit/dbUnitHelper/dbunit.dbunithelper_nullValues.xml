@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- # $Author: sat-rsa $ -->
+<!-- $Date: 2011-08-12 18:40:54 +0200 (Fr, 12 Aug 2011) $ -->
+<!-- $Revision: 119 $ -->
+<dataset>
+    <testtable id="4" name="xbla"/>
+    <testtable id="5" name="xblabla"/>
+    <testtable id="6" name="[null]"/>
+</dataset>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- $Author: pmarschik $ -->
+<!-- $Revision: 18119 $ -->
+<!-- $Date: 2011-04-12 17:48:48 +0200 (Di, 12 Apr 2011) $ -->
+
+<dataset>
+    <itemtype tenantId="0" id="1" name="ALBUM" visible="true" profileSchema="[null]" profileMatcher="[null]"/>
+    <itemtype tenantId="0" id="2" name="ARTIST" visible="true" profileSchema="[null]" profileMatcher="[null]"/>
+    <itemtype tenantId="0" id="3" name="ASSET" visible="true" profileSchema="[null]" profileMatcher="[null]"/>
+    <itemtype tenantId="0" id="4" name="CLUSTER" visible="true" profileSchema="[null]" profileMatcher="[null]"/>
+    <itemtype tenantId="0" id="5" name="GENRE_CLUSTER" visible="true" profileSchema="[null]" profileMatcher="[null]"/>
+    <itemtype tenantId="0" id="6" name="PLAYLIST" visible="true" profileSchema="[null]" profileMatcher="[null]"/>
+    <itemtype tenantId="0" id="7" name="PROTOTYPE_TRACK" visible="true" profileSchema="[null]" profileMatcher="[null]"/>
+    <itemtype tenantId="0" id="8" name="SOUND_CLUSTER" visible="true" profileSchema="[null]" profileMatcher="[null]"/>
+    <itemtype tenantId="0" id="9" name="TRACK" visible="true" profileSchema="[null]" profileMatcher="[null]"/>
+    <itemtype tenantId="0" id="10" name="INVISIBLE" visible="false" profileSchema="[null]" profileMatcher="[null]"/>
+</dataset>

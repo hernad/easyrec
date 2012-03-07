@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN"
+        "http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd">
+<taglib>
+    <tlibversion>1.0</tlibversion>
+    <jspversion>1.1</jspversion>
+    <shortname>mt</shortname>
+    <info>Tag Library</info>
+
+    <tag>
+        <name>stringabbreviator</name>
+        <tagclass>org.easyrec.taglib.StringAbbreviator</tagclass>
+        <bodycontent>empty</bodycontent>
+        <info>Creates a String</info>
+        <attribute>
+            <name>myString</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>maxLength</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>reversed</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+
+    <tag>
+        <name>wikiLink</name>
+        <tagclass>org.easyrec.taglib.WikiLink</tagclass>
+        <bodycontent>empty</bodycontent>
+        <info>Creates a link to the given source forge wiki page.</info>
+        <attribute>
+            <name>name</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>pageName</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+
+    <tag>
+        <name>generatorStats</name>
+        <tagclass>org.easyrec.taglib.GeneratorStatisticsTag</tagclass>
+        <bodycontent>empty</bodycontent>
+        <info>generates the view of the specified statistics object</info>
+        <attribute>
+            <name>stats</name>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+    <tag>
+        <name>generatorXmlStats</name>
+        <tagclass>org.easyrec.taglib.GeneratorStatisticsXmlTag</tagclass>
+        <bodycontent>empty</bodycontent>
+        <info>generates the view of the specified statistics object</info>
+        <attribute>
+            <name>xml</name>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+    <tag>
+        <name>absoluteUrl</name>
+        <tagclass>org.easyrec.taglib.AbsoluteUrl</tagclass>
+        <bodycontent>empty</bodycontent>
+        <info>completes relative urls to absolute urls</info>
+        <attribute>
+            <name>operatorId</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>tenantId</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>itemUrl</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+</taglib>

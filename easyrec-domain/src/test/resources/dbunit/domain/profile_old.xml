@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- $Author: pmarschik $ -->
+<!-- $Revision: 17664 $ -->
+<!-- $Date: 2011-02-11 11:37:45 +0100 (Fr, 11 Feb 2011) $ -->
+
+<dataset>
+    <table name="profile">
+        <column>tenantId</column>
+        <column>itemId</column>
+        <column>iteTypeId</column>
+        <column>profileData</column>
+        <row>
+            <value>1</value>
+            <value>1</value>
+            <value>1</value>
+            <value><![CDATA[
+                <movie xmlns:ns1="http://sat.researchstudio.at/movieProfile">
+                    <ns1:movieId>1</ns1:movieId>
+                    <ns1:title>Toy Story (1995)</ns1:title>
+                    <ns1:relDate>1995-01-01</ns1:relDate>
+                    <ns1:IMDBUrl>http://us.imdb.com/M/title-exact?Toy%20Story%20(1995)
+                    </ns1:IMDBUrl>
+                    <ns1:genre>Animation</ns1:genre>
+                    <ns1:genre>Childrens</ns1:genre>
+                    <ns1:genre>Comedy</ns1:genre>
+                </movie>
+                ]]></value>
+        </row>
+        <row>
+            <value>1</value>
+            <value>2</value>
+            <value>1</value>
+            <value><![CDATA[
+                <movie xmlns:ns1="http://sat.researchstudio.at/movieProfile">
+                    <ns1:movieId>2</ns1:movieId>
+                    <ns1:title>GoldenEye (1995)</ns1:title>
+                    <ns1:relDate>1995-01-01</ns1:relDate>
+                    <ns1:IMDBUrl>http://us.imdb.com/M/title-exact?GoldenEye%20(1995)
+                    </ns1:IMDBUrl>
+                    <ns1:genre>Action</ns1:genre>
+                    <ns1:genre>Adventure</ns1:genre>
+                    <ns1:genre>Thriller</ns1:genre>
+                </movie>
+                ]]></value>
+        </row>
+    </table>
+    <table name="itemtype">
+        <column>tenantId</column>
+        <column>name</column>
+        <column>id</column>
+        <column>profileSchema</column>
+        <column>profileMatcher</column>
+        <row>
+            <value>1</value>
+            <value>MOVIE</value>
+            <value>1</value>
+            <value><![CDATA[
+                <?xml version="1.0" encoding="UTF-8"?>
+
+                <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                            targetNamespace="http://sat.researchstudio.at/movieProfile"
+                            xmlns:tns="http://sat.researchstudio.at/movieProfile"
+                            elementFormDefault="qualified">
+
+                    <complexType name="movie">
+                        <sequence>
+                            <element name="movieId" type="string"></element>
+                            <element name="title" type="string"></element>
+                            <element name="relDate" type="date"></element>
+                            <element name="IMDBUrl" type="string"></element>
+                            <element name="genre" type="string" maxOccurs="unbounded" minOccurs="1"></element>
+                        </sequence>
+                    </complexType>
+
+                </xsd:schema>
+                ]]></value>
+
+            <value><![CDATA[
+                <?xml version="1.0" encoding="UTF-8"?>
+
+                <!--
+                    Document   : movieMatcher.xsl
+                    Created on : 24. Februar 2009, 14:24
+                    Author     : szavrel
+                    Description:
+                        Purpose of transformation follows.
+                -->
+
+                <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                                xmlns:movie="http://sat.researchstudio.at/movieProfile"
+                                version="1.0">
+                    <xsl:output method="xml"/>
+                    <!--<xsl:variable name="refProfile" select="movie:movies/movie:movie[1]">
+                    </xsl:variable>-->
+                    <xsl:param name="refProfile"/>
+
+                    <xsl:template match="/movie:movies/movie:movie">
+                        <xsl:call-template name="compare_genrePrefs">
+                            <xsl:with-param name="prefs1" select="$refProfile/movie:genre"/>
+                            <xsl:with-param name="prefs2" select="movie:genre"/>
+                        </xsl:call-template>
+                    </xsl:template>
+
+                    <xsl:template name="compare_genrePrefs">
+                        <xsl:param name="prefs1"/>
+                        <xsl:param name="prefs2"/>
+
+                        <ret>
+                            <xsl:value-of
+                                    select="count($prefs1[exists(index-of($prefs2,.))]) div max((count($prefs1),count($prefs2)))"/>
+                        </ret>
+                    </xsl:template>
+
+                </xsl:stylesheet>
+                ]]></value>
+        </row>
+    </table>
+</dataset>
+

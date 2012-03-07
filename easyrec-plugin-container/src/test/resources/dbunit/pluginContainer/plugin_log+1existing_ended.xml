@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  ~ Copyright 2011 Research Studios Austria Forschungsgesellschaft mBH
+  ~
+  ~ This file is part of easyrec.
+  ~
+  ~ easyrec is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ easyrec is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with easyrec.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<!-- $Author$ -->
+<!-- $Revision$ -->
+<!-- $Date$ -->
+
+<dataset>
+    <!-- this is a finished entry -->
+    <plugin_log id="1" tenantId="1" pluginId="http://www.easyrec.org/plugins/waiting" pluginVersion="0.95"
+                startDate="2011-02-23 15:00:00" endDate="2011-02-23 15:10:00" assocTypeId="1"
+                configuration="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?>&#10;&lt;org.easyrec.plugin.waiting.WaitingGeneratorConfiguration>&#10;&#32;&#32;&#32;&#32;&lt;configurationName>Default Configuration&lt;/configurationName>&#10;&#32;&#32;&#32;&#32;&lt;associationType>IS_RELATED&lt;/associationType>&#10;&#32;&#32;&#32;&#32;&lt;numberOfPhases>3&lt;/numberOfPhases>&#10;&#32;&#32;&#32;&#32;&lt;timeout>1000&lt;/timeout>&#10;&lt;/org.easyrec.plugin.waiting.WaitingGeneratorConfiguration>&#10;"
+                statistics="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?>&lt;org.easyrec.plugin.waiting.WaitingGeneratorStats>&lt;numberOfActionsConsidered>0&lt;/numberOfActionsConsidered>&lt;numberOfRulesCreated>0&lt;/numberOfRulesCreated>&lt;/org.easyrec.plugin.waiting.WaitingGeneratorStats>"/>
+
+    <!-- this is an open entry -->
+    <plugin_log tenantId="1" pluginId="http://www.easyrec.org/plugins/waiting" pluginVersion="0.95"
+                startDate="2011-02-23 15:20:00" endDate="2011-02-23 15:30:00" assocTypeId="1"
+                configuration="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?>&#10;&lt;org.easyrec.plugin.waiting.WaitingGeneratorConfiguration>&#10;&#32;&#32;&#32;&#32;&lt;configurationName>Default Configuration&lt;/configurationName>&#10;&#32;&#32;&#32;&#32;&lt;associationType>IS_RELATED&lt;/associationType>&#10;&#32;&#32;&#32;&#32;&lt;numberOfPhases>3&lt;/numberOfPhases>&#10;&#32;&#32;&#32;&#32;&lt;timeout>1000&lt;/timeout>&#10;&lt;/org.easyrec.plugin.waiting.WaitingGeneratorConfiguration>&#10;"
+                statistics="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?>&#10;&lt;org.easyrec.plugin.waiting.WaitingGeneratorStats>&#10;&#32;&#32;&#32;&#32;&lt;numberOfActionsConsidered>0&lt;/numberOfActionsConsidered>&#10;&#32;&#32;&#32;&#32;&lt;numberOfRulesCreated>0&lt;/numberOfRulesCreated>&#10;&lt;/org.easyrec.plugin.waiting.WaitingGeneratorStats>&#10;"/>
+</dataset>
+

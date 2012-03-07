@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  ~ Copyright 2011 Research Studios Austria Forschungsgesellschaft mBH
+  ~
+  ~ This file is part of easyrec.
+  ~
+  ~ easyrec is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ easyrec is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with easyrec.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<!-- $Author$ -->
+<!-- $Revision$ -->
+<!-- $Date$ -->
+
+<dataset>
+    <plugin_configuration id="1" tenantId="1" assocTypeId="1" pluginId="http://www.easyrec.org/plugins/waiting"
+                          pluginVersion="0.95" name="Configuration 1" active="0"
+                          configuration="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?>&lt;org.easyrec.plugin.waiting.WaitingGeneratorConfiguration>&lt;configurationName>Configuration 1&lt;/configurationName>&lt;associationType>1-1-1&lt;/associationType>&lt;numberOfPhases>3&lt;/numberOfPhases>&lt;timeout>1000&lt;/timeout>&lt;/org.easyrec.plugin.waiting.WaitingGeneratorConfiguration>"/>
+    <plugin_configuration id="2" tenantId="1" assocTypeId="1" pluginId="http://www.easyrec.org/plugins/waiting"
+                          pluginVersion="0.95" name="Configuration 2" active="1"
+                          configuration="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?>&lt;org.easyrec.plugin.waiting.WaitingGeneratorConfiguration>&lt;configurationName>Configuration 2&lt;/configurationName>&lt;associationType>1-1-2&lt;/associationType>&lt;numberOfPhases>3&lt;/numberOfPhases>&lt;timeout>2000&lt;/timeout>&lt;/org.easyrec.plugin.waiting.WaitingGeneratorConfiguration>"/>
+    <plugin_configuration id="3" tenantId="1" assocTypeId="2" pluginId="http://www.easyrec.org/plugins/waiting"
+                          pluginVersion="0.95" name="Configuration 1" active="1"
+                          configuration="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?>&lt;org.easyrec.plugin.waiting.WaitingGeneratorConfiguration>&lt;configurationName>Configuration 1&lt;/configurationName>&lt;associationType>1-2-1&lt;/associationType>&lt;numberOfPhases>3&lt;/numberOfPhases>&lt;timeout>1000&lt;/timeout>&lt;/org.easyrec.plugin.waiting.WaitingGeneratorConfiguration>"/>
+    <plugin_configuration id="4" tenantId="2" assocTypeId="1" pluginId="http://www.easyrec.org/plugins/waiting"
+                          pluginVersion="0.95" name="Configuration 1" active="1"
+                          configuration="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?>&lt;org.easyrec.plugin.waiting.WaitingGeneratorConfiguration>&lt;configurationName>Configuration 1&lt;/configurationName>&lt;associationType>2-1-1&lt;/associationType>&lt;numberOfPhases>3&lt;/numberOfPhases>&lt;timeout>1000&lt;/timeout>&lt;/org.easyrec.plugin.waiting.WaitingGeneratorConfiguration>"/>
+</dataset>
+

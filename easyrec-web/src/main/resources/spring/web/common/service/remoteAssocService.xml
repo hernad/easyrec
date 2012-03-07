@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- $Author: phlavac $ -->
+<!-- $Revision: 15731 $ -->
+<!-- $Date: 2010-03-02 19:37:31 +0100 (Di, 02 Mär 2010) $ -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+                http://www.springframework.org/schema/beans
+                http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+    <bean id="remoteAssocService"
+          class="org.easyrec.service.web.impl.RemoteAssocServiceImpl">
+        <property name="typeMappingService" ref="typeMappingService"/>
+        <property name="itemAssocService" ref="itemAssocService"/>
+        <property name="IDMappingDAO" ref="idMappingDAO"/>
+    </bean>
+</beans>
+     

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- $Author: pmarschik $ -->
+<!-- $Revision: 17666 $ -->
+<!-- $Date: 2011-02-11 11:45:46 +0100 (Fr, 11 Feb 2011) $ -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <!--import resource="classpath:spring/Cache.xml" /-->
+    <!-- core -->
+    <import resource="classpath:spring/easyrecDataSource.xml"/>
+    <import resource="classpath:spring/core/dao/ItemAssocDAO.xml"/>
+    <import resource="classpath:spring/core/dao/AuthenticationDAO.xml"/>
+    <import resource="classpath:spring/core/TenantConfig_DEFAULT.xml"/>
+    <import resource="classpath:spring/core/dao/TenantDAO.xml"/>
+    <import resource="classpath:spring/core/service/TenantService.xml"/>
+
+    <!-- core types -->
+    <import resource="classpath:spring/core/dao/types/ActionTypeDAO.xml"/>
+    <import resource="classpath:spring/core/dao/types/AggregateTypeDAO.xml"/>
+    <import resource="classpath:spring/core/dao/types/AssocTypeDAO.xml"/>
+    <import resource="classpath:spring/core/dao/types/ItemTypeDAO.xml"/>
+    <import resource="classpath:spring/core/dao/types/SourceTypeDAO.xml"/>
+    <import resource="classpath:spring/core/dao/types/ViewTypeDAO.xml"/>
+
+    <!-- domain -->
+    <import resource="classpath:spring/domain/service/TypeMappingService.xml"/>
+
+    <!-- content -->
+    <import resource="classpath:spring/plugins/arm/TupleCounterMem.xml"/>
+    <import resource="classpath:spring/plugins/arm/dao/RuleMiningActionDAO.xml"/>
+    <import resource="classpath:spring/plugins/arm/Analysis_DEFAULT.xml"/>
+    <import resource="classpath:spring/plugins/arm/AssocRuleMiningService.xml"/>
+
+
+</beans>

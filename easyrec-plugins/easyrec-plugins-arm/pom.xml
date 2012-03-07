@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>easyrec-plugins</artifactId>
+        <groupId>org.easyrec</groupId>
+        <version>0.97</version>
+    </parent>
+    <groupId>org.easyrec</groupId>
+    <artifactId>easyrec-plugins-arm</artifactId>
+    <version>0.97</version>
+    <name>easyrec - Plugins - ARM</name>
+    <description>The assoc rule miner plugin for shopping basket analysis.</description>
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>3.8.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.easyrec</groupId>
+            <artifactId>easyrec-plugin-api</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <!--       <dependency>
+            <groupId>org.easyrec</groupId>
+            <artifactId>easyrec-utils</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.easyrec</groupId>
+            <artifactId>easyrec-core</artifactId>
+            <version>${project.version}</version>
+        </dependency>-->
+        <dependency>
+            <groupId>org.easyrec</groupId>
+            <artifactId>easyrec-domain</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <!-- TEST SCOPE -->
+        <dependency>
+            <groupId>org.easyrec</groupId>
+            <artifactId>easyrec-testutils</artifactId>
+            <version>${project.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- dependency>
+            <groupId>org.easyrec</groupId>
+            <artifactId>easyrec-web</artifactId>
+            <version>${project.version}</version>
+            <scope>test</scope>
+        </dependency -->
+    </dependencies>
+</project>

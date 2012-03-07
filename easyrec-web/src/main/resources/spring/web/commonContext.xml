@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- $Author$ -->
+<!-- $Revision$ -->
+<!-- $Date$ -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+                http://www.springframework.org/schema/beans
+                http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <!-- This file contains all spring bean definitions that all easyrec features need in common -->
+
+    <import resource="classpath:spring/utils/aop/DAO.xml"/>
+    <import resource="classpath:spring/utils/aop/Cache.xml"/>
+    <import resource="classpath:spring/utils/aop/MapThrowableToException.xml"/>
+    <import resource="classpath:spring/core/PropertyPlaceholderConfigurerEasyrec.xml"/>
+    <import resource="classpath:spring/pluginContainer/LogEntryDAO.xml"/>
+    <import resource="classpath:spring/pluginContainer/NamedConfigurationDAO.xml"/>
+    <import resource="classpath:spring/web/common/dao/itemDAO.xml"/>
+    <import resource="classpath:spring/web/common/dao/assocDAO.xml"/>
+    <import resource="classpath:spring/web/common/dao/operatorDAO.xml"/>
+    <import resource="classpath:spring/web/common/dao/backtrackingDAO.xml"/>
+    <import resource="classpath:spring/web/common/dao/remoteTenantDAO.xml"/>
+    <import resource="classpath:spring/web/common/dao/statisticsDAO.xml"/>
+    <import resource="classpath:spring/web/common/service/itemService.xml"/>
+    <import resource="classpath:spring/web/common/service/viewInitializationService.xml"/>
+    <import resource="classpath:spring/web/common/service/remoteTenantService.xml"/>
+    <import resource="classpath:spring/web/common/service/remoteAssocService.xml"/>
+    <import resource="classpath:spring/web/common/service/shopRecommenderService.xml"/>
+    <import resource="classpath:spring/web/common/service/namedConfigurationService.xml"/>
+    <import resource="classpath:spring/web/common/rankingsCache.xml"/>
+    <import resource="classpath:spring/web/common/easyrecSettings.xml"/>
+    <import resource="classpath:spring/web/common/easyrec-core.xml"/>
+    <import resource="classpath:spring/web/common/easyrec-domain.xml"/>
+    <import resource="classpath:spring/web/common/idMapping.xml"/>
+    <import resource="classpath:spring/web/common/easyrec-plugins.xml"/>
+    <import resource="classpath:spring/web/common/service/displayService.xml"/>
+
+</beans>

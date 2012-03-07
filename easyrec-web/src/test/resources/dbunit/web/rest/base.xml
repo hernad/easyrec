@@ -1,0 +1,448 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+  ~ Copyright 2011 Research Studios Austria Forschungsgesellschaft mBH
+  ~
+  ~ This file is part of easyrec.
+  ~
+  ~ easyrec is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ easyrec is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with easyrec.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+<dataset>
+
+    <!-- password = rest -->
+    <operator operatorid="REST-test" password="*AE1B02B5EA66FF946B79E87B5D80CBEC30C88B3C" firstname="REST"
+              lastname="test" email="operator@testtenant.com" phone="" company="Research Studios Austria GesmbH"
+              address="" apikey="deadbeef00feedface00cafe00cafe00" ip="127.0.0.1" active="1"
+              creationdate="2011-06-22" accesslevel="0" lastlogin="2011-06-22" logincount="1"
+              token="cafe000cafe000cafe000cafe000cafe"/>
+
+    <tenant id="1" stringId="REST-Test" description="REST API test tenant" ratingRangeMin="0" ratingRangeMax="10"
+            ratingRangeNeutral="5.5" active="1" operatorid="REST-test" url="http://testtenant.com/test/"
+            creationdate="2011-06-22 12:00:01" tenantStatistic=""
+            tenantConfig="backtracking=true&#10;AUTO_ARCHIVER.enabled=false&#10;AUTO_RULEMINER.enabled=false&#10;AUTO_ARCHIVER.timeRange=1825&#10;AUTO_RULEMINER.executionTime=02\:00"/>
+
+    <itemtype id="1" tenantId="1" name="ITEM" profileSchema="[null]" profileMatcher="[null]" visible="1"/>
+    <itemtype id="2" tenantId="1" name="CLUSTER" profileSchema="[null]" profileMatcher="[null]" visible="0"/>
+    <itemtype id="3" tenantId="1" name="OTHER_ITEM" profileSchema="[null]" profileMatcher="[null]" visible="1"/>
+    <itemtype id="4" tenantId="1" name="INVISIBLE_ITEM" profileSchema="[null]" profileMatcher="[null]" visible="0"/>
+
+    <actiontype id="1" tenantId="1" name="VIEW"/>
+    <actiontype id="2" tenantId="1" name="RATE"/>
+    <actiontype id="3" tenantId="1" name="BUY"/>
+
+    <aggregatetype id="1" tenantId="1" name="AVERAGE"/>
+    <aggregatetype id="2" tenantId="1" name="FIRST"/>
+    <aggregatetype id="3" tenantId="1" name="MAXIMUM"/>
+    <aggregatetype id="4" tenantId="1" name="MOST_FREQUENT"/>
+    <aggregatetype id="5" tenantId="1" name="NEWEST"/>
+    <aggregatetype id="6" tenantId="1" name="OLDEST"/>
+
+    <assoctype id="1" tenantId="1" name="VIEWED_TOGETHER" visible="1"/>
+    <assoctype id="2" tenantId="1" name="GOOD_RATED_TOGETHER" visible="1"/>
+    <assoctype id="3" tenantId="1" name="BOUGHT_TOGETHER" visible="1"/>
+    <assoctype id="4" tenantId="1" name="IS_RELATED" visible="1"/>
+    <assoctype id="5" tenantId="1" name="IS_PARENT_OF" visible="0"/>
+    <assoctype id="6" tenantId="1" name="BELONGS_TO" visible="0"/>
+
+    <viewtype id="1" tenantId="1" name="ADMIN"/>
+    <viewtype id="2" tenantId="1" name="COMMUNITY"/>
+    <viewtype id="3" tenantId="1" name="SYSTEM"/>
+
+    <sourcetype id="1" tenantId="1" name="MANUALLY_CREATED"/>
+    <sourcetype id="2" tenantId="1" name="PLUGIN_A"/>
+
+    <!--
+    CLUSTERS (1)
+    +- CLUSTER_A (2)
+    | +- CLUSTER_A_1 (3)
+    | `- CLUSTER_A_2 (4)
+    +- CLUSTER_B (5)
+    `- CLUSTER_C_INVISIBLE (6)
+    -->
+    <profile profileId="1" tenantId="1" itemId="1" itemTypeId="2" changeDate="2011-01-01 00:00:01" active="1"
+             profileData="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?>&lt;clusterVO>&lt;description>The root object of every cluster hierarchy. Cannot be removed!&lt;/description>&lt;name>CLUSTERS&lt;/name>&lt;/clusterVO>"/>
+    <profile profileId="2" tenantId="1" itemId="2" itemTypeId="2" changeDate="2011-01-01 00:00:01" active="1"
+             profileData="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?>&lt;clusterVO>&lt;description>&lt;/description>&lt;name>CLUSTER_A&lt;/name>&lt;/clusterVO>"/>
+    <profile profileId="3" tenantId="1" itemId="3" itemTypeId="2" changeDate="2011-01-01 00:00:01" active="1"
+             profileData="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?>&lt;clusterVO>&lt;description>&lt;/description>&lt;name>CLUSTER_A_1&lt;/name>&lt;/clusterVO>"/>
+    <profile profileId="4" tenantId="1" itemId="4" itemTypeId="2" changeDate="2011-01-01 00:00:01" active="1"
+             profileData="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?>&lt;clusterVO>&lt;description>&lt;/description>&lt;name>CLUSTER_A_2&lt;/name>&lt;/clusterVO>"/>
+    <profile profileId="5" tenantId="1" itemId="5" itemTypeId="2" changeDate="2011-01-01 00:00:01" active="1"
+             profileData="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?>&lt;clusterVO>&lt;description>&lt;/description>&lt;name>CLUSTER_B&lt;/name>&lt;/clusterVO>"/>
+    <profile profileId="6" tenantId="1" itemId="6" itemTypeId="2" changeDate="2011-01-01 00:00:01" active="0"
+             profileData="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?>&lt;clusterVO>&lt;description>&lt;/description>&lt;name>CLUSTER_C_INVISIBLE&lt;/name>&lt;/clusterVO>"/>
+
+    <itemassoc tenantId="1" itemFromId="1" itemFromTypeId="2" assocTypeId="5" assocValue="1" itemToId="2"
+               itemToTypeId="2" sourceTypeId="1" sourceInfo="" viewTypeId="1" active="1"
+               changeDate="2011-06-22 12:01:00"/>
+    <itemassoc tenantId="1" itemFromId="1" itemFromTypeId="2" assocTypeId="5" assocValue="1" itemToId="5"
+               itemToTypeId="2" sourceTypeId="1" sourceInfo="" viewTypeId="1" active="1"
+               changeDate="2011-06-22 12:02:00"/>
+    <itemassoc tenantId="1" itemFromId="1" itemFromTypeId="2" assocTypeId="5" assocValue="1" itemToId="6"
+               itemToTypeId="2" sourceTypeId="1" sourceInfo="" viewTypeId="1" active="1"
+               changeDate="2011-06-22 12:03:00"/>
+    <itemassoc tenantId="1" itemFromId="2" itemFromTypeId="2" assocTypeId="5" assocValue="1" itemToId="3"
+               itemToTypeId="2" sourceTypeId="1" sourceInfo="" viewTypeId="1" active="1"
+               changeDate="2011-06-22 12:04:00"/>
+    <itemassoc tenantId="1" itemFromId="2" itemFromTypeId="2" assocTypeId="5" assocValue="1" itemToId="4"
+               itemToTypeId="2" sourceTypeId="1" sourceInfo="" viewTypeId="1" active="1"
+               changeDate="2011-06-22 12:05:00"/>
+
+    <idmapping intId="1" stringId="CLUSTERS"/>
+    <idmapping intId="2" stringId="CLUSTER_A"/>
+    <idmapping intId="3" stringId="CLUSTER_A_1"/>
+    <idmapping intId="4" stringId="CLUSTER_A_2"/>
+    <idmapping intId="5" stringId="CLUSTER_B"/>
+    <idmapping intId="6" stringId="CLUSTER_C_INVISIBLE"/>
+    <idmapping intId="10" stringId="ITEM_A"/>
+    <idmapping intId="11" stringId="ITEM_B"/>
+    <idmapping intId="12" stringId="ITEM_C_INACTIVE"/>
+    <idmapping intId="20" stringId="OTHER_A"/>
+    <idmapping intId="21" stringId="OTHER_B"/>
+    <idmapping intId="22" stringId="OTHER_C_INACTIVE"/>
+    <idmapping intId="23" stringId="OTHER_D"/>
+    <idmapping intId="30" stringId="INVISIBLE_A"/>
+    <idmapping intId="31" stringId="INVISIBLE_B"/>
+    <idmapping intId="32" stringId="INVISIBLE_C_INACTIVE"/>
+    <idmapping intId="40" stringId="USER_1"/>
+    <idmapping intId="41" stringId="USER_2"/>
+    <idmapping intId="42" stringId="USER_3"/>
+    <idmapping intId="50" stringId="TEST_A"/>
+    <idmapping intId="51" stringId="TEST_OTHER_A"/>
+    <idmapping intId="60" stringId="TEST_SESSION"/>
+
+
+    <item tenantId="1" itemid="ITEM_A" itemtype="ITEM" description="Item A"
+          url="http://testtenant.com/test/item/a" imageurl="http://testtenant.com/test/item/a/img.png"
+          active="1" creationdate="2011-06-22 12:01:00"/>
+    <item tenantId="1" itemid="ITEM_B" itemtype="ITEM" description="Item B"
+          url="http://testtenant.com/test/item/b" imageurl="http://testtenant.com/test/item/b/img.png"
+          active="1" creationdate="2011-06-22 12:02:00"/>
+    <item tenantId="1" itemid="ITEM_C" itemtype="ITEM" description="Item C"
+          url="http://testtenant.com/test/item/c" imageurl="http://testtenant.com/test/item/c/img.png"
+          active="0" creationdate="2011-06-22 12:03:00"/>
+    <item tenantId="1" itemid="OTHER_A" itemtype="OTHER_ITEM" description="Other A"
+          url="http://testtenant.com/test/other/a" imageurl="http://testtenant.com/test/other/a/img.png"
+          active="1" creationdate="2011-06-22 12:04:00"/>
+    <item tenantId="1" itemid="OTHER_B" itemtype="OTHER_ITEM" description="Other B"
+          url="http://testtenant.com/test/other/b" imageurl="http://testtenant.com/test/other/b/img.png"
+          active="1" creationdate="2011-06-22 12:05:00"/>
+    <item tenantId="1" itemid="OTHER_C" itemtype="OTHER_ITEM" description="Other C"
+          url="http://testtenant.com/test/other/c" imageurl="http://testtenant.com/test/other/c/img.png"
+          active="0" creationdate="2011-06-22 12:06:00"/>
+    <item tenantId="1" itemid="OTHER_D" itemtype="OTHER_ITEM" description="Other D"
+          url="http://testtenant.com/test/other/d" imageurl="http://testtenant.com/test/other/d/img.png"
+          active="1" creationdate="2011-06-22 12:03:30"/>
+    <item tenantId="1" itemid="INVISIBLE_A" itemtype="INVISIBLE_ITEM" description="Invisible A"
+          url="http://testtenant.com/test/invisible/a" imageurl="http://testtenant.com/test/invisible/a/img.png"
+          active="1" creationdate="2011-06-22 12:07:00"/>
+    <item tenantId="1" itemid="INVISIBLE_B" itemtype="INVISIBLE_ITEM" description="Invisible B"
+          url="http://testtenant.com/test/invisible/b" imageurl="http://testtenant.com/test/invisible/b/img.png"
+          active="1" creationdate="2011-06-22 12:08:00"/>
+    <item tenantId="1" itemid="INVISIBLE_C" itemtype="INVISIBLE_ITEM" description="Invisible C"
+          url="http://testtenant.com/test/invisible/c" imageurl="http://testtenant.com/test/invisible/c/img.png"
+          active="0" creationdate="2011-06-22 12:09:00"/>
+
+    <!-- view actions -->
+    <!-- user 1 -->
+    <action tenantId="1" userId="40" sessionId="session12345" ip="127.0.0.1" itemId="10" itemTypeId="1"
+            actionTypeId="1" ratingValue="[null]" searchSucceeded="[null]" numberOfFoundItems="[null]"
+            description="ITEM_A" actionTime="2011-06-22 13:00:01"/>
+    <action tenantId="1" userId="40" sessionId="session12345" ip="127.0.0.1" itemId="11" itemTypeId="1"
+            actionTypeId="1" ratingValue="[null]" searchSucceeded="[null]" numberOfFoundItems="[null]"
+            description="ITEM_B" actionTime="2011-06-22 13:00:01"/>
+    <action tenantId="1" userId="40" sessionId="session12345" ip="127.0.0.1" itemId="12" itemTypeId="1"
+            actionTypeId="1" ratingValue="[null]" searchSucceeded="[null]" numberOfFoundItems="[null]"
+            description="ITEM_C" actionTime="2011-06-22 13:00:01"/>
+    <action tenantId="1" userId="40" sessionId="session12345" ip="127.0.0.1" itemId="20" itemTypeId="3"
+            actionTypeId="1" ratingValue="[null]" searchSucceeded="[null]" numberOfFoundItems="[null]"
+            description="OTHER_A" actionTime="2011-06-22 13:00:01"/>
+    <action tenantId="1" userId="40" sessionId="session12345" ip="127.0.0.1" itemId="30" itemTypeId="4"
+            actionTypeId="1" ratingValue="[null]" searchSucceeded="[null]" numberOfFoundItems="[null]"
+            description="INVISIBLE_A" actionTime="2011-06-22 13:00:01"/>
+    <!-- user 2 -->
+    <action tenantId="1" userId="41" sessionId="session12345" ip="127.0.0.1" itemId="11" itemTypeId="1"
+            actionTypeId="1" ratingValue="[null]" searchSucceeded="[null]" numberOfFoundItems="[null]"
+            description="ITEM_B" actionTime="2011-06-22 13:00:01"/>
+    <action tenantId="1" userId="41" sessionId="session12345" ip="127.0.0.1" itemId="21" itemTypeId="3"
+            actionTypeId="1" ratingValue="[null]" searchSucceeded="[null]" numberOfFoundItems="[null]"
+            description="OTHER_B" actionTime="2011-06-22 13:00:01"/>
+    <action tenantId="1" userId="41" sessionId="session12345" ip="127.0.0.1" itemId="31" itemTypeId="4"
+            actionTypeId="1" ratingValue="[null]" searchSucceeded="[null]" numberOfFoundItems="[null]"
+            description="INVISIBLE_B" actionTime="2011-06-22 13:00:01"/>
+    <!-- user 3 -->
+    <action tenantId="1" userId="42" sessionId="session12345" ip="127.0.0.1" itemId="12" itemTypeId="1"
+            actionTypeId="1" ratingValue="[null]" searchSucceeded="[null]" numberOfFoundItems="[null]"
+            description="ITEM_C" actionTime="2011-06-22 13:00:01"/>
+    <action tenantId="1" userId="42" sessionId="session12345" ip="127.0.0.1" itemId="22" itemTypeId="3"
+            actionTypeId="1" ratingValue="[null]" searchSucceeded="[null]" numberOfFoundItems="[null]"
+            description="OTHER_C" actionTime="2011-06-22 13:00:01"/>
+    <action tenantId="1" userId="42" sessionId="session12345" ip="127.0.0.1" itemId="32" itemTypeId="4"
+            actionTypeId="1" ratingValue="[null]" searchSucceeded="[null]" numberOfFoundItems="[null]"
+            description="INVISIBLE_C" actionTime="2011-06-22 13:00:01"/>
+
+    <!-- rate actions -->
+    <!-- user 1 -->
+    <action tenantId="1" userId="40" sessionId="session12345" ip="127.0.0.1" itemId="10" itemTypeId="1"
+            actionTypeId="2" ratingValue="9.0" searchSucceeded="[null]" numberOfFoundItems="[null]"
+            description="ITEM_A" actionTime="2011-06-22 13:00:01"/>
+    <action tenantId="1" userId="40" sessionId="session12345" ip="127.0.0.1" itemId="11" itemTypeId="1"
+            actionTypeId="2" ratingValue="6.0" searchSucceeded="[null]" numberOfFoundItems="[null]"
+            description="ITEM_B" actionTime="2011-06-22 13:00:01"/>
+    <action tenantId="1" userId="40" sessionId="session12345" ip="127.0.0.1" itemId="12" itemTypeId="1"
+            actionTypeId="2" ratingValue="3.0" searchSucceeded="[null]" numberOfFoundItems="[null]"
+            description="ITEM_C" actionTime="2011-06-22 13:00:01"/>
+    <action tenantId="1" userId="40" sessionId="session12345" ip="127.0.0.1" itemId="20" itemTypeId="3"
+            actionTypeId="2" ratingValue="9.0" searchSucceeded="[null]" numberOfFoundItems="[null]"
+            description="OTHER_A" actionTime="2011-06-22 13:00:01"/>
+    <action tenantId="1" userId="40" sessionId="session12345" ip="127.0.0.1" itemId="30" itemTypeId="4"
+            actionTypeId="2" ratingValue="9.0" searchSucceeded="[null]" numberOfFoundItems="[null]"
+            description="INVISIBLE_A" actionTime="2011-06-22 13:00:01"/>
+    <!-- user 2 -->
+    <action tenantId="1" userId="41" sessionId="session12345" ip="127.0.0.1" itemId="11" itemTypeId="1"
+            actionTypeId="2" ratingValue="3.0" searchSucceeded="[null]" numberOfFoundItems="[null]"
+            description="ITEM_B" actionTime="2011-06-22 13:00:01"/>
+    <action tenantId="1" userId="41" sessionId="session12345" ip="127.0.0.1" itemId="21" itemTypeId="3"
+            actionTypeId="2" ratingValue="3.0" searchSucceeded="[null]" numberOfFoundItems="[null]"
+            description="OTHER_B" actionTime="2011-06-22 13:00:01"/>
+    <action tenantId="1" userId="41" sessionId="session12345" ip="127.0.0.1" itemId="31" itemTypeId="4"
+            actionTypeId="2" ratingValue="3.0" searchSucceeded="[null]" numberOfFoundItems="[null]"
+            description="INVISIBLE_B" actionTime="2011-06-22 13:00:01"/>
+    <!-- user 3 -->
+    <action tenantId="1" userId="42" sessionId="session12345" ip="127.0.0.1" itemId="12" itemTypeId="1"
+            actionTypeId="2" ratingValue="3.0" searchSucceeded="[null]" numberOfFoundItems="[null]"
+            description="ITEM_C" actionTime="2011-06-22 13:00:01"/>
+    <action tenantId="1" userId="42" sessionId="session12345" ip="127.0.0.1" itemId="22" itemTypeId="3"
+            actionTypeId="2" ratingValue="3.0" searchSucceeded="[null]" numberOfFoundItems="[null]"
+            description="OTHER_C" actionTime="2011-06-22 13:00:01"/>
+    <action tenantId="1" userId="42" sessionId="session12345" ip="127.0.0.1" itemId="32" itemTypeId="4"
+            actionTypeId="2" ratingValue="3.0" searchSucceeded="[null]" numberOfFoundItems="[null]"
+            description="INVISIBLE_C" actionTime="2011-06-22 13:00:01"/>
+
+    <!-- buy actions -->
+    <!-- user 1 -->
+    <action tenantId="1" userId="40" sessionId="session12345" ip="127.0.0.1" itemId="10" itemTypeId="1"
+            actionTypeId="3" ratingValue="[null]" searchSucceeded="[null]" numberOfFoundItems="[null]"
+            description="ITEM_A" actionTime="2011-06-22 13:00:01"/>
+    <action tenantId="1" userId="40" sessionId="session12345" ip="127.0.0.1" itemId="11" itemTypeId="1"
+            actionTypeId="3" ratingValue="[null]" searchSucceeded="[null]" numberOfFoundItems="[null]"
+            description="ITEM_B" actionTime="2011-06-22 13:00:01"/>
+    <action tenantId="1" userId="40" sessionId="session12345" ip="127.0.0.1" itemId="12" itemTypeId="1"
+            actionTypeId="3" ratingValue="[null]" searchSucceeded="[null]" numberOfFoundItems="[null]"
+            description="ITEM_C" actionTime="2011-06-22 13:00:01"/>
+    <action tenantId="1" userId="40" sessionId="session12345" ip="127.0.0.1" itemId="20" itemTypeId="3"
+            actionTypeId="3" ratingValue="[null]" searchSucceeded="[null]" numberOfFoundItems="[null]"
+            description="OTHER_A" actionTime="2011-06-22 13:00:01"/>
+    <action tenantId="1" userId="40" sessionId="session12345" ip="127.0.0.1" itemId="30" itemTypeId="4"
+            actionTypeId="3" ratingValue="[null]" searchSucceeded="[null]" numberOfFoundItems="[null]"
+            description="INVISIBLE_A" actionTime="2011-06-22 13:00:01"/>
+    <!-- user 2 -->
+    <action tenantId="1" userId="41" sessionId="session12345" ip="127.0.0.1" itemId="11" itemTypeId="1"
+            actionTypeId="3" ratingValue="[null]" searchSucceeded="[null]" numberOfFoundItems="[null]"
+            description="ITEM_B" actionTime="2011-06-22 13:00:01"/>
+    <action tenantId="1" userId="41" sessionId="session12345" ip="127.0.0.1" itemId="21" itemTypeId="3"
+            actionTypeId="3" ratingValue="[null]" searchSucceeded="[null]" numberOfFoundItems="[null]"
+            description="OTHER_B" actionTime="2011-06-22 13:00:01"/>
+    <action tenantId="1" userId="41" sessionId="session12345" ip="127.0.0.1" itemId="31" itemTypeId="4"
+            actionTypeId="3" ratingValue="[null]" searchSucceeded="[null]" numberOfFoundItems="[null]"
+            description="INVISIBLE_B" actionTime="2011-06-22 13:00:01"/>
+    <!-- user 3 -->
+    <action tenantId="1" userId="42" sessionId="session12345" ip="127.0.0.1" itemId="12" itemTypeId="1"
+            actionTypeId="3" ratingValue="[null]" searchSucceeded="[null]" numberOfFoundItems="[null]"
+            description="ITEM_C" actionTime="2011-06-22 13:00:01"/>
+    <action tenantId="1" userId="42" sessionId="session12345" ip="127.0.0.1" itemId="22" itemTypeId="3"
+            actionTypeId="3" ratingValue="[null]" searchSucceeded="[null]" numberOfFoundItems="[null]"
+            description="OTHER_C" actionTime="2011-06-22 13:00:01"/>
+    <action tenantId="1" userId="42" sessionId="session12345" ip="127.0.0.1" itemId="32" itemTypeId="4"
+            actionTypeId="3" ratingValue="[null]" searchSucceeded="[null]" numberOfFoundItems="[null]"
+            description="INVISIBLE_C" actionTime="2011-06-22 13:00:01"/>
+
+    <!-- viewed together assocs -->
+    <!-- ITEM_A -> ITEM_B -->
+    <itemassoc tenantId="1" itemFromId="10" itemFromTypeId="1" assocTypeId="1" assocValue="0.06" itemToId="11"
+               itemToTypeId="1" sourceTypeId="2" sourceInfo="some source info" viewTypeId="1" active="1"
+               changeDate="2011-06-22 14:00:00"/>
+    <!-- ITEM_A -> ITEM_C_DEACTIVATED -->
+    <itemassoc tenantId="1" itemFromId="10" itemFromTypeId="1" assocTypeId="1" assocValue="0.07" itemToId="12"
+               itemToTypeId="1" sourceTypeId="2" sourceInfo="some source info" viewTypeId="1" active="1"
+               changeDate="2011-06-22 14:01:00"/>
+    <!-- ITEM_A -> ITEM_A (deactivated) -->
+    <itemassoc tenantId="1" itemFromId="10" itemFromTypeId="1" assocTypeId="1" assocValue="0.08" itemToId="10"
+               itemToTypeId="1" sourceTypeId="2" sourceInfo="some source info" viewTypeId="1" active="0"
+               changeDate="2011-06-22 14:02:00"/>
+    <!-- ITEM_A -> OTHER_A -->
+    <itemassoc tenantId="1" itemFromId="10" itemFromTypeId="1" assocTypeId="1" assocValue="0.09" itemToId="20"
+               itemToTypeId="3" sourceTypeId="2" sourceInfo="some source info" viewTypeId="1" active="1"
+               changeDate="2011-06-22 14:03:00"/>
+    <!-- ITEM_A -> OTHER_B (deactivated) -->
+    <itemassoc tenantId="1" itemFromId="10" itemFromTypeId="1" assocTypeId="1" assocValue="0.09" itemToId="21"
+               itemToTypeId="3" sourceTypeId="2" sourceInfo="some source info" viewTypeId="1" active="0"
+               changeDate="2011-06-22 14:04:00"/>
+    <!-- ITEM_A -> OTHER_C_DEACTIVATED -->
+    <itemassoc tenantId="1" itemFromId="10" itemFromTypeId="1" assocTypeId="1" assocValue="0.10" itemToId="22"
+               itemToTypeId="3" sourceTypeId="2" sourceInfo="some source info" viewTypeId="1" active="1"
+               changeDate="2011-06-22 14:05:00"/>
+    <!-- ITEM_B -> ITEM_A -->
+    <itemassoc tenantId="1" itemFromId="11" itemFromTypeId="1" assocTypeId="1" assocValue="0.11" itemToId="10"
+               itemToTypeId="1" sourceTypeId="2" sourceInfo="some source info" viewTypeId="1" active="1"
+               changeDate="2011-06-22 14:06:00"/>
+    <!-- ITEM_B -> OTHER_D -->
+    <itemassoc tenantId="1" itemFromId="11" itemFromTypeId="1" assocTypeId="1" assocValue="0.12" itemToId="23"
+               itemToTypeId="3" sourceTypeId="2" sourceInfo="some source info" viewTypeId="1" active="1"
+               changeDate="2011-06-22 14:06:00"/>
+
+    <!-- bought together assocs -->
+    <!-- ITEM_A -> ITEM_B -->
+    <itemassoc tenantId="1" itemFromId="10" itemFromTypeId="1" assocTypeId="3" assocValue="0.06" itemToId="11"
+               itemToTypeId="1" sourceTypeId="2" sourceInfo="some source info" viewTypeId="1" active="1"
+               changeDate="2011-06-22 14:00:00"/>
+    <!-- ITEM_A -> ITEM_C_DEACTIVATED -->
+    <itemassoc tenantId="1" itemFromId="10" itemFromTypeId="1" assocTypeId="3" assocValue="0.07" itemToId="12"
+               itemToTypeId="1" sourceTypeId="2" sourceInfo="some source info" viewTypeId="1" active="1"
+               changeDate="2011-06-22 14:01:00"/>
+    <!-- ITEM_A -> ITEM_A (deactivated) -->
+    <itemassoc tenantId="1" itemFromId="10" itemFromTypeId="1" assocTypeId="3" assocValue="0.08" itemToId="10"
+               itemToTypeId="1" sourceTypeId="2" sourceInfo="some source info" viewTypeId="1" active="0"
+               changeDate="2011-06-22 14:02:00"/>
+    <!-- ITEM_A -> OTHER_A -->
+    <itemassoc tenantId="1" itemFromId="10" itemFromTypeId="1" assocTypeId="3" assocValue="0.09" itemToId="20"
+               itemToTypeId="3" sourceTypeId="2" sourceInfo="some source info" viewTypeId="1" active="1"
+               changeDate="2011-06-22 14:03:00"/>
+    <!-- ITEM_A -> OTHER_B (deactivated) -->
+    <itemassoc tenantId="1" itemFromId="10" itemFromTypeId="1" assocTypeId="3" assocValue="0.09" itemToId="21"
+               itemToTypeId="3" sourceTypeId="2" sourceInfo="some source info" viewTypeId="1" active="0"
+               changeDate="2011-06-22 14:04:00"/>
+    <!-- ITEM_A -> OTHER_C_DEACTIVATED -->
+    <itemassoc tenantId="1" itemFromId="10" itemFromTypeId="1" assocTypeId="3" assocValue="0.10" itemToId="22"
+               itemToTypeId="3" sourceTypeId="2" sourceInfo="some source info" viewTypeId="1" active="1"
+               changeDate="2011-06-22 14:05:00"/>
+    <!-- ITEM_B -> ITEM_A -->
+    <itemassoc tenantId="1" itemFromId="11" itemFromTypeId="1" assocTypeId="3" assocValue="0.11" itemToId="10"
+               itemToTypeId="1" sourceTypeId="2" sourceInfo="some source info" viewTypeId="1" active="1"
+               changeDate="2011-06-22 14:06:00"/>
+
+    <!-- good rated together assocs -->
+    <!-- ITEM_A -> ITEM_B -->
+    <itemassoc tenantId="1" itemFromId="10" itemFromTypeId="1" assocTypeId="2" assocValue="0.06" itemToId="11"
+               itemToTypeId="1" sourceTypeId="2" sourceInfo="some source info" viewTypeId="1" active="1"
+               changeDate="2011-06-22 14:00:00"/>
+    <!-- ITEM_A -> ITEM_C_DEACTIVATED -->
+    <itemassoc tenantId="1" itemFromId="10" itemFromTypeId="1" assocTypeId="2" assocValue="0.07" itemToId="12"
+               itemToTypeId="1" sourceTypeId="2" sourceInfo="some source info" viewTypeId="1" active="1"
+               changeDate="2011-06-22 14:01:00"/>
+    <!-- ITEM_A -> ITEM_A (deactivated) -->
+    <itemassoc tenantId="1" itemFromId="10" itemFromTypeId="1" assocTypeId="2" assocValue="0.08" itemToId="10"
+               itemToTypeId="1" sourceTypeId="2" sourceInfo="some source info" viewTypeId="1" active="0"
+               changeDate="2011-06-22 14:02:00"/>
+    <!-- ITEM_A -> OTHER_A -->
+    <itemassoc tenantId="1" itemFromId="10" itemFromTypeId="1" assocTypeId="2" assocValue="0.09" itemToId="20"
+               itemToTypeId="3" sourceTypeId="2" sourceInfo="some source info" viewTypeId="1" active="1"
+               changeDate="2011-06-22 14:03:00"/>
+    <!-- ITEM_A -> OTHER_B (deactivated) -->
+    <itemassoc tenantId="1" itemFromId="10" itemFromTypeId="1" assocTypeId="2" assocValue="0.09" itemToId="21"
+               itemToTypeId="3" sourceTypeId="2" sourceInfo="some source info" viewTypeId="1" active="0"
+               changeDate="2011-06-22 14:04:00"/>
+    <!-- ITEM_A -> OTHER_C_DEACTIVATED -->
+    <itemassoc tenantId="1" itemFromId="10" itemFromTypeId="1" assocTypeId="2" assocValue="0.10" itemToId="22"
+               itemToTypeId="3" sourceTypeId="2" sourceInfo="some source info" viewTypeId="1" active="1"
+               changeDate="2011-06-22 14:05:00"/>
+    <!-- ITEM_B -> ITEM_A -->
+    <itemassoc tenantId="1" itemFromId="11" itemFromTypeId="1" assocTypeId="2" assocValue="0.11" itemToId="10"
+               itemToTypeId="1" sourceTypeId="2" sourceInfo="some source info" viewTypeId="1" active="1"
+               changeDate="2011-06-22 14:06:00"/>
+
+    <!-- 'is related' assocs -->
+    <!-- ITEM_A -> ITEM_B -->
+    <itemassoc tenantId="1" itemFromId="10" itemFromTypeId="1" assocTypeId="4" assocValue="0.06" itemToId="11"
+               itemToTypeId="1" sourceTypeId="2" sourceInfo="some source info" viewTypeId="1" active="1"
+               changeDate="2011-06-22 14:00:00"/>
+    <!-- ITEM_A -> ITEM_C_DEACTIVATED -->
+    <itemassoc tenantId="1" itemFromId="10" itemFromTypeId="1" assocTypeId="4" assocValue="0.07" itemToId="12"
+               itemToTypeId="1" sourceTypeId="2" sourceInfo="some source info" viewTypeId="1" active="1"
+               changeDate="2011-06-22 14:01:00"/>
+    <!-- ITEM_A -> ITEM_A (deactivated) -->
+    <itemassoc tenantId="1" itemFromId="10" itemFromTypeId="1" assocTypeId="4" assocValue="0.08" itemToId="10"
+               itemToTypeId="1" sourceTypeId="2" sourceInfo="some source info" viewTypeId="1" active="0"
+               changeDate="2011-06-22 14:02:00"/>
+    <!-- ITEM_A -> OTHER_A -->
+    <itemassoc tenantId="1" itemFromId="10" itemFromTypeId="1" assocTypeId="4" assocValue="0.09" itemToId="20"
+               itemToTypeId="3" sourceTypeId="2" sourceInfo="some source info" viewTypeId="1" active="1"
+               changeDate="2011-06-22 14:03:00"/>
+    <!-- ITEM_A -> OTHER_B (deactivated) -->
+    <itemassoc tenantId="1" itemFromId="10" itemFromTypeId="1" assocTypeId="4" assocValue="0.09" itemToId="21"
+               itemToTypeId="3" sourceTypeId="2" sourceInfo="some source info" viewTypeId="1" active="0"
+               changeDate="2011-06-22 14:04:00"/>
+    <!-- ITEM_A -> OTHER_C_DEACTIVATED -->
+    <itemassoc tenantId="1" itemFromId="10" itemFromTypeId="1" assocTypeId="4" assocValue="0.10" itemToId="22"
+               itemToTypeId="3" sourceTypeId="2" sourceInfo="some source info" viewTypeId="1" active="1"
+               changeDate="2011-06-22 14:05:00"/>
+    <!-- ITEM_B -> ITEM_A -->
+    <itemassoc tenantId="1" itemFromId="11" itemFromTypeId="1" assocTypeId="4" assocValue="0.11" itemToId="10"
+               itemToTypeId="1" sourceTypeId="2" sourceInfo="some source info" viewTypeId="1" active="1"
+               changeDate="2011-06-22 14:06:00"/>
+
+    <!-- cluster 'belongs to' assocs -->
+    <!-- ITEM_B -> CLUSTER_A -->
+    <itemassoc tenantId="1" itemFromId="11" itemFromTypeId="1" assocTypeId="6" assocValue="1.0" itemToId="2"
+               itemToTypeId="2" sourceTypeId="2" sourceInfo="some source info" viewTypeId="1" active="1"
+               changeDate="2011-06-22 14:06:00"/>
+    <!-- ITEM_A -> CLUSTER_A_1 -->
+    <itemassoc tenantId="1" itemFromId="10" itemFromTypeId="1" assocTypeId="6" assocValue="1.0" itemToId="3"
+               itemToTypeId="2" sourceTypeId="2" sourceInfo="some source info" viewTypeId="1" active="1"
+               changeDate="2011-06-22 14:06:00"/>
+    <!-- OTHER_A -> CLUSTER_A_1 -->
+    <itemassoc tenantId="1" itemFromId="20" itemFromTypeId="3" assocTypeId="6" assocValue="1.0" itemToId="3"
+               itemToTypeId="2" sourceTypeId="2" sourceInfo="some source info" viewTypeId="1" active="1"
+               changeDate="2011-06-22 14:06:00"/>
+    <!-- ITEM_C (inactive) -> CLUSTER_A_1 -->
+    <itemassoc tenantId="1" itemFromId="12" itemFromTypeId="1" assocTypeId="6" assocValue="1.0" itemToId="3"
+               itemToTypeId="2" sourceTypeId="2" sourceInfo="some source info" viewTypeId="1" active="1"
+               changeDate="2011-06-22 14:06:00"/>
+    <!-- OTHER_B -> CLUSTER_A_1 [inactive] -->
+    <itemassoc tenantId="1" itemFromId="21" itemFromTypeId="3" assocTypeId="6" assocValue="1.0" itemToId="3"
+               itemToTypeId="2" sourceTypeId="2" sourceInfo="some source info" viewTypeId="1" active="0"
+               changeDate="2011-06-22 14:06:00"/>
+    <!-- INVISIBLE_C -> CLUSTER_A_1 -->
+    <itemassoc tenantId="1" itemFromId="32" itemFromTypeId="4" assocTypeId="6" assocValue="1.0" itemToId="3"
+               itemToTypeId="2" sourceTypeId="2" sourceInfo="some source info" viewTypeId="1" active="1"
+               changeDate="2011-06-22 14:06:00"/>
+    <!-- OTHER_B -> CLUSTER_A_2 -->
+    <itemassoc tenantId="1" itemFromId="21" itemFromTypeId="3" assocTypeId="6" assocValue="1.0" itemToId="4"
+               itemToTypeId="2" sourceTypeId="2" sourceInfo="some source info" viewTypeId="1" active="1"
+               changeDate="2011-06-22 14:06:00"/>
+    <!-- ITEM_C (inactive) -> CLUSTER_B -->
+    <itemassoc tenantId="1" itemFromId="12" itemFromTypeId="1" assocTypeId="6" assocValue="1.0" itemToId="5"
+               itemToTypeId="2" sourceTypeId="2" sourceInfo="some source info" viewTypeId="1" active="1"
+               changeDate="2011-06-22 14:06:00"/>
+    <!-- OTHER_C (inactive) -> CLUSTER_B -->
+    <itemassoc tenantId="1" itemFromId="22" itemFromTypeId="3" assocTypeId="6" assocValue="1.0" itemToId="5"
+               itemToTypeId="2" sourceTypeId="2" sourceInfo="some source info" viewTypeId="1" active="1"
+               changeDate="2011-06-22 14:06:00"/>
+    <!-- INVISIBLE_C (inactive) -> CLUSTER_B -->
+    <itemassoc tenantId="1" itemFromId="32" itemFromTypeId="4" assocTypeId="6" assocValue="1.0" itemToId="5"
+               itemToTypeId="2" sourceTypeId="2" sourceInfo="some source info" viewTypeId="1" active="1"
+               changeDate="2011-06-22 14:06:00"/>
+    <!-- INVISIBLE_A -> CLUSTER_C -->
+    <itemassoc tenantId="1" itemFromId="30" itemFromTypeId="4" assocTypeId="6" assocValue="1.0" itemToId="6"
+               itemToTypeId="2" sourceTypeId="2" sourceInfo="some source info" viewTypeId="1" active="1"
+               changeDate="2011-06-22 14:06:00"/>
+    <!-- INVISIBLE_B -> CLUSTER_C -->
+    <itemassoc tenantId="1" itemFromId="31" itemFromTypeId="4" assocTypeId="6" assocValue="1.0" itemToId="6"
+               itemToTypeId="2" sourceTypeId="2" sourceInfo="some source info" viewTypeId="1" active="1"
+               changeDate="2011-06-22 14:06:00"/>
+    <!-- INVISIBLE_C (inactive) -> CLUSTER_C -->
+    <itemassoc tenantId="1" itemFromId="32" itemFromTypeId="4" assocTypeId="6" assocValue="1.0" itemToId="6"
+               itemToTypeId="2" sourceTypeId="2" sourceInfo="some source info" viewTypeId="1" active="1"
+               changeDate="2011-06-22 14:06:00"/>
+
+</dataset>

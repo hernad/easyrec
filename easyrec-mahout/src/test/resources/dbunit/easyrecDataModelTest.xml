@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- $Author: dmann $ -->
+<!-- $Revision: 18406 $ -->
+<!-- $Date: 2011-05-31 16:33:07 +0200 (Di, 31 Mai 2011) $ -->
+
+<dataset>
+    <action id="1" tenantId="1" userId="1" sessionId="session1" ip="127.0.0.1" itemId="1" itemTypeId="1"
+            actionTypeId="2"
+            ratingValue="1" searchSucceeded="[null]" numberOfFoundItems="[null]" description="Bread"
+            actionTime="2007-04-15 12:11:00.0"/>
+    <action id="2" tenantId="1" userId="1" sessionId="session1" ip="127.0.0.1" itemId="2" itemTypeId="1"
+            actionTypeId="2"
+            ratingValue="5" searchSucceeded="[null]" numberOfFoundItems="[null]" description="Tofu"
+            actionTime="2007-04-15 12:12:00.0"/>
+    <action id="3" tenantId="1" userId="1" sessionId="session1" ip="127.0.0.1" itemId="3" itemTypeId="1"
+            actionTypeId="2"
+            ratingValue="10" searchSucceeded="[null]" numberOfFoundItems="[null]" description="Apple"
+            actionTime="2007-04-15 12:13:00.0"/>
+
+    <action id="4" tenantId="1" userId="2" sessionId="session2" ip="127.0.0.1" itemId="1" itemTypeId="1"
+            actionTypeId="2"
+            ratingValue="1" searchSucceeded="[null]" numberOfFoundItems="[null]" description="Bread"
+            actionTime="2007-04-15 12:14:00.0"/>
+    <action id="5" tenantId="1" userId="2" sessionId="session2" ip="127.0.0.1" itemId="2" itemTypeId="1"
+            actionTypeId="2"
+            ratingValue="5" searchSucceeded="[null]" numberOfFoundItems="[null]" description="Tofu"
+            actionTime="2007-04-15 12:15:00.0"/>
+    <action id="6" tenantId="1" userId="2" sessionId="session2" ip="127.0.0.1" itemId="3" itemTypeId="1"
+            actionTypeId="2"
+            ratingValue="10" searchSucceeded="[null]" numberOfFoundItems="[null]" description="Apple"
+            actionTime="2007-04-15 12:16:00.0"/>
+
+    <action id="7" tenantId="1" userId="1" sessionId="session1" ip="127.0.0.1" itemId="10" itemTypeId="1"
+            actionTypeId="3"
+            ratingValue="[null]" searchSucceeded="[null]" numberOfFoundItems="[null]" description="Bread"
+            actionTime="2007-04-15 12:11:00.0"/>
+    <action id="8" tenantId="1" userId="1" sessionId="session1" ip="127.0.0.1" itemId="20" itemTypeId="1"
+            actionTypeId="3"
+            ratingValue="[null]" searchSucceeded="[null]" numberOfFoundItems="[null]" description="Tofu"
+            actionTime="2007-04-15 12:12:00.0"/>
+    <action id="9" tenantId="1" userId="1" sessionId="session1" ip="127.0.0.1" itemId="30" itemTypeId="1"
+            actionTypeId="3"
+            ratingValue="[null]" searchSucceeded="[null]" numberOfFoundItems="[null]" description="Apple"
+            actionTime="2007-04-15 12:13:00.0"/>
+
+    <action id="10" tenantId="1" userId="2" sessionId="session2" ip="127.0.0.1" itemId="10" itemTypeId="1"
+            actionTypeId="3"
+            ratingValue="[null]" searchSucceeded="[null]" numberOfFoundItems="[null]" description="Bread"
+            actionTime="2007-04-15 12:14:00.0"/>
+    <action id="11" tenantId="1" userId="2" sessionId="session2" ip="127.0.0.1" itemId="20" itemTypeId="1"
+            actionTypeId="3"
+            ratingValue="[null]" searchSucceeded="[null]" numberOfFoundItems="[null]" description="Tofu"
+            actionTime="2007-04-15 12:15:00.0"/>
+    <action id="12" tenantId="1" userId="2" sessionId="session2" ip="127.0.0.1" itemId="30" itemTypeId="1"
+            actionTypeId="3"
+            ratingValue="[null]" searchSucceeded="[null]" numberOfFoundItems="[null]" description="Apple"
+            actionTime="2007-04-15 12:16:00.0"/>
+
+    <tenant id="1" stringId="FOOD SHOP INC" description="SELLING FOOD SINCE 1987" ratingRangeMin="1" ratingRangeMax="10"
+            ratingRangeNeutral="5.5" active="1"/>
+
+    <itemtype tenantId="1" name="ITEM" id="1" profileSchema="[null]" profileMatcher="[null]"/>
+    <actiontype tenantId="1" name="VIEW" id="1"/>
+    <actiontype tenantId="1" name="RATE" id="2"/>
+    <actiontype tenantId="1" name="BUY" id="3"/>
+
+
+    <assoctype tenantId="1" name="VIEWED_TOGETHER" id="1"/>
+    <assoctype tenantId="1" name="GOOD_RATED_TOGETHER" id="2"/>
+    <assoctype tenantId="1" name="BOUGHT_TOGETHER" id="3"/>
+    <assoctype tenantId="1" name="IS_RELATED" id="4"/>
+
+    <sourcetype tenantId="1" name="http://www.easyrec.org/plugins/MAHOUT/0.96" id="1"/>
+    <viewtype tenantId="1" name="COMMUNITY" id="1"/>
+</dataset>
+

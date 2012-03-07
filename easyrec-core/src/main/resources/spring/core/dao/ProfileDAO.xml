@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- $Author: pmarschik $ -->
+<!-- $Revision: 17736 $ -->
+<!-- $Date: 2011-02-22 14:36:38 +0100 (Di, 22 Feb 2011) $ -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+                http://www.springframework.org/schema/beans
+                http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+    <!--
+    ******************************************
+        DAO OBJECTS
+    ******************************************
+    -->
+    <bean id="profileDAO"
+          class="org.easyrec.store.dao.core.impl.ProfileDAOMysqlImpl">
+        <constructor-arg ref="easyrecDataSource"/>
+        <constructor-arg ref="easyrecSqlScriptService"/>
+    </bean>
+</beans>

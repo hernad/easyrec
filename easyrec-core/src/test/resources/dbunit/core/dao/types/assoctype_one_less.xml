@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- $Author: pmarschik $ -->
+<!-- $Revision: 18120 $ -->
+<!-- $Date: 2011-04-12 17:52:28 +0200 (Di, 12 Apr 2011) $ -->
+
+<dataset>
+    <assoctype tenantId="0" id="1" name="BOUGHT_TOGETHER"/>
+    <assoctype tenantId="0" id="2" name="COLL_TOGETHER"/>
+    <assoctype tenantId="0" id="3" name="IS_ELEMENT_OF"/>
+    <assoctype tenantId="0" id="4" name="IS_SIMILAR_TO"/>
+    <assoctype tenantId="0" id="5" name="RATED_TOGETHER"/>
+    <assoctype tenantId="0" id="6" name="SOUNDS_SIMILAR"/>
+</dataset>

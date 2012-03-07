@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- $Author$ -->
+<!-- $Revision$ -->
+<!-- $Date$ -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+                http://www.springframework.org/schema/beans
+                http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <!-- This file contains all spring bean definitions from the easyrec core package -->
+
+    <!-- core -->
+    <import resource="classpath:spring/core/PropertyPlaceholderConfigurerEasyrec.xml"/>
+    <import resource="classpath:spring/easyrecDataSource.xml"/>
+    <import resource="classpath:spring/core/idMapping.xml"/>
+    <import resource="classpath:spring/core/service/ActionService.xml"/>
+    <import resource="classpath:spring/core/service/ItemAssocService.xml"/>
+    <import resource="classpath:spring/core/dao/ActionDAO.xml"/>
+    <import resource="classpath:spring/core/dao/ArchiveDAO.xml"/>
+    <import resource="classpath:spring/core/dao/AuthenticationDAO.xml"/>
+    <import resource="classpath:spring/core/dao/ItemAssocDAO.xml"/>
+    <import resource="classpath:spring/core/dao/RecommendationDAO.xml"/>
+    <import resource="classpath:spring/core/dao/RecommendedItemDAO.xml"/>
+    <import resource="classpath:spring/core/dao/ProfileDAO.xml"/>
+    <!-- uncomment RecommendationHistoryService so recommendations aren't logged to databease - major performance penalty -->
+    <!--import resource="classpath:spring/core/RecommendationHistoryService.xml" />
+  <import resource="classpath:spring/core/RecommenderService.xml" /-->
+    <bean id="recommenderService"
+          class="org.easyrec.service.core.impl.RecommenderServiceImpl">
+        <property name="actionService" ref="actionService"/>
+        <property name="itemAssocService" ref="itemAssocService"/>
+        <property name="recommendationHistoryService">
+            <null/>
+        </property>
+        <!-- In certain circumstances the actual number of results can get lower due to e.g.
+ duplicate filtering. To compensate use higher values -->
+        <property name="maximumNumberOfRelatedItemsPerItem"
+                  value="$easyrec{easyrec.recService.maximumNumberOfRelatedItemsPerItem}"/>
+        <property name="filterResults" value="$easyrec{easyrec.recService.filterResults}"/>
+    </bean>
+    <import resource="classpath:spring/core/TenantConfig_DEFAULT.xml"/>
+    <import resource="classpath:spring/core/dao/TenantDAO.xml"/>
+    <import resource="classpath:spring/core/service/TenantService.xml"/>
+    <import resource="classpath:spring/core/service/ClusterStrategies.xml"/>
+    <import resource="classpath:spring/core/service/ClusterService.xml"/>
+    <import resource="classpath:spring/core/autoimport/AutoImportService.xml"/>
+    <import resource="classpath:spring/core/autoimport/ActionAICommand.xml"/>
+    <import resource="classpath:spring/core/autoimport/ItemAssocAICommand.xml"/>
+
+    <!-- core types -->
+    <import resource="classpath:spring/core/dao/types/ActionTypeDAO.xml"/>
+    <import resource="classpath:spring/core/dao/types/AggregateTypeDAO.xml"/>
+    <import resource="classpath:spring/core/dao/types/AssocTypeDAO.xml"/>
+    <import resource="classpath:spring/core/dao/types/ItemTypeDAO.xml"/>
+    <import resource="classpath:spring/core/dao/types/SourceTypeDAO.xml"/>
+    <import resource="classpath:spring/core/dao/types/ViewTypeDAO.xml"/>
+    <import resource="classpath:spring/core/dao/types/ProfiledItemTypeDAO.xml"/>
+
+</beans>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- $Author: pmarschik $ -->
+<!-- $Revision: 17656 $ -->
+<!-- $Date: 2011-02-11 11:04:49 +0100 (Fr, 11 Feb 2011) $ -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id="tupleCounter"
+          class="org.easyrec.plugin.arm.impl.TupleCounterMemoryImpl">
+    </bean>
+
+</beans>

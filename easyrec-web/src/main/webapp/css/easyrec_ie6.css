@@ -1,0 +1,36 @@
+td.top_left {
+    background-image: url(../img/shadow_top_left.gif);
+}
+
+td.top {
+    background-image: url(../img/shadow_top.gif);
+}
+
+td.top_right {
+    background-image: url(../img/shadow_top_right.gif);
+}
+
+td.bottom_right {
+    background-image: url(../img/shadow_bottom_right.gif);
+}
+
+td.bottom {
+    background-image: url(../img/shadow_bottom.gif);
+}
+
+td.bottom_left {
+    background-image: url(../img/shadow_bottom_left.gif);
+}
+
+td.content_left {
+    background-image: url(../img/content_shadow_left.gif);
+}
+
+td.content {
+    background-image: url(../img/bg_70prozent.gif);
+}
+
+td.content_right {
+    background-image: url(../img/content_shadow_right.gif);
+}
+

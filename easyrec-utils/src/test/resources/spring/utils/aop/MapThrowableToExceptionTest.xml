@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- $Author: pmarschik $ -->
+<!-- $Revision: 17736 $ -->
+<!-- $Date: 2011-02-22 14:36:38 +0100 (Di, 22 Feb 2011) $ -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/aop 
+	http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
+
+    <import resource="classpath:spring/utils/aop/MapThrowableToException.xml"/>
+    <import resource="classpath:spring/utils/aop/IOLog.xml"/>
+
+    <bean id="exceptionTestDummy"
+          class="org.easyrec.utils.spring.exception.ThrowableToExceptionAnnotationDummy">
+    </bean>
+
+</beans>

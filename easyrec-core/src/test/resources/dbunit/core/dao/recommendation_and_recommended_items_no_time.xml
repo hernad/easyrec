@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  ~ Copyright 2011 Research Studios Austria Forschungsgesellschaft mBH
+  ~
+  ~ This file is part of easyrec.
+  ~
+  ~ easyrec is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ easyrec is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with easyrec.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<!-- $Author$ -->
+<!-- $Revision$ -->
+<!-- $Date$ -->
+
+<dataset>
+    <recommendation id="1" tenantId="1" userId="1" queriedItemId="1" queriedItemTypeId="1" queriedAssocTypeId="1"
+                    relatedActionTypeId="1" recommendationStrategy="a" explanation="b"
+                    recommendationTime="2007-04-15 12:11:00.0"/>
+    <recommendation id="2" tenantId="1" userId="1" queriedItemId="2" queriedItemTypeId="1" queriedAssocTypeId="1"
+                    relatedActionTypeId="2" recommendationStrategy="a" explanation="b"
+                    recommendationTime="2007-04-15 12:12:00.0"/>
+    <recommendation id="3" tenantId="1" userId="2" queriedItemId="1" queriedItemTypeId="1" queriedAssocTypeId="1"
+                    relatedActionTypeId="1" recommendationStrategy="a" explanation="b"
+                    recommendationTime="2007-04-15 12:15:00.0"/>
+    <recommendation id="4" tenantId="2" userId="2" queriedItemId="3" queriedItemTypeId="1" queriedAssocTypeId="1"
+                    relatedActionTypeId="1" recommendationStrategy="a" explanation="b"
+                    recommendationTime="2007-04-15 12:17:00.0"/>
+    <recommendation tenantId="1" userId="3" queriedItemId="1" queriedItemTypeId="1" queriedAssocTypeId="1"
+                    relatedActionTypeId="1" recommendationStrategy="a" explanation="b"/>
+
+
+    <recommendeditem id="1" itemId="2" itemTypeId="1" recommendationId="1" predictionValue="0.7" itemAssocId="1"
+                     explanation="x"/>
+    <recommendeditem id="2" itemId="3" itemTypeId="1" recommendationId="1" predictionValue="0.69" itemAssocId="1"
+                     explanation="x"/>
+
+    <recommendeditem id="3" itemId="1" itemTypeId="1" recommendationId="2" predictionValue="0.801" itemAssocId="1"
+                     explanation="x"/>
+    <recommendeditem id="4" itemId="3" itemTypeId="1" recommendationId="2" predictionValue="0.79" itemAssocId="1"
+                     explanation="x"/>
+
+    <recommendeditem id="5" itemId="3" itemTypeId="1" recommendationId="3" predictionValue="0.81" itemAssocId="1"
+                     explanation="x"/>
+
+    <recommendeditem id="6" itemId="1" itemTypeId="1" recommendationId="4" predictionValue="0.8" itemAssocId="1"
+                     explanation="x"/>
+    <recommendeditem id="7" itemId="13" itemTypeId="1" recommendationId="4" predictionValue="0.79" itemAssocId="1"
+                     explanation="x"/>
+    <recommendeditem id="8" itemId="17" itemTypeId="1" recommendationId="4" predictionValue="0.77" itemAssocId="1"
+                     explanation="x"/>
+
+    <recommendeditem itemId="33" itemTypeId="1" predictionValue="0.89" itemAssocId="1"
+                     explanation="x"/>
+    <recommendeditem itemId="34" itemTypeId="1" predictionValue="0.88" itemAssocId="1"
+                     explanation="x"/>
+</dataset>
