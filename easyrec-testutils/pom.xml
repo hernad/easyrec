@@ -20,19 +20,19 @@
 
 <!--
  $Author: szavrel $
- $Revision: 18733 $
- $Date: 2012-02-08 19:25:39 +0100 (Mi, 08 Feb 2012) $
+ $Revision: 18735 $
+ $Date: 2012-02-08 19:25:46 +0100 (Mi, 08 Feb 2012) $
  -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <parent>
         <groupId>org.easyrec</groupId>
         <artifactId>easyrec</artifactId>
-        <version>0.97</version>
+        <version>0.98-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.easyrec</groupId>
     <artifactId>easyrec-testutils</artifactId>
-    <version>0.97</version>
+    <version>0.98-SNAPSHOT</version>
     <name>easyrec - Test Utils</name>
     <description>This module provides utility classes for use in testing used within all other modules of the easyrec.</description>
 

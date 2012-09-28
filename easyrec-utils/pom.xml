@@ -20,19 +20,19 @@
 
 <!--
  $Author: sat-rsa $
- $Revision: 140 $
- $Date: 2012-02-23 16:01:50 +0100 (Do, 23 Feb 2012) $
+ $Revision: 151 $
+ $Date: 2012-02-23 18:18:28 +0100 (Thu, 23 Feb 2012) $
  -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <parent>
         <groupId>org.easyrec</groupId>
         <artifactId>easyrec</artifactId>
-        <version>0.97</version>
+        <version>0.98-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.easyrec</groupId>
     <artifactId>easyrec-utils</artifactId>
-    <version>0.97</version>
+    <version>0.98-SNAPSHOT</version>
     <name>easyrec - Utils</name>
     <description>This module provides utility classes used within all other modules of the easyrec.</description>
     <!--suppress MavenModelInspection -->

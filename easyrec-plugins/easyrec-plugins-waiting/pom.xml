@@ -25,12 +25,12 @@
     <parent>
         <artifactId>easyrec-plugins</artifactId>
         <groupId>org.easyrec</groupId>
-        <version>0.97</version>
+        <version>0.98-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <description>Simple plugin used for unit tests. It does nothing but sleep for a specified timeout</description>
     <artifactId>easyrec-plugins-waiting</artifactId>
-    <version>0.97</version>
+    <version>0.98-SNAPSHOT</version>
     <name>easyrec - Plugins - Waiting</name>
 
     <dependencies>

@@ -19,18 +19,18 @@
   -->
 
 <!-- $Author: szavrel $ -->
-<!-- $Revision: 18733 $ -->
-<!-- $Date: 2012-02-08 19:25:39 +0100 (Mi, 08 Feb 2012) $ -->
+<!-- $Revision: 18735 $ -->
+<!-- $Date: 2012-02-08 19:25:46 +0100 (Mi, 08 Feb 2012) $ -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>easyrec-plugins</artifactId>
         <groupId>org.easyrec</groupId>
-        <version>0.97</version>
+        <version>0.98-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>easyrec-plugins-slopeone</artifactId>
-    <version>0.97</version>
+    <version>0.98-SNAPSHOT</version>
     <name>easyrec - Plugins - SlopeOne</name>
     <description>A collaborative filtering algorithm using ratings for calculating recommendations.</description>
 

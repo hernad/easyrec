@@ -22,12 +22,12 @@
     <parent>
         <artifactId>easyrec-plugins</artifactId>
         <groupId>org.easyrec</groupId>
-        <version>0.97</version>
+        <version>0.98-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>easyrec-plugins-itemitem</artifactId>
-    <version>0.97</version>
+    <version>0.98-SNAPSHOT</version>
     <name>easyrec - Plugins - Item-Item</name>
     <description>Another collaborative filtering algorithm using ratings for defining related items.</description>
 

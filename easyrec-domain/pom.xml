@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
  $Author: sat-rsa $
- $Revision: 140 $
- $Date: 2012-02-23 16:01:50 +0100 (Do, 23 Feb 2012) $
+ $Revision: 151 $
+ $Date: 2012-02-23 18:18:28 +0100 (Thu, 23 Feb 2012) $
  -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <parent>
         <groupId>org.easyrec</groupId>
         <artifactId>easyrec</artifactId>
-        <version>0.97</version>
+        <version>0.98-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.easyrec</groupId>
     <artifactId>easyrec-domain</artifactId>
     <name>easyrec - Domain</name>
-    <version>0.97</version>
+    <version>0.98-SNAPSHOT</version>
     <description>For the isolation of domain specific content, this package is introduced, providing services and
         database access classes for a generic domain, as well as for specific domains like the music domain.
         Additional interfaces for the access of Third-Party data and a utility class for the aggregation of actions to

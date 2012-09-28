@@ -33,7 +33,7 @@ import java.util.List;
  * <p/>
  * <p><b>last modified:</b><br/>
  * $Author: sat-rsa $<br/>
- * $Date: 2011-08-12 16:46:14 +0200 (Fr, 12 Aug 2011) $<br/>
+ * $Date: 2011-08-12 16:46:14 +0200 (Fri, 12 Aug 2011) $<br/>
  * $Revision: 113 $</p>
  *
  * @author Roman Cerny

@@ -4,11 +4,11 @@
     <parent>
         <artifactId>easyrec</artifactId>
         <groupId>org.easyrec</groupId>
-        <version>0.97</version>
+        <version>0.98-SNAPSHOT</version>
     </parent>
     <groupId>org.easyrec</groupId>
     <artifactId>easyrec-plugin-api</artifactId>
-    <version>0.97</version>
+    <version>0.98-SNAPSHOT</version>
     <name>easyrec - Plugin API</name>
     <description>This module provides the basis for plugin development. It provides interfaces a plugin provider needs
         to implement.

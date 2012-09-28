@@ -28,7 +28,7 @@
  *
  * <p><b>last modified:</b><br/>
  * $Author: sat-rsa $<br/>
- * $Date: 2011-08-12 17:06:27 +0200 (Fr, 12 Aug 2011) $<br/>
+ * $Date: 2011-08-12 17:06:27 +0200 (Fri, 12 Aug 2011) $<br/>
  * $Revision: 116 $</p>
  *
  * @author Roman Cerny 

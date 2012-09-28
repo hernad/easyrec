@@ -43,7 +43,7 @@ import static org.junit.Assert.assertThat;
  * <p/>
  * <p><b>last modified:</b><br/>
  * $Author: sat-rsa $<br/>
- * $Date: 2011-08-12 18:40:54 +0200 (Fr, 12 Aug 2011) $<br/>
+ * $Date: 2011-08-12 18:40:54 +0200 (Fri, 12 Aug 2011) $<br/>
  * $Revision: 119 $</p>
  *
  * @author Stephan Zavrel

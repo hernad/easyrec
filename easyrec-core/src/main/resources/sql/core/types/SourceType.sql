@@ -1,7 +1,7 @@
 ###############################################################
 # $Author: sat-rsa $
 # $Revision: 64 $
-# $Date: 2010-12-22 18:10:36 +0100 (Mi, 22 Dez 2010) $
+# $Date: 2010-12-22 18:10:36 +0100 (Wed, 22 Dec 2010) $
 ###############################################################
 
 # ATTENTION: do not add other sql statements than the CREATE TABLE statement
